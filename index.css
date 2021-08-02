@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
 *{
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
 }
 /* navigation bar */
 a{
@@ -24,10 +24,18 @@ a{
     width: 400px;
     font-family: 'Caveat', cursive;
 }
-.navbar .navreg
+ .navreg 
 {
-    float: right;
-    padding: bottom 20px ;
+    position: absolute;
+    right: 10%;
+    top: 3%;
+    border:solid;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-color: black;
+    border-radius: 10px;
+    display: inline;
+
 }
 .navbar ul
 {
@@ -68,10 +76,11 @@ a{
 }
 .submit
 {
+    /* margin-top: 30px; */
     padding: 10px;
     color: black;
     border: none;
-    border-radius: 8px;
+    border-radius: 50px;
     background-color: white;
 }
 /* .register end */
@@ -89,8 +98,10 @@ a{
 } */
 .login input
 {
-    float:  right;
+    position: relative;
+    float:right;
     margin-right: 20px;
+    padding-right: 10px;
 }
 .login:hover
 {
@@ -98,12 +109,16 @@ a{
 }
 .login a
 {
-  /* padding-right: 150px; */
+  padding-right: 150px;
   color:blue;
 }
-.login input
+.Submit
 {
-  float: left;    
+    padding: 10px;
+    border: none;
+    color: black;
+    border-radius: 50px;
+    background-color: white;
 }
 /* login :end */
 /* forgetpassword */
@@ -114,7 +129,19 @@ a{
     background-color: #f0efeb;
     border: solid;
 }
-
+.forgetpassword input
+{
+    
+    padding-right: 10px;
+}
+.Submit
+{
+    padding: 10px;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    background-color: white;
+}
 /* occasions */
 .occasions
 {
