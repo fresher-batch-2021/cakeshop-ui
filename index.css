@@ -3,6 +3,7 @@
     margin: 0%;
     padding: 0%;
 }
+/* navigation bar */
 a{
     text-decoration: none;
     color: black;
@@ -22,6 +23,11 @@ a{
     padding-right: 25px;
     width: 400px;
     font-family: 'Caveat', cursive;
+}
+.navbar .navreg
+{
+    float: right;
+    padding: bottom 20px ;
 }
 .navbar ul
 {
@@ -43,3 +49,113 @@ a{
     padding: 2px;
     transition: 0.3s;
 }
+/* navigation :end */
+/* register page */
+.register
+{
+    border: solid;
+    margin: 80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    background-color: #f0efeb;    
+}
+.register input
+{
+    float: right;
+    margin-right: 80px;
+}
+.register:hover{
+    box-shadow: 5px 3px 10px 2px #ff4d6d;
+}
+.submit
+{
+    padding: 10px;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+}
+/* .register end */
+/* login page */
+.login
+{
+    margin: 80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    background-color: #f0efeb;
+    border: solid;
+}
+/* .login h3
+{
+    padding-right: 50px;
+} */
+.login input
+{
+    float:  right;
+    margin-right: 20px;
+}
+.login:hover
+{
+    box-shadow: 5px 3px 10px 2px;
+}
+.login a
+{
+  /* padding-right: 150px; */
+  color:blue;
+}
+.login input
+{
+  float: left;    
+}
+/* login :end */
+/* forgetpassword */
+.forgetpassword
+{
+    margin: 80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    background-color: #f0efeb;
+    border: solid;
+}
+
+/* occasions */
+.occasions
+{
+    /* text-decoration: none; */
+    /* border: solid; */
+    margin: 50px 30px 50px 30px;
+    padding: 50px 30px 50px 30px;
+    border: solid;
+    padding-bottom: 250px;
+    
+}
+.occasions .special 
+{
+    font-size: 20px;
+    float: left;
+    margin-left: 50px;
+    padding-right: 100px; 
+    
+}
+.special
+{
+    width: 200px;
+    padding: right 0px; 
+}
+.designers
+{
+  margin: 50px 500px 50px 200px;  
+  padding-left: 50px;
+  padding-bottom: 50px;
+  border: solid;  
+  
+}
+.designers h1
+{
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+.designers ul
+{
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+

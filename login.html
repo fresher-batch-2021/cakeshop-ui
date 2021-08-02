@@ -5,27 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="index.css">
+    <style>body
+    {
+      background-color:#fae1dd ;
+    }
+    </style>
 </head>
 <body>
-    <!-- <header id="header"></header> -->
-    <h1>welcome to login page</h1>
-    <div id="login">
+    <header id="header"></header>
+    <div class="login">
+        <h3>welcome to login page</h3><br>
     <form action="index.html">
-        <label for="">Email</label>
-        <input type="email:" required><br>
-        <label for="">Password</label>
-        <input type="password:" required><br>
-        <p><a href="forgetpassword.html">forgetpassword?</a></p>
-        <input type="submit" value="sign in">
+        <label for="email">Email</label>
+        <input type="email:" required placeholder="Enter the Email ID"><br><br>
+        <label for="password">Password</label>
+        <input type="password:" required placeholder="Emter the password"><br><br>
+        <p><a href="forgetpassword.html">forgetpassword?</a></p><br>
+        <input type="submit" value="sign in"><br><br>
+        <p>or</p><br>
+        <p><a href="register.html">register</a></p>
+        </div>
+     
+            <script src="Assest/js/jquery.min.js"></script>
+                 <script>
+                       $("#header").load("header.html")
+                 </script>
     </form>
-    <p>or</p>
-    <p><a href="register.html">register</a></p>
-</div>
-    <script src="Assest/js/jquery.min.js"></script>
-    <script>
-        $("#header").load("header.html")
-    </script>
     
 </body>
 </html>
