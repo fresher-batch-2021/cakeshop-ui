@@ -173,6 +173,7 @@ a{
     width: 200px;
     padding: right 0px; 
 } */ 
+/* occasions */
 .cakerow{
     width: 200px;
     height: 300px;
@@ -185,9 +186,22 @@ a{
     border: 2px solid blue;
     
 }
-
-
-.designers
+/* occassions end */
+/* designerscake */
+.designcake
+{
+    width: 200px;
+    height: 300px;
+    border: 2px solid red;
+    display: inline-block;
+}
+.designimg
+{
+    width: 200px;
+    height: 250px;
+    border: 2px solid blue;
+}
+/*.designers
 {
   margin: 50px 500px 50px 200px;  
   padding-left: 50px;
@@ -209,6 +223,6 @@ a{
 {
     list-style-position: inside;
     
-}
+}*/
 
 

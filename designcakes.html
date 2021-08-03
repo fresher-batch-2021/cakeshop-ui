@@ -18,9 +18,24 @@
         <li>pinata cakes</li>
     </ul>
 </div>
+<div class="designcontainer" id="container">
+   
+
+    </div>
+</div>
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
+
+        var designs=["pexels 4.jpg"]
+        let content="";
+        for(let design of designs)
+        {
+            content=content+` <div class="designcake">
+        <img class="designimg" src="images/${design}" alt="img">
+        <p>rate=500</p>`;
+        }
+        document.querySelector("#container").innerHTML=content;
         </script>
 </body>
 </html>
