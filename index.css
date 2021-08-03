@@ -173,7 +173,16 @@ a{
     width: 200px;
     padding: right 0px; 
 } */ 
-
+.cakerow{
+    width: 200px;
+    height: 300px;
+    border: 2px solid red;
+}
+.cakeimg{
+    width: 200px;
+    height: 250px;
+    border: 2px solid blue;
+}
 .designers
 {
   margin: 50px 500px 50px 200px;  
