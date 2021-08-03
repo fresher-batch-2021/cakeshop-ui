@@ -3,6 +3,13 @@
     margin: 0;
     padding: 0;
 }
+/* homepage image */
+.index img
+{
+   width: 700px;
+
+   /* height: 700px;  */
+}
 /* navigation bar */
 a{
     text-decoration: none;
@@ -143,10 +150,10 @@ a{
     background-color: white;
 }
 /* occasions */
-.occasions
+ /* .occasions
 {
     /* text-decoration: none; */
-    /* border: solid; */
+    /* border: solid; 
     margin: 50px 30px 50px 30px;
     padding: 50px 30px 50px 30px;
     border: solid;
@@ -165,7 +172,8 @@ a{
 {
     width: 200px;
     padding: right 0px; 
-}
+} */ 
+
 .designers
 {
   margin: 50px 500px 50px 200px;  
@@ -183,6 +191,11 @@ a{
 {
     padding-left: 20px;
     font-size: 20px;
+}
+.flavours
+{
+    list-style-position: inside;
+    
 }
 
 
