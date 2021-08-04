@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            background-color: #fae1dd;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header id="header"></header>
+        <div class="ordernow">
+        <h1>DIVINE CAKES ONLINE DELIVERY </h1><br><br>
+        <form onsubmit="ordernow()">
+
+        <label for="name">Customer Name</label>
+        <input type="text" name="name" id="name" required placeholder="Enter your name"><br><br>
+        <label for="phonenumber">Contact number</label>
+        <input type="phonenumber" name="phonenumber" id="phonenumber" required placeholder="Enter phone number"><br><br>
+        <label for="date">Delivery date</label>
+        <input type="date" name="date" id="date" required placeholder="date"><br><br>
+        <label for="time">Delivery time</label>
+        <input type="time" name="time" id="time"required><br>
+        <label for="type"><b>Type:</b></label><br><br>
+         <!-- <input type="text" name="type" id="type"><br>  -->
+        <input type="checkbox" name="fondant" id="fondant">
+        <label for="fondant">Fonadant</label><br>
+        <input type="checkbox" name="icecake" id="icecake">
+        <label for="icecake">Ice Cake</label><br>
+        <input type="checkbox" name="buttercake" id="buttercake">
+        <label for="buttercream">Butter cream cake</label><br><br>
+        <label for="numberofkg">No.of kg</label>
+        <input type="text" name="numberofkg" id="numberofkg" required ><br><br>
+        <label for="specialinstruction">Special Instruction</label>
+        <input type="text" name="specialinstruction" id="specialinstruction" required><br><br>
+        <label for="cakemessage">Cake message</label>
+        <input type="text" name="cakemessage" id="cakemessage" required><br><br>
+        <label for="address">Address</label>
+        <input type="address" name="address" id="address" required placeholder="Enter the address"  ><br><br>
+        <button type="submit">place order</button>
+        <button type="reset">reset</button>
+        <button type="cancel"><a href="index.html">cancel</a></button>
+        <a href="index.html"></a>
+    </div>
+    </form>
+     </section>
+    <script src="Assest/js/jquery.min.js"></script>
+    <script>
+        $("#header").load("header.html")
+        function ordernow()
+        {
+            event.preventDefault();
+            const name=document.querySelector("#name").value;
+            const phonenumber=document.querySelector("#phonenumber").value;
+            const date=document.querySelector("#date").value;
+            const time=document.querySelector("#time").value;
+            const fondant=document.querySelector("#fondant").value;
+            const icecake=document.querySelector("#icecake").value;
+            const buttercream=document.querySelector("#buttercake").value;
+            const numberfkg=document.querySelector("#numberofkg").value;
+            const specialinstruction=document.querySelector("#specialinstruction").value;
+            const cakemessage=document.querySelector("#cakemessage").value;
+            const address=document.querySelector("#address").value;
+            console.log(name+"-"+phonenumber+"-"+date+"-"+time+"-"+fondant+"-"+icecake+"-"+buttercake+"-"+numberofkg+"-"+specialinstruction+"-"+cakemessage+"-"+address);
+            alert("your order successfully placed");
+            window.location.href="index.html";
+        }
+
+    </script>
+
+</body>
+</html>

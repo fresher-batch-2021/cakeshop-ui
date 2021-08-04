@@ -16,7 +16,7 @@ a{
     color: black;
 }
 .navbar{
-    height: 100px;
+    height: 80px;
     background-color: #f0efeb;
 }
 .navbar img{
@@ -178,12 +178,17 @@ a{
     width: 200px;
     height: 300px;
     border: 2px solid red;
+    border-radius: 10px;
     display: inline-block;
+    padding: 3px 10px 10px 4px;
+    margin-left: 35px;
+    margin-top: 10px;
 }
 .cakeimg{
     width: 200px;
     height: 250px;
     border: 2px solid blue;
+    border-radius: 10px;
     
 }
 /* occassions end */
@@ -193,13 +198,17 @@ a{
     width: 200px;
     height: 300px;
     border: 2px solid red;
+    border-radius: 10px;
     display: inline-block;
+    padding: 3px 10px 10px 4px;
 }
 .designimg
 {
     width: 200px;
     height: 250px;
     border: 2px solid blue;
+    border-radius: 10px;
+    
 }
 /*.designers
 {
@@ -218,11 +227,19 @@ a{
 {
     padding-left: 20px;
     font-size: 20px;
-}
+}*/
 .flavours
 {
     list-style-position: inside;
     
-}*/
-
+}
+/* designer end */
+/* ordernow */
+.ordernow
+{
+    margin:  80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    border: solid;
+    background-color:  #f0efeb;
+}
 

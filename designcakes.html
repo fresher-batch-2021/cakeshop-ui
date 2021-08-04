@@ -9,6 +9,7 @@
 </head>
 <body>
     <header id="header"></header>
+    <section>
     
     <div class="designers"> 
      <h1>DESIGNER CAKES</h1>
@@ -23,6 +24,7 @@
 
     </div>
 </div>
+</section>
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
@@ -33,7 +35,7 @@
         {
             content=content+` <div class="designcake">
         <img class="designimg" src="images/${design}" alt="img">
-        <p>rate=500</p>`;
+        <p>price=500</p>`;
         }
         document.querySelector("#container").innerHTML=content;
         </script>

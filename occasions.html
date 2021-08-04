@@ -9,6 +9,7 @@
 </head>
 <body>
     <header id="header"></header>
+    <section>
     <div class="occasions">
        <div class="special"><h2>Everyday</h2><br>
         <ul>
@@ -30,17 +31,19 @@
 <div  class="cakecontainer" id="container">
    
 </div>
+</section>
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
 
-        var cakes=["birthday-cake.png","birthday-cake1.png","pexels 2.jpg","pexels 4.jpg","stepcake1.jpg","pexels 3.jpg"];
+        var cakes=[{imageurl:"birthday-cake.png",name:"cake1",price:"500"},{imageurl:"birthday-cake1.png",name:"cake2",price:"400"},{imageurl:"pexels 2.jpg",name:"cake3",price:"450"},{imageurl:"pexels 4.jpg",name:"cake4",price:"456"},{imageurl:"stepcake1.jpg",name:"cake5",price:"489"},{imageurl:"stepcake1.jpg",name:"cake6",price:"600"}];
         let content="";
         for(let cake of cakes)
         {
             content=content+ `<div class="cakerow">
-        <img class="cakeimg" id="cakeworld"src="images/${cake}" alt="img">
-            <p>rate = 400</p>
+        <img class="cakeimg" id="cakeworld"src="images/${cake.imageurl}" alt="img">
+            <p>cakename = ${cake.name}</p>
+            <p>cakeprice = ${cake.price}</p>
     </div>`;    
         } 
         document.querySelector("#container").innerHTML=content;
