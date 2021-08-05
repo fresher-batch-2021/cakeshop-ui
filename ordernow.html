@@ -15,6 +15,7 @@
 <body>
     <section>
         <header id="header"></header>
+        
         <div class="ordernow">
         <h1>DIVINE CAKES ONLINE DELIVERY </h1><br><br>
         <form onsubmit="ordernow()">
@@ -50,9 +51,15 @@
     </div>
     </form>
      </section>
+        <!-- <footer>
+            <div style="background-color: black;color: #fff;padding: 20px;">Copyright</div>
+            </footer> -->
+     </footer>
+     <footer id="footer"></footer>
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
+        $("#footer").load("footer.html")
         function ordernow()
         {
             event.preventDefault();

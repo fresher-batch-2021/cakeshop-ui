@@ -15,9 +15,14 @@ a{
     text-decoration: none;
     color: black;
 }
+header{
+    position: sticky;
+    top: 0;
+}
 .navbar{
     height: 80px;
     background-color: #f0efeb;
+   
 }
 .navbar img{
     width: 75px;
@@ -246,14 +251,32 @@ a{
 /* footer */
 .Footer
 {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background-color:gray;
+    /* position: fixed; */
+    /* position: absolute; */
+    bottom: 0%;   
+    background-color: #f0efeb;
     width: 100%;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
+/* footer end */
+/* contactus start */
+.contactus
+{
+    /* text-align: center; */
+    text-align: justify
+}
+/* contactus end */
+/* privacy and policy start */
+.privacy 
+{
+  /* text-align: justify; */
+  /* justify-content: center; */
+}
+/* privacy end */
+
+
+
 
 

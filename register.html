@@ -16,6 +16,7 @@
 
 <body>
     <header id="header"></header>
+    
     <div class="register">
         <h3>Register the details</h3><br>
         <form onsubmit="register()">
@@ -26,12 +27,12 @@
             <input type="email:" name="email" id="email" required placeholder="Enter the email"><br><br>
             <!-- <label for="Date of Birth">Date of Birth:</label>
         <input style="margin-right: 109px;" type="date"><br><br> -->
-            <label for="phone number">Phone number</label>
-            <input type="phone nummber" name="phonenumber" id="phonenumber" required
+            <label for="phonenumber">Phone number</label>
+            <input type="phonenummber" name="phonenumber" id="phonenumber" required
                 placeholder="Enter the phone number"><br><br>
             <label for="Password">Password:</label>
             <input type="password" name="password" id="password" required placeholder="Enter the password"><br><br>
-            <label for="Confirm password">Confirm Password:</label>
+            <label for="Confirmpassword">Confirm Password:</label>
             <input type="password" name="Confirmpassword" id="Confirmpassword" required
                 placeholder="Confirm password"><br><br>
             <button class="submit">submit</button>
@@ -39,10 +40,11 @@
     </div>
     </form>
 
-
+    <footer id="footer"></footer>
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
+        $("#footer").load("footer.html")
         function register() {
             event.preventDefault();
             const name = document.querySelector("#name").value;
@@ -58,11 +60,11 @@
             }
             else{
                     const data = {
-                        Name: name,
-                        email: email,
-                        phonenumber: phonenumber,
-                        password: password,
-                        Confirmpassword: Confirmpassword
+                        "Name": name,
+                        "email": email,
+                        "phonenumber": phonenumber,
+                        "password": password,
+                        "Confirmpassword": Confirmpassword
                     };
                     console.log(data);
 
