@@ -16,8 +16,8 @@ a{
     color: black;
 }
 header{
-    position: sticky;
-    top: 0;
+     position: sticky;
+     top: 0;  
 }
 .navbar{
     height: 80px;
@@ -52,7 +52,7 @@ header{
 .navbar ul
 {
     float: right;  
-    padding-bottom: 100px;
+    padding-bottom: 5px;
 
 }
 .navbar li
@@ -70,6 +70,54 @@ header{
     transition: 0.3s;
 }
 /* navigation :end */
+/* slider */
+/* Slideshow container */
+.slideshow_container{
+    position: relative; 
+    max-width: 99%;
+    /* height: 475px; */
+    /* margin: 40px; */
+    margin-top: 20px;
+    /* padding-right: 100px; */
+    /* right: 0; */
+    /* border: 2px solid greenyellow; */
+    
+  }  
+  .slideshow_container img{
+    height: 450px;
+    /* position: absolute; */
+    width: 99%;
+    margin-top: -2px;
+    margin: 15px 0px 0px 5px;
+
+  }
+    /* Fading animation */
+    /* .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    } */
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {font-size: 11px}
+    }
+    .imgslide{
+        /* position: absolute; */
+      width: 1000px;
+      /* border: 2px solid red; */
+      /* padding-right: 100px; */
+      margin-top: 80px;
+      /* height: 200px; */
+    /* border: 2px solid red; */
+    }
+   /*  .mySlides{
+      position: absolute; */
+      /* top: 0; */
+      /* margin-top: -80px; */
+      /* margin-bottom: 100px; */
+      /* width: 100%; 
+    }*/ 
 /* register page */
 .register
 {
@@ -80,8 +128,17 @@ header{
 }
 .register input
 {
-    float: right;
-    margin-right: 80px;
+    /* float: right;
+    margin-right: 80px; */
+    
+    margin: 10px 0;
+    padding: 5px 10px; 
+    display: block; 
+    border: 2px solid #D3D3D3; 
+    border-radius: 5px;
+    width: 50%;
+    box-sizing: border-box; 
+    margin-bottom: 20px;
 }
 .register:hover{
     box-shadow: 5px 3px 10px 2px #ff4d6d;
@@ -104,17 +161,17 @@ header{
     background-color: #f0efeb;
     border: solid;
 }
-/* .login h3
+/* .login h3    
 {
     padding-right: 50px;
 } */
-.login input
+/* .login input
 {
     position: relative;
     float:right;
     margin-right: 20px;
     padding-right: 10px;
-}
+} */
 .login:hover
 {
     box-shadow: 5px 3px 10px 2px;
@@ -132,6 +189,18 @@ header{
     border-radius: 50px;
     background-color: white;
 }
+.login input[type=password],[type=email]
+{
+        margin: 10px 0;
+        padding: 5px 10px; 
+        display: block; 
+        border: 2px solid #D3D3D3; 
+        border-radius: 5px;
+        width: 50%;
+        box-sizing: border-box; 
+        margin-bottom: 20px;
+
+} 
 /* login :end */
 /* forgetpassword */
 .forgetpassword
@@ -144,7 +213,15 @@ header{
 .forgetpassword input
 {
     
-    padding-right: 10px;
+    
+    margin: 10px 0;
+    padding: 5px 10px; 
+    display: block; 
+    border: 2px solid #D3D3D3; 
+    border-radius: 0px;
+    width: 50%;
+    box-sizing: border-box; 
+    margin-bottom: 20px;
 }
 .Submit
 {
@@ -182,7 +259,7 @@ header{
 .cakerow{
     width: 200px;
     height: 300px;
-    border: 2px solid red;
+    border: 2px solid greenyellow;
     border-radius: 10px;
     display: inline-block;
     padding: 3px 10px 10px 4px;
@@ -192,7 +269,7 @@ header{
 .cakeimg{
     width: 200px;
     height: 250px;
-    border: 2px solid blue;
+    border: 2px solid black;
     border-radius: 10px;
     
 }
@@ -202,7 +279,7 @@ header{
 {
     width: 200px;
     height: 300px;
-    border: 2px solid red;
+    border: 2px solid black;
     border-radius: 10px;
     display: inline-block;
     padding: 3px 10px 10px 4px;
@@ -211,7 +288,7 @@ header{
 {
     width: 200px;
     height: 250px;
-    border: 2px solid blue;
+    border: 2px solid greenyellow;
     border-radius: 10px;
     
 }
@@ -262,19 +339,25 @@ header{
 }
 /* footer end */
 /* contactus start */
-.contactus
-{
-    /* text-align: center; */
-    text-align: justify
-}
+/* .contact p*/
+/*{
+    text-align: center;
+    margin: 80px 400px 0px 400px;
+    
+} */
 /* contactus end */
 /* privacy and policy start */
-.privacy 
+/* .privacy 
 {
   /* text-align: justify; */
   /* justify-content: center; */
-}
+/* }  
 /* privacy end */
+.about
+{
+    margin-top: 20px;
+    
+}
 
 
 
