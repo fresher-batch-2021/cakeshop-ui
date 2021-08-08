@@ -1,85 +1,100 @@
-<!DOCTYPE html>
-<html>
-
+<!-- <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="slider.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
 <body>
+    
+    <header id="header"></header>
 
 
-    <div class="slideshow-container">
+    <section class="RegisterContainer">
 
-        <!-- <div class="mySlides fade">
-            <img src="Assets/Images/bc1.jpg" style="width:100%">
+        <div class="regLogo">
+            <img src="Assets/Images/gift.png" alt="">
+            <img class="regimg" src="Assets/Images/gift.png" alt=""> 
+            <p>Gift corner</p><br>
         </div>
-        <div class="mySlides fade">
-            <img src="Assets/Images/bc2.jpg" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-            <img src="Assets/Images/bc3.jpg" style="width:100%">
-        </div> -->
 
-    </div>
-    <br>
+        <form onsubmit="register()">
+            <div class="field">
+                <input type="text" required autocomplete="off" id="registerName">
+                <label for="registerName" title="Name"></label>
+            </div>
+            <div class="field">
+                <div class="email">
+                    <input type="email" required autocomplete="off" id="registerEmail" placeholder="email">
+                    <label for="registerEmail" title="email"></label>
+                </div>
+            </div>
+            <div class="field">
+                <input type="password" required autocomplete="off" id="registerPassword">
+                <label for="registerPassword" title="password"></label>
+            </div>
+            <div class="field">
+                <input type="password" required autocomplete="off" id="registerConfirm">
+                <label for="registerConfirm" title="confirm"></label>
+            </div>
+            <button type="submit">Register</button>
+
+        </form>
+
+    </section>
 
 
+    java script -->
+<!--     
 
+    <script src="Assets/js/jquery.min.js"></script>
     <script>
-        var slideIndex = 0;
-        
-        let slideData =["images/cake.png","images/cake2.png","images/cake3.png"];
+        $("#header").load("header.html")
 
-        function addSliderImages(){
-
-              
-            const slider = document.querySelector('.slideshow-container');//to place the html code in container
-            
-
-            for(let slide of slideData){
-                let slideDiv = document.createElement('div');    
-                slideDiv.setAttribute('class','mySlides fade');      
-
-                slideDiv.innerHTML = `<img class="imgslide" src="${slide}"/>`;
-                
-                    
-                slider.appendChild(slideDiv);
-
+        function register() {
+            event.preventDefault();
+            const name = document.querySelector("#name").value;
+            const email = document.querySelector("#email").value;
+            const password = document.querySelector("#password").value;
+            const confirm = document.querySelector("#confirm").value;
+            // if name is valid or not
+            if (name == "" || name == null || name.trim() == "") {
+                alert("invalid name");
             }
-
-        }
-        
-
-        function showSlides() {
-
-            slideIndex++;
-        //    alert("showSlides"  + slideIndex);
-          
-            
-            let mySlidesDiv = document.querySelectorAll('.mySlides');
-            
-            // Don't display images
-            mySlidesDiv.forEach( divObj=>{                                                  
-                divObj.style.display = "none";
-            });
-            
-
-            //reset to 1st image
-            if (slideIndex > mySlidesDiv.length) {
-                 slideIndex = 1 
+            if (password.length < 8) {
+                alert("password is short");
             }
+            else 
+                if (password != confirm) {
+                    alert("password doesnot match");
+                }  
+                else {
+                     // backend
+                     let registerObj = {
+                        "name": name,
+                        "email": email,
+                        "password": password,
+                        "role": "USER"
+                    };
 
-            //display one image at at time
-            mySlidesDiv[slideIndex - 1].style.display = "block";
+                    console.log(registerObj); //for printing in console 
 
-            setTimeout(showSlides, 1500); // Change image every 2 seconds  
-        }
-        addSliderImages();
-        showSlides();
-      
-    </script>
+              const url = "https://product-mock-api.herokuapp.com/giftshopapp/api/v1/auth/register";//registration url
+              axios.post(url, registerObj).then(res => {
 
-</body>
+                        console.log(res);//printing in console // for user purpose
+                        alert("Registration is succesful");
+                        window.location.href = "login.html";
+                    }).catch(err => {
+                        console.error(err);
+                        alert("Unable to register");
+                    });
 
-</html>
+                    }
+                }
+                </script>
+                                    
+                </body>
+ </html>       -->
+ 

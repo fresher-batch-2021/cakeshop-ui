@@ -23,19 +23,20 @@
         <form onsubmit="register()">
 
             <label for="Name">Name:</label>
-            <input type="text" name="name" id="name" required placeholder="Enter the Name"><br>
+            <input type="text" name="name" id="name" autocomplete="off"  placeholder="Enter the Name"><br>
             <label for="Email">Email:</label>
-            <input type="email:" name="email" id="email" required placeholder="Enter the email"><br>
+            <input type="email:" name="email" id="email" autocomplete="off" required placeholder="Enter the email"><br>
             <!-- <label for="Date of Birth">Date of Birth:</label>
         <input style="margin-right: 109px;" type="date"><br><br> -->
-            <label for="phonenumber">Phone number</label>
-            <input type="phonenummber" name="phonenumber" id="phonenumber" required
+            <label for="phoneNumber">Phone number</label>
+            <input type="phoneNummber" name="phoneNumber" id="phoneNumber" required
                 placeholder="Enter the phone number"><br>
-            <label for="Password">Password:</label>
+            <label for="password">Password:</label>
             <input type="password" name="password" id="password" required placeholder="Enter the password"><br>
-            <label for="Confirmpassword">Confirm Password:</label>
-            <input type="password" name="Confirmpassword" id="Confirmpassword" required
-                placeholder="Confirm password"><br>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" class="confirmPassword" required   placeholder="Confirm Password">
+            
+           <br>
             <button class="submit">submit</button>
             <a href="index.html">Back</a>
     </div>
@@ -45,33 +46,53 @@
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
-        $("#footer").load("footer.html")
+        // $("#footer").load("footer.html")
         function register() {
             event.preventDefault();
             const name = document.querySelector("#name").value;
             const email = document.querySelector("#email").value;
-            const phonenumber = document.querySelector("#phonenumber").value;
+            const phoneNumber = document.querySelector("#phoneNumber").value;
             const password = document.querySelector("#password").value;
-            const Confirmpassword = document.querySelector("#Confirmpassword").value;
-            if (password.length < 8) {
-                alert("password must be greater 8 characters");
-            }
-            else if (password != Confirmpassword) {
-                alert("password does not matching")
-            }
-            else if(phonenumber.length < 10)
+            const confirmPassword = document.querySelector("#confirmPassword").value;
+            if(name == ""||name == null||name.trim()=="")
             {
-                alert("number is not valid")
+                alert("name cant be blank");
+            }
+            else
+            {
+
+             if(email == ""||email == null||email.trim()=="")
+            {
+                alert("please enter a valid email ");
             }
             else{
-                    const data = {
+                if(phoneNumber.length < 10)
+            {
+                alert("number is not valid");
+            }
+            else{
+
+             if (password.length < 8)
+             {
+                alert("password must be greater 8 characters");
+            }
+            else
+            { 
+              
+                if (password != confirmPassword) 
+                {
+                alert("password does not matching");
+                }            
+            
+                 else{
+                    const regobj = {
                         "Name": name,
                         "email": email,
-                        "phonenumber": phonenumber,
+                        "phoneNumber": phoneNumber,
                         "password": password,
-                        "Confirmpassword": Confirmpassword
+                        "confirmPassword": confirmPassword
                     };
-                    console.log(data);
+                    console.log(regobj);
 
                     alert("Successfully Registered");
                     //next page
@@ -79,7 +100,10 @@
                 }
                 
             }
-        
+        }
+    }
+}
+}
     </script>
 </body>
 

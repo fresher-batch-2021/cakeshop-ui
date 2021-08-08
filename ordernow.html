@@ -22,13 +22,13 @@
 
         <label for="name">Customer Name</label>
         <input type="text" name="name" id="name" required placeholder="Enter your name"><br><br>
-        <label for="phonenumber">Contact number</label>
-        <input type="phonenumber" name="phonenumber" id="phonenumber" required placeholder="Enter phone number"><br><br>
+        <label for="phoneNumber">Contact number</label>
+        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" required placeholder="Enter phone number"><br><br>
         <label for="date">Delivery date</label>
         <input type="date" name="date" id="date" required placeholder="date"><br><br>
         <label for="time">Delivery time</label>
         <input type="time" name="time" id="time"required><br>
-        <label for="type"><b>Type:</b></label><br><br>
+        <label for="type"><strong>Type:</strong></label><br><br>
          <!-- <input type="text" name="type" id="type"><br>  -->
         <input type="checkbox" name="fondant" id="fondant">
         <label for="fondant">Fondant</label><br>
@@ -59,26 +59,8 @@
     <script src="Assest/js/jquery.min.js"></script>
     <script>
         $("#header").load("header.html")
-        $("#footer").load("footer.html")
-        function ordernow()
-        {
-            event.preventDefault();
-            const name=document.querySelector("#name").value;
-            const phonenumber=document.querySelector("#phonenumber").value;
-            const date=document.querySelector("#date").value;
-            const time=document.querySelector("#time").value;
-            const fondant=document.querySelector("#fondant").value;
-            const icecake=document.querySelector("#icecake").value;
-            const buttercream=document.querySelector("#buttercake").value;
-            const numberfkg=document.querySelector("#numberofkg").value;
-            const specialinstruction=document.querySelector("#specialinstruction").value;
-            const cakemessage=document.querySelector("#cakemessage").value;
-            const address=document.querySelector("#address").value;
-            console.log(name+"-"+phonenumber+"-"+date+"-"+time+"-"+fondant+"-"+icecake+"-"+buttercake+"-"+numberofkg+"-"+specialinstruction+"-"+cakemessage+"-"+address);
-            alert("your order successfully placed");
-            window.location.href="index.html";
-        }
-
+        // $("#footer").load("footer.html")
+       
     </script>
 
 </body>

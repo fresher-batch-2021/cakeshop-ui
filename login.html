@@ -21,7 +21,7 @@
         <input type="email" name="email"id="email" required placeholder="Enter the Email ID">
         <label for="password">Password</label>
         <input type="password" name="password"id="password"required placeholder="Enter the password"><br>
-        <p><a href="forgetpassword.html">forgetpassword?</a></p><br>
+        <p><a href="forgetPassword.html">forgetpassword?</a></p><br>
         <button class="Submit" type="submit">Submit</button><br><br>
         <p>or</p><br>
         <p><a href="register.html">register</a></p>
@@ -37,33 +37,30 @@
                            event.preventDefault();
                            const email=document.querySelector("#email").value;
                            const password=document.querySelector("#password").value;
-                           if(email=="hari@gmail.com" && password=="123456789"){
-                               alert("successfully logged in");
-                               window.location.href="index.html";
-                           }
-                           else{
-                               alert("invalid userid and password");
-                           }
-                        //    if(password.length < 8)
-                        //    {
-                        //        alert("password must be greater than 8 characters")
+                        //    if(email=="hari@gmail.com" && password=="123456789"){
+                        //        alert("successfully logged in");
+                        //        window.location.href="index.html";
                         //    }
-                        // //    else if(forgetpassword!=password)
-                        // //    {
-                        // //        alert("Please enter a valid password")
-                        // //    }
-                        //    else 
-                        //    {
-                        //        const data={
-                        //            "Email": email,
-                        //            "password": password
+                        //    else{
+                        //        alert("invalid userid and password");
+                        //    }
+                           if(password.length < 8)
+                           {
+                               alert("password must be greater than 8 characters")
+                           }
+                          
+                           else 
+                           {
+                               const data={
+                                   "Email": email,
+                                   "password": password
                                    
 
-                        //        };
-                        //        console.log(data);
-                        //            alert("successfully logged in");
-                        //             window.location.href="index.html";
-                        //    }
+                               };
+                               console.log(data);
+                                   alert("successfully logged in");
+                                    window.location.href="index.html";
+                           }
                           
                            
                        }
