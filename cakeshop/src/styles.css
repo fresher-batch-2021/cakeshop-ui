@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.index img
+{
+   width: 700px;
+
+   /* height: 700px;  */
+}
+/* navigation bar */
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+     position: sticky;
+     top: 0;  
+}
+.navbar{
+    height: 80px;
+    background-color: #f0efeb;
+   
+}
+.navbar img{
+    width: 75px;
+    height: 60px;
+    margin: 10px;
+    float: left;
+}
+.navbar h1{
+    padding-top: 25px;
+    padding-right: 25px;
+    width: 400px;
+    font-family: 'Caveat', cursive;
+}
+ .navreg 
+{
+    position: absolute;
+    right: 10%;
+    top: 3%;
+    border:solid;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-color: black;
+    border-radius: 10px;
+    display: inline;
+
+}
+.navbar ul
+{
+    float: right;  
+    padding-bottom: 5px;
+
+}
+.navbar li
+{
+    list-style: none;
+   float: left;
+    margin-right: 40px;
+    font-size: 16.5px;
+}
+.navbar li a:hover
+{
+    color:#D00000;
+    border: 2px solid white;
+    padding: 2px;
+    transition: 0.3s;
+}
+/* navigator :end */
+/* .register */
+.register
+{
+    border: solid;
+    margin: 80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    background-color: #f0efeb;    
+}
+.register input
+{
+    /* float: right;
+    margin-right: 80px; */
+    
+    margin: 10px 0;
+    padding: 5px 10px; 
+    display: block; 
+    border: 2px solid #D3D3D3; 
+    border-radius: 5px;
+    width: 50%;
+    box-sizing: border-box; 
+    margin-bottom: 20px;
+}
+.register:hover{
+    box-shadow: 5px 3px 10px 2px #ff4d6d;
+}
+.submit
+{
+    /* margin-top: 30px; */
+    padding: 10px;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    background-color: white;
+}
+/* .register end */
+/* login */
+.login
+{
+    margin: 80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    background-color: #f0efeb;
+    border: solid;
+}
+/* .login h3    
+{
+    padding-right: 50px;
+} */
+/* .login input
+{
+    position: relative;
+    float:right;
+    margin-right: 20px;
+    padding-right: 10px;
+} */
+.login:hover
+{
+    box-shadow: 5px 3px 10px 2px;
+}
+.login a
+{
+  padding-right: 150px;
+  color:blue;
+}
+.Submit
+{
+    padding: 10px;
+    border: none;
+    color: black;
+    border-radius: 50px;
+    background-color: white;
+}
+.login input[type=password],[type=email]
+{
+        margin: 10px 0;
+        padding: 5px 10px; 
+        display: block; 
+        border: 2px solid #D3D3D3; 
+        border-radius: 5px;
+        width: 50%;
+        box-sizing: border-box; 
+        margin-bottom: 20px;
+
+} 
+/* login :end */
+/* forgetpassword */
+.forgetpassword
+{
+    margin: 80px 400px 0px 400px;
+    padding: 50px 0px 40px 80px;
+    background-color: #f0efeb;
+    border: solid;
+}
+.forgetpassword input
+{
+    
+    
+    margin: 10px 0;
+    padding: 5px 10px; 
+    display: block; 
+    border: 2px solid #D3D3D3; 
+    border-radius: 0px;
+    width: 50%;
+    box-sizing: border-box; 
+    margin-bottom: 20px;
+}
+.Submit
+{
+    padding: 10px;
+    color: black;
+    border: none;
+    border-radius: 50px;
+    background-color: white;
+}
+/* .forgetpassword :end */
+/* occasions :start */
+.cakerow{
+    width: 200px;
+    height: 300px;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 3px 10px 10px 4px;
+    margin-left: 35px;
+    margin-top: 10px;
+}
+.cakeimg{
+    width: 200px;
+    height: 250px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
+}
+/* occasions :end */

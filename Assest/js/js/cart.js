@@ -1,4 +1,4 @@
-alert("hello");
+// alert("hello");
 let cartitem=[{cakeno:1,cakedesign:"fondant",cakeprice:100,cakequantity:1}];
 
 let content=`<table>

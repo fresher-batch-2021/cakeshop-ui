@@ -118,6 +118,10 @@ header{
       /* margin-bottom: 100px; */
       /* width: 100%; 
     }*/ 
+    .index h2
+    {
+        text-align: center;
+    }
 /* register page */
 .register
 {
