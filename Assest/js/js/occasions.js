@@ -5,7 +5,7 @@ for(let cake of cakes)
 {
      content=content+ `
     <div class="cakerow">
-<a href="cart.html"><img class="cakeimg" id="cakeworld"src="images/${cake.imageurl}" alt="img"></a>
+<a href="product.html"><img class="cakeimg" id="cakeworld"src="images/${cake.imageurl}" alt="img"></a>
     <p>cakename = ${cake.name}</p>
     <p>cakeprice = ${cake.price}</p>
 <a href="ordernow.html">ordernow</a>
