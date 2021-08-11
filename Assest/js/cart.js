@@ -1,7 +1,11 @@
 // alert("hello");
-let cartitem=[{cakeno:1,cakedesign:"fondant",cakeprice:100,cakequantity:1}];
 
-let content=`<table>
+function displayCartItems() {
+  let cartitem = [{ cakeno: 1, cakedesign: "fondant", cakeprice: 100, cakequantity: 1 },
+  { cakeno: 1, cakedesign: "fondant", cakeprice: 100, cakequantity: 1 },
+  { cakeno: 1, cakedesign: "fondant", cakeprice: 100, cakequantity: 1 }];
+
+  let content = `<table>
 
 <caption>cart Table</caption>
 <tr>
@@ -10,19 +14,21 @@ let content=`<table>
     <th class="cakeprice">cakeprice</th>
     <th class="cakequantity">Cakequantity</th>
 </tr>`;
- let end=`</table>`;
- 
-for(let item of cartitem)
-{
-   content=content+`
+  let end = `</table>`;
+
+  for (let item of cartitem) {
+    content = content + `
                   <tr>
                      <td>${item.cakeno}</td>
                      <td>${item.cakedesign}</td>
                      <td>${item.cakeprice}</td>
                      <td>${item.cakequantity}</td>
                    </tr> `
+  }
+  content = content + end;
+  document.querySelector("#cartdata").innerHTML = content;
+
 }
-content=content+end;
-document.querySelector(".cartdata").innerHTML=content;
+displayCartItems();
 
 
