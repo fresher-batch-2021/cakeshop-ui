@@ -10,7 +10,8 @@ function getCakeSection(category, cakeItems){
 
 <div class="cakerow">
 
-<a href="product.html?id=2"><img class="cakeimg" id="cakeworld"src="images/${cake.imageUrl}" alt="img"></a>
+<a href="product.html?category=${cake.id}">
+<img class="cakeimg" id="cakeworld"src="images/${cake.imageUrl}" alt="img"></a>
 <p>${cake.productName}</p>
 <p>${cake.price}.000</p>
 <a href="ordernow.html">ordernow</a>
@@ -20,6 +21,8 @@ function getCakeSection(category, cakeItems){
             content = content + `<br>`;
             count = 0;
         }
+
+        
 
     }
     return content;
