@@ -13,7 +13,7 @@ function getCakeSection(category, cakeItems){
 <a href="product.html?category=${cake.id}">
 <img class="cakeimg" id="cakeworld"src="images/${cake.imageUrl}" alt="img"></a>
 <p>${cake.productName}</p>
-<p>${cake.price}.000</p>
+<p>₹${cake.price}.00</p>
 <a href="ordernow.html">ordernow</a>
 </div>`;
         count = count + 1;
@@ -30,7 +30,7 @@ function getCakeSection(category, cakeItems){
 }
 
 
-function displayCakes(x) {
+function displayCakes(category) {
     const url = "https://product-mock-api.herokuapp.com/cakeshopapp/api/v1/products";
     axios.get(url).then(res => {
         const products = res.data;
@@ -38,26 +38,32 @@ function displayCakes(x) {
         const categories = _.groupBy(products, 'category');
         console.log(categories);
 
-       
+        var content = "";
         if (products.length==0) {
             alert("No cake items");
         }
-        else {
-            
-
-            var content = "";
-            
-            for (let category in categories) {
-                const cakeItems = categories[category];
-                console.log("Category:", category, cakeItems);
-                content+= getCakeSection(category, cakeItems);// return html code
+        else  if ( category !=null){
+           
+                 const cakeItems = categories[category];
+                 console.log("Category:", category, cakeItems);
+                 content+= getCakeSection(category, cakeItems);// return html code
                               
-            }
-            console.log(content);
-            document.querySelector("#container").innerHTML = content;
+            // }
+           
         }
+        else{            
+            
+             for (let category in categories) {
+                 const cakeItems = categories[category];
+                 console.log("Category:", category, cakeItems);
+                 content+= getCakeSection(category, cakeItems);// return html code
+                              
+             }
+        }
+        console.log(content);
+        document.querySelector("#container").innerHTML = content;
 
-        //alert("succesful on getting data");
+        // alert("succesful on getting data");
     }).catch(err => {
         console.log(err.data);
         alert("failed in getting data");

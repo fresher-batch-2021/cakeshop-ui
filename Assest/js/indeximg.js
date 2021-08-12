@@ -1,6 +1,6 @@
 var kings=[{imageurl:"pexelsdairy12.jpg",name:"Birthday"},
-{imageurl:"anniversary min.png",name:"Annivesary"},
-{imageurl:"for her.png",name:"Lovable one"},
+{imageurl:"anniversary min.png",name:"Anniversary"},
+{imageurl:"for her.png",name:"Wedding Cake"},
 {imageurl:"love3.png",name:"For your lover" }];
 let content="";
 for(let king of kings)
