@@ -1,29 +1,33 @@
 // alert("hello");
 
 function displayCartItems() {
-  let cartitem = [{ cakeno: 1, cakedesign: "fondant", cakeprice: 100, cakequantity: 1 },
-  { cakeno: 1, cakedesign: "fondant", cakeprice: 100, cakequantity: 1 },
-  { cakeno: 1, cakedesign: "fondant", cakeprice: 100, cakequantity: 1 }];
+let cartitem=JSON.parse(localStorage.getItem("cartElements"));
 
   let content = `<table>
+  
 
-<caption>cart Table</caption>
+
 <tr>
-    <th class="cakeno">Cake.no</th>
-    <th class="cakedesign">Cakedesign</th>
-    <th class="cakeprice">cakeprice</th>
-    <th class="cakequantity">Cakequantity</th>
+    <th class="cakeNo">Cake.No</th>
+    <th class="cakeDesign">CakeDesign</th>
+    <th class="cakePrice">cakePrice</th>
+    <th class="cakeQuantity">CakeQuantity</th>
+    <th class="delete">Delete</th>
 </tr>`;
   let end = `</table>`;
-
+var count=1;
   for (let item of cartitem) {
+    
     content = content + `
                   <tr>
-                     <td>${item.cakeno}</td>
-                     <td>${item.cakedesign}</td>
-                     <td>${item.cakeprice}</td>
-                     <td>${item.cakequantity}</td>
-                   </tr> `
+                  <td>${count}</td>
+                     
+                     <td>${item.name}</td>
+                     <td>${item.price}</td>
+                     <td>${item.Qty}</td>
+                     <td><a onclick="deleteCartData(${count})">delete</a></td>
+                   </tr> `;
+                   count++;
   }
   content = content + end;
   document.querySelector("#cartdata").innerHTML = content;
@@ -31,4 +35,13 @@ function displayCartItems() {
 }
 displayCartItems();
 
+// deleting elements in cart
+function deleteCartData(index){
+  var arr=JSON.parse(localStorage.getItem("cartElements"));
+  arr.splice((index-1),1);
+  console.log(arr[index-1]);
+  localStorage.setItem("cartElements",JSON.stringify(arr));
+  cartItems();
+  }
+  cartItems();
 

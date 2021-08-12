@@ -4,7 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <title>Document</title>
+
+    <style>
+        .productrow img
+    {
+        width: 200px;
+        height: 300px;
+        border: 2px solid black;
+        border-radius: 10px;
+        display: inline-block;
+        padding: 3px 10px 10px 4px;
+    }
+    /* .productrow img{
+        margin: 20px;
+        padding: 90px;
+    } */
+    .productimg
+    {
+        width: 200px;
+        height: 250px;
+        border: 2px solid greenyellow;
+        border-radius: 10px;
+    }
+    </style>
 </head>
 <body>
     <header id="header"></header>
@@ -13,10 +39,7 @@
         
 <!-- <img src="images/cake.png" alt=""> -->
     </div>
-    <h2>Product</h2>
-    <form onsubmit="" action="cart.html">
-        <button type="submit">Add to cart</button>
-    </form>
+    
 
     <script src="Assest/jquery.min.js"></script>
     <script src="Assest/js/index.js"></script>
@@ -27,25 +50,3 @@
     </script>
 </body>
 </html>
-<style>
-    .productrow img
-{
-    width: 200px;
-    height: 300px;
-    border: 2px solid black;
-    border-radius: 10px;
-    display: inline-block;
-    padding: 3px 10px 10px 4px;
-}
-/* .productrow img{
-    margin: 20px;
-    padding: 90px;
-} */
-.productimg
-{
-    width: 200px;
-    height: 250px;
-    border: 2px solid greenyellow;
-    border-radius: 10px;
-}
-</style>
