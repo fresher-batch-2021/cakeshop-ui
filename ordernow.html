@@ -11,6 +11,9 @@
             background-color: #fae1dd;
         }
     </style>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 <body>
     <section>
@@ -22,49 +25,32 @@
 
         <label for="name">Customer Name</label>
         <input type="text" name="name" id="name" required placeholder="Enter your name"><br><br>
-        <label for="phoneNumber">Contact number</label>
-        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" required placeholder="Enter phone number" pattern="[6-9]{1}[0-9]{9}" 
-        title="Phone number with 6-9 and remaing 9 digit with 0-9"><br><br>
+        <label for="totalAmount">totalAmount</label>
+        <input type="number" name="totalAmount" id="totalAmount"> <br>
+        <label for="date">orderDate</label>
+         <input type="date" name="orderDate" id="orderDate" required> <br>
+         
         
-        <body onload="">
-            <label for="date">Delivery date</label>
-            <input type="date" name="date" id="date" required placeholder="date" ><br><br>
-        </body>
-        
-        <label for="time">Delivery time</label>
-        <input type="time" name="time" id="time"required><br>
-        <label for="type"><strong>Type:</strong></label><br><br>
-         <!-- <input type="text" name="type" id="type"><br>  -->
-        <input type="checkbox" name="fondant" id="fondant">
-        <label for="fondant">Fondant</label><br>
-        <input type="checkbox" name="icecake" id="icecake">
-        <label for="icecake">Ice Cake</label><br>
-        <input type="checkbox" name="buttercake" id="buttercake">
-        <label for="buttercream">Butter cream cake</label><br><br>
-        <label for="cakeflovour">Cake flovours</label>
-        <select name="cakeflovour" id="cakeflovour" required>
-        <option value="blackForest">Blackforest</option>
-        <option value="whiteForest">Whiteforest</option>
-        <option value="blackcurrant">Blackcurrant</option>
-        <option value="strawberry">Strawberry</option>
-        <option value="blueberry">Blueberry</option>
-        <option value="butterscotch">Butterscotch</option>
-        <option value="chocotruffle">Chocotruffle</option>
-        <option value="choconuts">Choconuts</option>
-        <option value="chocobutterscotch">Choco butterscotch</option>
-        <option value="redvelvet">Red velvet</option></select> <br><br>
-        <label for="numberofkg">No.of kg</label>
-        <input type="text" name="numberofkg" id="numberofkg" required ><br><br>
-        <label for="specialinstruction">Special Instruction</label>
-        <input type="text" name="specialinstruction" id="specialinstruction" required><br><br>
-        <label for="cakemessage">Cake message</label>
-        <input type="text" name="cakemessage" id="cakemessage" required><br><br>
-        <label for="address">Address</label>
-        <input type="address" name="address" id="address" required placeholder="Enter the address"  ><br><br>
-        <a href="payment.html"><button type="submit">place order</button></a>
+        <label for="status">status </label>
+        <input type="text" name="status" id="status"required><br>
+       
+         <label for="address">Address</label>
+        <input type="text" name="address" id="address"><br>
+        <label for="comments">comments</label>
+        <input type="text" name="comments" id="comments"><br>
+        <label for="createdDate">createdDate</label>
+        <input type="date" name="createdDate" id="createdDate"><br>
+        <label for="modifiedDate">modifiedDate</label>
+        <input type="date" name="modifiedDate" id="modifiedDate"><br>
+       
+        <label for="deliveredDate">deliveredDate</label>
+        <input type="date" name="deliveredDate" id="deliveredDate" required ><br>
+        <label for="cancelledDate">cancelledDate</label>
+        <input type="date" name="cancelledDate" id="cancelledDate" required><br><br>
+         <button type="submit" onclick="ordernow()">place order</button>
         <button type="reset">reset</button>
         <button type="cancel"><a href="index.html">cancel</a></button>
-        <a href="index.html"></a>
+        
     </div>
     </form>
      </section>
@@ -75,6 +61,7 @@
      <footer id="footer"></footer>
     <script src="Assest/jquery.min.js"></script>
     <script src="Assest/js/cart.js"></script>
+    <script src="Assest/js/ordernow.js"></script>
     <script>
         $("#header").load("header.html")
         // $("#footer").load("footer.html")
