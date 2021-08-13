@@ -8,6 +8,7 @@ function ordernow()
     const fondant=document.querySelector("#fondant").value;
     const icecake=document.querySelector("#icecake").value;
     const buttercream=document.querySelector("#buttercake").value;
+    const cakeFlavour=document.querySelector("#cakeflavour").value;
     const numberfkg=document.querySelector("#numberofkg").value;
     const specialinstruction=document.querySelector("#specialinstruction").value;
     const cakemessage=document.querySelector("#cakemessage").value;

@@ -28,14 +28,16 @@
         <form onsubmit="register()">
 
             <label for="Name">Name:</label>
-            <input type="text" name="name" id="name" autocomplete="off"  placeholder="Enter the Name"><br>
+           
+            <input type="text" name="name" id="name" autocomplete="off"  placeholder="Enter the Name" pattern="[A-Za-z]{1,32}" maxlength="20" required><br>
             <label for="Email">Email:</label>
-            <input type="email:" name="email" id="email" autocomplete="off" required placeholder="Enter the email"><br>
+            <input type="email:" name="email" id="email" autocomplete="off" required placeholder="Enter the email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
             <!-- <label for="Date of Birth">Date of Birth:</label>
         <input style="margin-right: 109px;" type="date"><br><br> -->
             <label for="phoneNumber">Phone number</label>
             <input type="phoneNummber" name="phoneNumber" id="phoneNumber" required
-                placeholder="Enter the phone number"><br>
+                placeholder="Enter the phone number" pattern="[6-9]{1}[0-9]{9}" 
+                title="Phone number with 6-9 and remaing 9 digit with 0-9"><br>
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" required placeholder="Enter the password"><br>
             <label for="confirmPassword">Confirm Password:</label>

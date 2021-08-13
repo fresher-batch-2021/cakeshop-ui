@@ -10,6 +10,7 @@ function register() {
     {
         alert("name cant be blank");
     }
+   
     else
     {
 

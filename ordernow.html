@@ -23,9 +23,14 @@
         <label for="name">Customer Name</label>
         <input type="text" name="name" id="name" required placeholder="Enter your name"><br><br>
         <label for="phoneNumber">Contact number</label>
-        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" required placeholder="Enter phone number"><br><br>
-        <label for="date">Delivery date</label>
-        <input type="date" name="date" id="date" required placeholder="date"><br><br>
+        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" required placeholder="Enter phone number" pattern="[6-9]{1}[0-9]{9}" 
+        title="Phone number with 6-9 and remaing 9 digit with 0-9"><br><br>
+        
+        <body onload="">
+            <label for="date">Delivery date</label>
+            <input type="date" name="date" id="date" required placeholder="date" ><br><br>
+        </body>
+        
         <label for="time">Delivery time</label>
         <input type="time" name="time" id="time"required><br>
         <label for="type"><strong>Type:</strong></label><br><br>
@@ -73,6 +78,23 @@
     <script>
         $("#header").load("header.html")
         // $("#footer").load("footer.html")
+        
+        $(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var minDate= year + '-' + month + '-' + day;
+    
+    $('#date').attr('min', minDate);
+});
+
        
     </script>
 
