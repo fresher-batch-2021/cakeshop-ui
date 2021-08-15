@@ -1,5 +1,3 @@
-// getting data from server
-
 
 function getCakeSection(category, cakeItems){
     let content = "";

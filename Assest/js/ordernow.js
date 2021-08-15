@@ -1,6 +1,5 @@
 function ordernow()
 {
-    alert("hello");
     event.preventDefault();
     const name=document.querySelector("#name").value;
      const totalAmount=document.querySelector("#totalAmount").value;
@@ -10,7 +9,7 @@ function ordernow()
     const comments=document.querySelector("#comments").value;
     const createdDate=document.querySelector("#createdDate").value;
     const modifiedDate=document.querySelector("#modifiedDate").value;
-    // const deliverdDate=document.querySelector("#deliveryDate").value;
+    const deliverdDate=document.querySelector("#deliveryDate").value;
     const cancelledDate=document.querySelector("#cancelledDate").value;
     // const cakemessage=document.querySelector("#cakemessage").value;
     // const address=document.querySelector("#address").value;

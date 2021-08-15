@@ -1,7 +1,6 @@
-// alert("hello");
 
 function displayCartItems() {
-let cartitem=JSON.parse(localStorage.getItem("cartElements"));
+let cartItem=JSON.parse(localStorage.getItem("cartElements"));
 
   let content = `<table>
   
@@ -15,8 +14,10 @@ let cartitem=JSON.parse(localStorage.getItem("cartElements"));
     <th class="delete">Delete</th>
 </tr>`;
   let end = `</table>`;
+  console.log(displayCartItems);
 var count=1;
-  for (let item of cartitem) {
+let sum=0;
+  for (let item of cartItem) {
     
     content = content + `
                   <tr>
@@ -25,23 +26,46 @@ var count=1;
                      <td>${item.name}</td>
                      <td>${item.price}</td>
                      <td>${item.Qty}</td>
-                     <td><a onclick="deleteCartData(${count})">delete</a></td>
+                     <td><a onclick="deleteCartData(${count-1})">delete</a></td>
                    </tr> `;
-                   count++;
+  
+sum=sum+total;              
+count++;
   }
+  localStorage.setItem(sum);
   content = content + end;
+  // alert("hello");
   document.querySelector("#cartdata").innerHTML = content;
 
 }
-displayCartItems();
 
-// deleting elements in cart
+
+// Deleting elements in cart
 function deleteCartData(index){
-  var arr=JSON.parse(localStorage.getItem("cartElements"));
-  arr.splice((index-1),1);
-  console.log(arr[index-1]);
-  localStorage.setItem("cartElements",JSON.stringify(arr));
-  cartItems();
+  var arr=JSON.parse(localStorage.getItem("cartElements"));//store the value in localstorage changed into json obj and store it in arr
+  if (arr[index].Qty>1)
+   {
+      arr[index].Qty--;
   }
-  cartItems();
+  else{
+    arr.splice(index,1);
+  }
+  console.log(arr[index]);
+  localStorage.setItem("cartElements",JSON.stringify(arr));
+  displayCartItems();
+  }
+
+  function cartcheck()
+  {
+    let cartItem=JSON.parse(localStorage.getItem("cartElements"));
+    if (cartItem==null||cartItem=="")
+     {
+      alert("cart is empty");
+      window.location.href="occasionsz.html";
+    } else 
+    {
+      window.location.href="ordernow.html";
+    }
+  }
+  displayCartItems();
 

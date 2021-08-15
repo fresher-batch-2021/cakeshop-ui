@@ -36,7 +36,7 @@ project();
 // const projects=[{id:4,imageUrl:"choco-Butterscotch.png",name:"cake",price:"220"}];
 function tocart(id,imageUrl,name,price)
 {
-    alert("edward");
+    // alert("edward");
     let cartItemsStr=localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr):[];
     var qty=1;

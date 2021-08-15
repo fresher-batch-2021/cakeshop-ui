@@ -32,10 +32,8 @@
             <input type="text" name="name" id="name" autocomplete="off"  placeholder="Enter the Name" pattern="[A-Za-z]{1,32}" maxlength="20" required><br>
             <label for="Email">Email:</label>
             <input type="email:" name="email" id="email" autocomplete="off" required placeholder="Enter the email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
-            <!-- <label for="Date of Birth">Date of Birth:</label>
-        <input style="margin-right: 109px;" type="date"><br><br> -->
-            <label for="phoneNumber">Phone number</label>
-            <input type="phoneNummber" name="phoneNumber" id="phoneNumber" required
+            <label for="mobileNo">Phone number:</label>
+            <input type="Nummber" name="mobileNo" id="mobileNo" required
                 placeholder="Enter the phone number" pattern="[6-9]{1}[0-9]{9}" 
                 title="Phone number with 6-9 and remaing 9 digit with 0-9"><br>
             <label for="password">Password:</label>
@@ -54,64 +52,7 @@
     <script src="Assest/js/register.js"></script>
     <script>
         $("#header").load("header.html")
-        // $("#footer").load("footer.html")
-//         function register() {
-//             event.preventDefault();
-//             const name = document.querySelector("#name").value;
-//             const email = document.querySelector("#email").value;
-//             const phoneNumber = document.querySelector("#phoneNumber").value;
-//             const password = document.querySelector("#password").value;
-//             const confirmPassword = document.querySelector("#confirmPassword").value;
-//             if(name == ""||name == null||name.trim()=="")
-//             {
-//                 alert("name cant be blank");
-//             }
-//             else
-//             {
-
-//              if(email == ""||email == null||email.trim()=="")
-//             {
-//                 alert("please enter a valid email ");
-//             }
-//             else{
-//                 if(phoneNumber.length < 10)
-//             {
-//                 alert("number is not valid");
-//             }
-//             else{
-
-//              if (password.length < 8)
-//              {
-//                 alert("password must be greater 8 characters");
-//             }
-//             else
-//             { 
-              
-//                 if (password != confirmPassword) 
-//                 {
-//                 alert("password does not matching");
-//                 }            
-            
-//                  else{
-//                     const regobj = {
-//                         "Name": name,
-//                         "email": email,
-//                         "phoneNumber": phoneNumber,
-//                         "password": password,
-//                         "confirmPassword": confirmPassword
-//                     };
-//                     console.log(regobj);
-
-//                     alert("Successfully Registered");
-//                     //next page
-//                     window.location.href = "login.html";
-//                 }
-                
-//             }
-//         }
-//     }
-// }
-// }
+       
     </script>
 </body>
 
