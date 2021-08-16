@@ -15,10 +15,11 @@ let cartItem=JSON.parse(localStorage.getItem("cartElements"));
 </tr>`;
   let end = `</table>`;
   console.log(displayCartItems);
-var count=1;
+var count=0;
 let sum=0;
+let total=0;
   for (let item of cartItem) {
-    
+    total=item.Qty*item.price;
     content = content + `
                   <tr>
                   <td>${count}</td>
@@ -26,15 +27,15 @@ let sum=0;
                      <td>${item.name}</td>
                      <td>${item.price}</td>
                      <td>${item.Qty}</td>
-                     <td><a onclick="deleteCartData(${count-1})">delete</a></td>
+                     <td><a onclick="deleteCartData(${count})">delete</a></td>
                    </tr> `;
   
 sum=sum+total;              
 count++;
   }
-  localStorage.setItem(sum);
+  
   content = content + end;
-  // alert("hello");
+  
   document.querySelector("#cartdata").innerHTML = content;
 
 }
