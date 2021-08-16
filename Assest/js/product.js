@@ -32,11 +32,10 @@ function project()
 
 }
 project();
-// {/* <a href="cart.html"><button type="submit">add to cart</button></a> */}
-// const projects=[{id:4,imageUrl:"choco-Butterscotch.png",name:"cake",price:"220"}];
+
 function tocart(id,imageUrl,name,price)
 {
-    // alert("edward");
+    
     let cartItemsStr=localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr):[];
     var qty=1;
@@ -44,7 +43,7 @@ function tocart(id,imageUrl,name,price)
 
     
     let index = cartItems.findIndex(cartItems=>cartItems.Id == id);// If item already exist, update the quantity
-    // alert(index);
+    
     console.log(index);
     if (index != -1){
         let cartObj = cartItems[index];
@@ -54,8 +53,7 @@ function tocart(id,imageUrl,name,price)
  
     }
     else{
-        // if item not exist, add new item to cart
-    let cartObj = {Id:id,name:name,price:price,imageUrl:imageUrl,Qty:qty};
+       let cartObj = {Id:id,name:name,price:price,imageUrl:imageUrl,Qty:qty}; // if item not exist, add new item to cart
     console.log(cartObj);
     cartItems.push(cartObj);
     }

@@ -11,9 +11,7 @@ function ordernow()
     const modifiedDate=document.querySelector("#modifiedDate").value;
     const deliverdDate=document.querySelector("#deliveryDate").value;
     const cancelledDate=document.querySelector("#cancelledDate").value;
-    // const cakemessage=document.querySelector("#cakemessage").value;
-    // const address=document.querySelector("#address").value;
-    // console.log(name+"-"+phoneNumber+"-"+date+"-"+time+"-"+fondant+"-"+icecake+"-"+buttercake+"-"+numberofkg+"-"+specialinstruction+"-"+cakemessage+"-"+address);
+    
 
     orderObj={
         id:1,

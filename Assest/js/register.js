@@ -1,5 +1,5 @@
 function register() {
-    // alert("Register btn clicked");
+    
     event.preventDefault();
     const name = document.querySelector("#name").value;
     const email = document.querySelector("#email").value;
@@ -41,12 +41,7 @@ function register() {
 
                         console.log(regObj);
                         registerAPI(regObj);
-                       
 
-
-
-                        // alert("Successfully Registered");
-                        //next page
 
                     }
 

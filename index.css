@@ -124,6 +124,25 @@ header{
     {
         text-align: center;
     }
+    .indexcontainer{
+        text-align: center;
+        /* border: solid black; */
+    }
+    .items1{
+        display: inline-block;
+       padding-top :10px;
+       padding-bottom: 50px; 
+        margin-right: 40px;
+        margin-left: 20px;
+        font-size: 20px;
+        /* border-radius: 10px; */
+        /* border: solid black; */
+    }
+    .items1 img{
+        width: 250px;
+        
+    }
+
 /* register page */
 .register
 {
@@ -281,6 +300,13 @@ header{
     border: 2px solid black;
     border-radius: 10px;
     
+}
+.cakecontainer h3
+{
+    padding-left: 36px;
+padding-top: 12px;
+font-size: 22px 
+ 
 }
 /* occassions end */
 /* product.html */
