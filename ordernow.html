@@ -23,30 +23,16 @@
         <h1>DIVINE CAKES ONLINE DELIVERY </h1><br><br>
         <form onsubmit="ordernow()">
 
-        <label for="name">Customer Name</label>
-        <input type="text" name="name" id="name" required placeholder="Enter your name"><br><br>
-        <label for="totalAmount">totalAmount</label>
-        <input type="number" name="totalAmount" id="totalAmount"> <br>
-        <label for="date">orderDate</label>
-         <input type="date" name="orderDate" id="orderDate" required> <br>
-         
-        
-        <label for="status">status </label>
-        <input type="text" name="status" id="status"required><br>
-       
-         <label for="address">Address</label>
-        <input type="text" name="address" id="address"><br>
-        <label for="comments">comments</label>
-        <input type="text" name="comments" id="comments"><br>
-        <label for="createdDate">createdDate</label>
-        <input type="date" name="createdDate" id="createdDate"><br>
-        <label for="modifiedDate">modifiedDate</label>
-        <input type="date" name="modifiedDate" id="modifiedDate"><br>
-       
-        <label for="deliveredDate">deliveredDate</label>
-        <input type="date" name="deliveredDate" id="deliveredDate" required ><br>
-        <label for="cancelledDate">cancelledDate</label>
-        <input type="date" name="cancelledDate" id="cancelledDate" required><br><br>
+        <label for="name">Customer Name:</label>
+        <input type="text" class="name" id="name" required>
+        <label for="number">Customer Contact Number:</label>
+        <input type="number" class="number"  id="number" required>
+        <label for="date">Delivery Date</label>
+        <input type="date" class="date" id="date" required>
+        <label for="address">Address</label>
+        <input type="text " class="address" id="address">
+        <label for="totalAmount">Total Amount</label>
+        <input type="text" class="totalAmount" id="totalAmount" required>
          <button type="submit" onclick="ordernow()">place order</button>
         <button type="reset">reset</button>
         <button type="cancel"><a href="index.html">cancel</a></button>
