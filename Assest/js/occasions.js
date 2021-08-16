@@ -8,7 +8,7 @@ function getCakeSection(category, cakeItems){
 
 <div class="cakerow">
 
-<a href="product.html?category=${cake.id}">
+<a href="product.html?id=${cake._id}">
 <img class="cakeimg" id="cakeworld"src="images/${cake.imageUrl}" alt="img"></a>
 <p>${cake.productName}</p>
 <p>₹${cake.price}.00</p>
@@ -28,10 +28,15 @@ function getCakeSection(category, cakeItems){
 }
 
 
-function displayCakes(category) {
-    const url = "https://product-mock-api.herokuapp.com/cakeshopapp/api/v1/products";
-    axios.get(url).then(res => {
-        const products = res.data;
+function displayCakes(category) 
+{
+    const dbUsername = 'apikey-v2-237a9fx60g51gyopiewwx5pb339t2r1xw085fzt3skgx';
+    const dbPassword = '85e4a7e36372ac1e47c80f4b81a78d62';
+    const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
+    const url = "https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_cakes/_all_docs?include_docs=true";
+    axios.get(url,{ headers: { Authorization: basicAuth } }).then(res => {
+        const data = res.data.rows;
+        const products = data.map(obj=>obj.doc);
         console.log(products);
         const categories = _.groupBy(products, 'category');
         console.log(categories);
