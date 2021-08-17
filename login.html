@@ -18,9 +18,9 @@
     <header id="header"></header>
     <div class="login">
         <h1>welcome to login page</h1><br>
-    <form action="index.html" onsubmit="Login()">
+    <form onsubmit="Login()">
         <label for="email" >Email</label>
-        <input type="email" name="email"id="email" required placeholder="Enter the Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <input type="email" name="email"id="email" required placeholder="Enter the Email" pattern="[a-z.0-9]+@[a-z]+\.[a-z]{2,}$">
         <label for="password">Password</label>
         <input type="password" name="password"id="password"required placeholder="Enter the password"><br>
         <p><a href="forgetPassword.html">forgetpassword?</a></p><br>
@@ -31,7 +31,9 @@
         
 
             <script src="Assest/jquery.min.js"></script>
+            <!-- <script src="Assest/js/servicelayer.js"></script> -->
             <script src="Assest/js/login.js"></script>
+            <script src="Assest/js/userservice.js"></script>
                  <script>
                        $("#header").load("header.html")
                        $("#footer").load("footer.html")

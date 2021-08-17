@@ -1,21 +1,21 @@
 
 function displayCartItems() {
+  console.log("displayCartItems");
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
 
   let content = `<table>
-  
-
-
+  <thead>
 <tr>
     <th class="cakeNo">Cake.No</th>
     <th class="cakeDesign">CakeDesign</th>
     <th class="cakePrice">cakePrice</th>
     <th class="cakeQuantity">CakeQuantity</th>
     <th class="delete">Delete</th>
-</tr>`;
-  let end = `</table>`;
+</tr>
+</thead><tbody>`;
+  let end = ` </tbody></table>`;
   console.log(displayCartItems);
-var count=0;
+var count=1;
 let sum=0;
 let total=0;
   for (let item of cartItem) {
@@ -27,14 +27,14 @@ let total=0;
                      <td>${item.name}</td>
                      <td>${item.price}</td>
                      <td>${item.Qty}</td>
-                     <td><a onclick="deleteCartData(${count})">delete</a></td>
+                     <td><a onclick="deleteCartData(${count-1})">delete</a></td>
                    </tr> `;
   
 sum=sum+total;              
 count++;
   }
   
-  content = content + end;
+  content  += end;
   
   document.querySelector("#cartdata").innerHTML = content;
 

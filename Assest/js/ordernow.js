@@ -1,5 +1,6 @@
 function ordernow()
 {
+    console.log("ordernow method");
     event.preventDefault();
     const name=document.querySelector("#name").value;
     const number=document.querySelector("#number").value;
@@ -7,8 +8,16 @@ function ordernow()
     const address=document.querySelector("#address").value;
     const totalAmount=document.querySelector("#totalAmount").value;
     
-    
-
+    if(name==null||name.trim()==""){
+        alert("no");
+        return;
+    }else if(mobileNo.length!=10)
+    {
+        alert("Please Enter a valid phone number ");
+         return;
+    }
+    else
+    {
     orderObj={
          Name:name,
          mobileNo:number,
@@ -22,10 +31,8 @@ function ordernow()
 const url="https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_ordernow";
 alert("helo");
 
-axios.post(url,orderObj,{headers:{'Authorication':basicAuth}}).then(res =>{
-    const data = res.data.rows;
-    const products = data.map(obj=>obj.doc);
-    console.log(products);
+axios.post(url,orderObj,{headers:{'Authorization':basicAuth}}).then(res =>{
+   console.log(res.data);
     alert("your order successfully placed");
     window.location.href="index.html";
 }).catch(err=>{
@@ -33,4 +40,5 @@ axios.post(url,orderObj,{headers:{'Authorication':basicAuth}}).then(res =>{
     alert(" Your Order is Failed ");
 });
     
+}
 }

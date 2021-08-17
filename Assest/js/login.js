@@ -1,6 +1,8 @@
 function Login()
 {
-    // alert("validation");
+    
+    console.log("login method");
+    
     event.preventDefault();
     const email=document.querySelector("#email").value;
     const password=document.querySelector("#password").value;
@@ -12,26 +14,10 @@ function Login()
    
     else 
     {
-        // const loginObj={
-        //     "email": email,
-        //     "password": password
-        //    };
-        // console.log(loginObj);
         
-        const dbUsername = 'apikey-v2-237a9fx60g51gyopiewwx5pb339t2r1xw085fzt3skgx';
-        const dbPassword = '85e4a7e36372ac1e47c80f4b81a78d62';
-        const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
-    const url = "https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_user/_find";
-    const loginObj = {
-        selector:{
-            email:email,
-            password:password
-            
-        },
-        fields:["_id","name","email"],
-    };
-        axios.post(url,loginObj, {headers : { Authorization:basicAuth}}).then(res=>
+        UserService.login(email,password).then(res=>
             {
+                
                 let data=res.data.docs;
                 if (data.length==0)
                  {
@@ -41,6 +27,7 @@ function Login()
                 {
                     const user=0;
                 console.log(data);
+                localStorage.setItem("LoggedIn",JSON.stringify(true));
                 alert("successfully logged in");
                 window.location.href="index.html";
             }

@@ -31,7 +31,7 @@
            
             <input type="text" name="name" id="name" autocomplete="off"  placeholder="Enter the Name" pattern="[A-Za-z]{1,32}" maxlength="20" required><br>
             <label for="Email">Email:</label>
-            <input type="email:" name="email" id="email" autocomplete="off" required placeholder="Enter the email"  pattern="[a-z0-9._]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+            <input type="email:" name="email" id="email" autocomplete="off" required placeholder="Enter the email"  pattern="[a-z.0-9]+@[a-z]+\.[a-z]{2,}$"><br>
             <label for="mobileNo">Phone number:</label>
             <input type="Nummber" name="mobileNo" id="mobileNo" required
                 placeholder="Enter the phone number" pattern="[6-9]{1}[0-9]{9}" 
@@ -50,6 +50,7 @@
     
     <script src="Assest/jquery.min.js"></script>
     <script src="Assest/js/register.js"></script>
+    <script src="Assest/js/userservice.js"></script>
     <script>
         $("#header").load("header.html")
        

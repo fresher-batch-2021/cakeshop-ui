@@ -1,5 +1,6 @@
 function project()
 {
+    console.log("product method");
     var content="";
     
     const param=new URLSearchParams(window.location.search.substr(1));
@@ -25,7 +26,7 @@ function project()
         <br>
         <p>product description......</p>
         <button type="button" onClick="tocart(${cake.id},'${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
-        
+        <button ></button>
         
         </div>`;
         document.querySelector("#productcontainer").innerHTML=content;

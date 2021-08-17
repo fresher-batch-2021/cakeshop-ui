@@ -1,5 +1,7 @@
 
 function getCakeSection(category, cakeItems){
+    console.log("getCakeSection");
+
     let content = "";
     var count = 0;
     content += "<h3>" + category + "</h3>";
@@ -51,7 +53,7 @@ function displayCakes(category)
                  console.log("Category:", category, cakeItems);
                  content+= getCakeSection(category, cakeItems);// return html code
                               
-            // }
+            
            
         }
         else{            
