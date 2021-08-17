@@ -40,3 +40,6 @@ CakeService.cartCake().then(res =>
     
 }
 }
+
+const totalBillAmount = localStorage.getItem("TOTAL_BILL_AMOUNT");
+document.querySelector("#totalAmount").value = totalBillAmount;

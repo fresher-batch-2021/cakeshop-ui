@@ -34,6 +34,7 @@ let total=0;
 sum=sum+total;              
 count++;
   }
+  localStorage.setItem("TOTAL_BILL_AMOUNT", sum);
   
   content  += end;
   
