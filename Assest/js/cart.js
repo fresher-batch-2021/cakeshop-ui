@@ -1,3 +1,4 @@
+loginCheck();
 
 function displayCartItems() {
   console.log("displayCartItems");

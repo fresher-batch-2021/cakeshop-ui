@@ -10,8 +10,7 @@ function project()
     const dbPassword = '85e4a7e36372ac1e47c80f4b81a78d62';
     const basicAuth = "Basic " + btoa(dbUsername + ":" + dbPassword);
     
-    const url=`https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_cakes/${id}`;
-    axios.get(url,{headers:{'Authorization':basicAuth}}).then(res =>{
+   CakeService.getCake(id).then(res =>{
         
         let cake = res.data;
         console.log(cake);

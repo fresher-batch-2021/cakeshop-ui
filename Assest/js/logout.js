@@ -6,7 +6,8 @@ function LoggedIn() {
     let login = JSON.parse(localStorage.getItem("LoggedIn"));
 
 
-    if (login == null || login == undefined) {
+    if (login == null || login == undefined)
+     {
         login = false;
     }
     let content = "";
@@ -34,7 +35,7 @@ function LoggedIn() {
 }
 
 function logout() {
-    localStorage.setItem("LoggedIn", false);
+    localStorage.setItem("LoggedIn", JSON.stringify(false));
     localStorage.removeItem("cartElements");
     localStorage.removeItem("totalAmount");
     window.location.href = "index.html";
@@ -43,8 +44,8 @@ function logout() {
 
 function loginCheck() {
 
-    if (JSON.parse(localStorage.getItem("LoggedIn"))) {
-        alert("can't do that need to login first");
+    if (JSON.parse(localStorage.getItem("LoggedIn"))==false) {
+        alert("need to login first");
         window.location.href = "login.html";
         return false;
     }
