@@ -6,15 +6,13 @@ function Login()
     event.preventDefault();
     const email=document.querySelector("#email").value;
     const password=document.querySelector("#password").value;
- 
-    if(password.length < 8)
-    {
-        alert("password must be greater than 8 characters")
-    }
-   
-    else 
-    {
-        
+    console.log(email,password);
+    //1.write try and catch block.
+     try{
+         //2.insert the login-validation.js call the class name and function name 
+        LoginValidator.validate(email,password)
+     
+      //3.call backend api
         UserService.login(email,password).then(res=>
             {
                 
@@ -30,15 +28,21 @@ function Login()
                 localStorage.setItem("LoggedIn",JSON.stringify(true));
                 alert("successfully logged in");
                 window.location.href="index.html";
-            }
+                }
             }).catch(err=>{
                 console.error(err.response.data);
                 alert("not login");
                 
             });
+        }
+        catch(err)
+        {
+            console.error(err.message);
+            alert("Error"+err.message)
+        }
            
-             
-    }
-   
+            
     
 }
+   
+    

@@ -58,7 +58,8 @@ function tocart(id,imageUrl,name,price)
  
     }
     else{
-       let cartObj = {Id:id,name:name,price:price,imageUrl:imageUrl,Qty:qty}; // if item not exist, add new item to cart
+       let cartObj = {Id:id,
+        name:name,price:price,imageUrl:imageUrl,Qty:qty}; // if item not exist, add new item to cart
     console.log(cartObj);
     cartItems.push(cartObj);
     }

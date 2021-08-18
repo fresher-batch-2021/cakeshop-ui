@@ -7,39 +7,20 @@ function register() {
     const mobileNo = document.querySelector("#mobileNo").value;
     const password = document.querySelector("#password").value;
     const confirmPassword = document.querySelector("#confirmPassword").value;
-    if (name == "" || name == null || name.trim() == "") {
-        alert("name cant be blank");
-    }
+    console.log(name,email,mobileNo,password,confirmPassword);
+   
+                try {
+                    RegisterValidation.validate(name,email,mobileNo,password,confirmPassword)
 
-    else {
-
-        if (email == "" || email == null || email.trim() == "") {
-            alert("please enter a valid email ");
-        }
-        else {
-            if (mobileNo.length < 10) {
-                alert("number is not valid");
-            }
-            else {
-
-                if (password.length < 8) {
-                    alert("password must be greater 8 characters");
-                }
-                else {
-
-                    if (password != confirmPassword) {
-                        alert("password does not matching");
+                    let regObj = {
+                        name: name,
+                        email: email,
+                        mobileNo:mobileNo,
+                        password:password,
+                        confirmPassword:confirmPassword
                     }
 
-                    else {
-                       const regObj  = {
-                           name:  name,
-                           email:email,
-                           mobileNo:mobileNo,
-                           password:password
-                       }
-
-                        // console.log(regObj);
+                        console.log(regObj);
                         UserService.register(regObj).then(res =>
                             {
                                let data = res.data;
@@ -50,19 +31,26 @@ function register() {
                                console.log(err.response.data);
                                alert("Unable to Register");
                            });
+                        }
+                           catch(err)
+                           {
+                               
+                                console.error(err.message);
+                                alert("Error"+err.message)
+                           }
+                        
+                        }
+                    
                        
-                       }
+    
+        
+
+                        
 
 
-                    }
-
-
-                }
-            }
-        }
-    }
+                    
 
 
 
-// function registerAPI(regObj){
+
   

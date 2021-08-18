@@ -25,15 +25,15 @@
 
         <label for="name">Customer Name:</label>
         <input type="text" class="name" id="name" required>
-        <label for="number">Customer Contact Number:</label>
-        <input type="number" class="number"  id="number" required>
+        <label for="mobileNo">Customer Contact Number:</label>
+        <input type="number" class="mobileNo"  id="mobileNo" required>
         <label for="date">Delivery Date</label>
         <input type="date" class="date" id="date" required>
         <label for="address">Address</label>
-        <input type="text " class="address" id="address">
+        <input type="text " class="address" id="address" required>
         <label for="totalAmount">Total Amount</label>
         <input type="number" class="totalAmount" id="totalAmount" required>
-         <button type="submit" onclick="ordernow()">place order</button>
+         <button type="submit">place order</button>
         <button type="reset">reset</button>
         <button type="cancel"><a href="index.html">cancel</a></button>
         
@@ -44,6 +44,7 @@
      </footer>
      <footer id="footer"></footer>
     <script src="Assest/jquery.min.js"></script>
+    <script src="Assest/js/order-validation.js"></script>
     
     <script>
         $("#header").load("header.html")
@@ -73,6 +74,7 @@
     <script src="Assest/js/logout.js"></script>
     <script src="Assest/js/cart.js"></script>
     <script src="Assest/js/ordernow.js"></script>
+    <script src="Assest/js/cakeservice.js"></script>
     
 
 </body>

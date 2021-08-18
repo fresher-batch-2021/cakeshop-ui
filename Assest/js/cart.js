@@ -12,7 +12,10 @@ let cartItem=JSON.parse(localStorage.getItem("cartElements"));
     <th class="cakePrice">cakePrice</th>
     <th class="cakeQuantity">CakeQuantity</th>
     <th class="delete">Delete</th>
+    
 </tr>
+
+    
 </thead><tbody>`;
   let end = ` </tbody></table>`;
   console.log(displayCartItems);
@@ -29,8 +32,9 @@ let total=0;
                      <td>${item.price}</td>
                      <td>${item.Qty}</td>
                      <td><a onclick="deleteCartData(${count-1})">delete</a></td>
+                     
                    </tr> `;
-  
+                  //  <td>total</td>
 sum=sum+total;              
 count++;
   }

@@ -1,5 +1,5 @@
 
-function getCakeSection(category, cakeItems){
+function getCakeSection(category, cakeItems) {
     console.log("getCakeSection");
 
     let content = "";
@@ -22,7 +22,7 @@ function getCakeSection(category, cakeItems){
             count = 0;
         }
 
-        
+
 
     }
     return content;
@@ -30,37 +30,36 @@ function getCakeSection(category, cakeItems){
 }
 
 
-function displayCakes(category) 
-{
-    
+function displayCakes(category) {
+
     CakeService.getCakes().then(res => {
         const data = res.data.rows;
-        const products = data.map(obj=>obj.doc);
+        const products = data.map(obj => obj.doc);
         console.log(products);
         const categories = _.groupBy(products, 'category');
         console.log(categories);
 
         var content = "";
-        if (products.length==0) {
+        if (products.length == 0) {
             alert("No cake items");
         }
-        else  if ( category !=null){
-           
-                 const cakeItems = categories[category];
-                 console.log("Category:", category, cakeItems);
-                 content+= getCakeSection(category, cakeItems);// return html code
-                              
-            
-           
+        else if (category != null) {
+
+            const cakeItems = categories[category];
+            console.log("Category:", category, cakeItems);
+            content += getCakeSection(category, cakeItems);// return html code
+
+
+
         }
-        else{            
-            
-             for (let category in categories) {
-                 const cakeItems = categories[category];
-                 console.log("Category:", category, cakeItems);
-                 content+= getCakeSection(category, cakeItems);// return html code
-                              
-             }
+        else {
+
+            for (let category in categories) {
+                const cakeItems = categories[category];
+                console.log("Category:", category, cakeItems);
+                content += getCakeSection(category, cakeItems);// return html code
+
+            }
         }
         console.log(content);
         document.querySelector("#container").innerHTML = content;
@@ -83,17 +82,5 @@ displayCakes(category);
 
 
 
-// var cakeObj={ "title": "Birthday" , items: [
-//     { imageurl:"birthday-cake.png",
-//     name:"cake1",price:"500"},
-//     {imageurl:"birthday-cake1.png",name:"cake2",price:"400"},
-//     {imageurl:"pexels 2.jpg",name:"cake3",price:"450"},
-//     {imageurl:"pexels 4.jpg",name:"cake4",price:"456"},
-//     {imageurl:"stepcake1.jpg",name:"cake5",price:"489"},
-//      {imageurl:"stepcake1.jpg",name:"cake6",price:"600"},
-//      {imageurl:"stepcake1.jpg",name:"cake5",price:"489"},
-//      {imageurl:"stepcake1.jpg",name:"cake5",price:"489"},
-//      {imageurl:"stepcake1.jpg",name:"cake5",price:"489"},
-//      {imageurl:"stepcake1.jpg",name:"cake5",price:"489"}]};
 
 
