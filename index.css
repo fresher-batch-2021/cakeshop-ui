@@ -69,10 +69,22 @@ header{
     padding: 2px;
     transition: 0.3s;
 }
+/* search */
+.searchContainer
+{
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    /* width: 100%; */
+    /* height: 200vh; */
+    /* margin-left: 500px; */
+}
+in
 /* navigation :end */
 /* slider */
 /* Slideshow container */
 .slideshow_container{
+    /* margin: auto; */
     position: relative; 
     max-width: 100%;
     z-index: -2;

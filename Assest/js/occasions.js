@@ -67,7 +67,7 @@ function displayCakes(category) {
         // alert("succesful on getting data");
     }).catch(err => {
         console.log(err.data);
-        alert("failed in getting data");
+        // alert("failed in getting data");
     });
 
 
