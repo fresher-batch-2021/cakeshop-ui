@@ -8,13 +8,7 @@ class CakeService
     const url = "https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_categories/_all_docs?include_docs=true";
     return axios.get(url,{ headers: {'Authorization': basicAuth } });
    }
-   static getCat(){
-      let x=this.getCategories();
-      x.then(res=>{
-         let data =res.data.doc;
-         
-      })
-   }
+   
 
    static getCakes()//occasions
    {
