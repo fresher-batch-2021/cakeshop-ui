@@ -1,10 +1,12 @@
 
 function getCakeSection(category, cakeItems) {
-    console.log("getCakeSection");
+    console.log("getCakeSection" , category );
+    console.table(cakeItems);
 
     let content = "";
     var count = 0;
     content += "<h3>" + category + "</h3>";
+    if(cakeItems){
     for (let cake of cakeItems) {
         content = content + `
 
@@ -25,19 +27,51 @@ function getCakeSection(category, cakeItems) {
 
 
     }
+}
     return content;
 
 }
+function SearchCakes()
+{
+    CakeSearchService.getAllCakes().then(res=>{
+        let data=res.data.rows;
+        let occasionData=data.map(obj=>obj.doc);
+        console.log(occasionData);
+        
+    });
+}
+//  SearchCakes();
 
-
-function displayCakes(category) {
-
+/**
+ * This functions 
+ * 1. Call db and get all cakes
+ * 2. Call display method and pass the cakes
+ */
+function getAllCakes(category){
     CakeService.getCakes().then(res => {
         const data = res.data.rows;
         const products = data.map(obj => obj.doc);
         console.log(products);
+        displayCakes(products,category);
+    }).catch(err => {
+        console.log(err.data);
+        // alert("failed in getting data");
+    });
+
+}
+
+/**
+ *  This function displays cakes category wise
+ * If category is passed, it will display only the selected category
+ * else it will display all category 
+ * @param {*} products 
+ * @param {*} category 
+ */
+function displayCakes(products, category ) {
+
         const categories = _.groupBy(products, 'category');
-        console.log(categories);
+
+        console.log(JSON.stringify( categories));
 
         var content = "";
         if (products.length == 0) {
@@ -53,7 +87,7 @@ function displayCakes(category) {
 
         }
         else {
-
+            console.log("No category selected")
             for (let category in categories) {
                 const cakeItems = categories[category];
                 console.log("Category:", category, cakeItems);
@@ -65,20 +99,12 @@ function displayCakes(category) {
         document.querySelector("#container").innerHTML = content;
 
         // alert("succesful on getting data");
-    }).catch(err => {
-        console.log(err.data);
-        // alert("failed in getting data");
-    });
-
-
-
-
 }
 
 const params = new URLSearchParams(window.location.search.substr(1));
 const category = params.get('category');
 console.log("Selected Category in previous page:" + category);
-displayCakes(category);
+getAllCakes(category);
 
 
 

@@ -1,6 +1,7 @@
-loginCheck();
-
+// loginCheck();
+document.querySelector("#totalAmount").value=localStorage.getItem("TOTAL_BILL_AMOUNT");
 function ordernow() {
+    alert("hari");
 
     console.log("ordernow method");
     event.preventDefault();
@@ -38,8 +39,8 @@ function ordernow() {
         console.error(err.message);
         alert("Error" + err.message)
     }
-}
-
-
+    
 const totalBillAmount = localStorage.getItem("TOTAL_BILL_AMOUNT");
 document.querySelector("#totalAmount").value = totalBillAmount;
+}
+

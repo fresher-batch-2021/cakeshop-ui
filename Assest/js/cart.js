@@ -3,7 +3,8 @@ loginCheck();
 function displayCartItems() {
   console.log("displayCartItems");
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
-
+// alert(cartItem);
+console.log(cartItem);
   let content = `<table>
   <thead>
 <tr>
@@ -33,8 +34,9 @@ let total=0;
                      <td>${item.Qty}</td>
                      <td><a onclick="deleteCartData(${count-1})">delete</a></td>
                      
-                   </tr> `;
-                  //  <td>total</td>
+                   </tr>
+                   `;
+                   
 sum=sum+total;              
 count++;
   }

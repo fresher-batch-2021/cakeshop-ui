@@ -43,7 +43,6 @@ function logout() {
 
 
 function loginCheck() {
-
     if (JSON.parse(localStorage.getItem("LoggedIn"))==false) {
         alert("need to login first");
         window.location.href = "login.html";

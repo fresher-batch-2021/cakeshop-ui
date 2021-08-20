@@ -72,14 +72,18 @@ header{
 /* search */
 .searchContainer
 {
+    padding: 1%;
     border-radius: 5px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+    /* overflow: hidden; */
     /* width: 100%; */
     /* height: 200vh; */
     /* margin-left: 500px; */
 }
-in
+.searchContainer>input[type="text"]{
+padding: 0.4%;
+padding-right: 30%;
+}
 /* navigation :end */
 /* slider */
 /* Slideshow container */
@@ -132,6 +136,21 @@ in
       /* margin-bottom: 100px; */
       /* width: 100%; 
     }*/ 
+
+    .caption{
+        background-color: white;
+    }
+
+    .horizontal {
+        margin-left: 35%;
+        width: 30%;
+        border-style: none none dotted none;
+        /* border-spacing: 100px; */
+        border-width: 5px;
+        border-color: grey;
+        /* line-height: 50px; */
+
+    }
     .index h2
     {
         text-align: center;

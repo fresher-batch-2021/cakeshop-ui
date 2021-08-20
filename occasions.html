@@ -17,6 +17,12 @@
         </head>
 <body>
     <header id="header"></header>
+    <div class="searchContainer">
+        
+        <input type="text" id="cakeFilter" placeholder="Search">
+        <button type="button" onclick="searchCake()">Search</button>
+        <ul id="search"  class="userList">
+
     
     <section>
 
@@ -29,14 +35,34 @@
     
      <script src="Assest/jquery.min.js"></script> 
      <script src="Assest/js/cakeservice.js"></script>
-     
+     <script src="Assest/js/cake-search-service.js"></script>
      <script src="Assest/js/occasions.js"></script> 
     <script src="Assest/js/ordernow.js"></script> 
     
     <script>
         $("#header").load("header.html")
         
+        /**
+         * 1. Get all cakes
+         * 2. Filter the cakes based on the input given
+         * 3. Call display method to display cakes
+         * */
 
+        function searchCake(){
+            const cake = document.querySelector("#cakeFilter").value;
+            console.log("Search Cake - " + cake);
+
+            CakeService.getCakes().then(res=>{
+                let cakes = res.data.rows.map(obj=>obj.doc);
+                console.table(cakes);
+                let filteredCakes = CakeSearchService.searchCake(cakes, cake);
+                console.table(filteredCakes);
+                displayCakes(filteredCakes);
+
+
+            })
+
+        }
        
     </script>
    
