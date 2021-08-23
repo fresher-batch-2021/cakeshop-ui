@@ -1,8 +1,4 @@
-// const cakes = [
-//     {name:"Black Forest"},
-//     {name:"White Forest"},
-//     {name:"Ssss"},
-// ];
+
 
 class CakeSearchService{
 
@@ -14,6 +10,4 @@ class CakeSearchService{
     }
 }
 
-// const searchResults = getCakes(cakes, 'Black Forest');
-// console.table(searchResults);
 

@@ -23,8 +23,4 @@ class CakeService
     const url="https://99560248-15e7-4158-bfde-3c13e3ebf4e9-bluemix.cloudantnosqldb.appdomain.cloud/cakeshop_ordernow";
      return axios.post(url,orderObj,{headers:{'Authorization':basicAuth}});
    }
-   static imagecake()
-   {
-
-   }
 }

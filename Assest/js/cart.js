@@ -70,7 +70,7 @@ function deleteCartData(index){
     if (cartItem==null||cartItem=="")
      {
       alert("cart is empty");
-      window.location.href="occasionsz.html";
+      window.location.href="occasions.html";
     } else 
     {
       window.location.href="ordernow.html";
