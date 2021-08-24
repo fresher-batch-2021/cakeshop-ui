@@ -3,7 +3,7 @@
 
 function LoggedIn() {
     console.log("LoggedIn method ");
-    let login = JSON.parse(localStorage.getItem("LoggedIn"));
+    let login = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 
 
     if (login == null || login == undefined)
@@ -22,7 +22,7 @@ function LoggedIn() {
          <span> | </sapn>
         <a class="navbar" href="Register.html">Register</a>
         `;
-        localStorage.setItem("LoggedIn",JSON.stringify(false));
+        // localStorage.setItem("LOGGED_IN_USER",JSON.stringify(false));
     }
     let navReg = document.querySelector(".navreg");
     if (navReg) {
@@ -35,15 +35,13 @@ function LoggedIn() {
 }
 
 function logout() {
-    localStorage.setItem("LoggedIn", JSON.stringify(false));
-    localStorage.removeItem("cartElements");
-    localStorage.removeItem("totalAmount");
+    localStorage.clear();
     window.location.href = "index.html";
 }
 
 
 function loginCheck() {
-    if (JSON.parse(localStorage.getItem("LoggedIn"))==false) {
+    if (JSON.parse(localStorage.getItem("LOGGED_IN_USER"))== null) {
         alert("need to login first");
         window.location.href = "login.html";
         return false;

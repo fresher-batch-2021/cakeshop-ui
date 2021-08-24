@@ -25,9 +25,11 @@ function Login()
                 {
                     const user=0;
                 console.log(data);
-                localStorage.setItem("LoggedIn",JSON.stringify(true));
+                localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data[0]));
                 alert("successfully logged in");
                 window.location.href="index.html";
+                let email = JSON.parse(localStorage.setItem("email"));
+                
                 }
             }).catch(err=>{
                 console.error(err.response.data);

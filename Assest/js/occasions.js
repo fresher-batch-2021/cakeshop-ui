@@ -23,9 +23,6 @@ function getCakeSection(category, cakeItems) {
             content = content + `<br>`;
             count = 0;
         }
-
-
-
     }
 }
     return content;

@@ -1,11 +1,13 @@
-// loginCheck();
-document.querySelector("#totalAmount").value=localStorage.getItem("TOTAL_BILL_AMOUNT");
+
+
+
 function ordernow() {
-    alert("hari");
+    
 
     console.log("ordernow method");
     event.preventDefault();
     const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
     const mobileNo = document.querySelector("#mobileNo").value;
     const date = document.querySelector("#date").value;
     const address = document.querySelector("#address").value;
@@ -13,6 +15,8 @@ function ordernow() {
 
     let cartItem = JSON.parse(localStorage.getItem("cartElements"));
 
+    let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    let loggedInEmail = user != null ? user.email : null;
     try {
         OrderValidation.validate(name, mobileNo, date, address, cartItem, totalAmount)
         let orderObj = {
@@ -22,9 +26,11 @@ function ordernow() {
             address: address,
             products: cartItem,
             status: "ORDERED",
-            totalAmount: totalAmount
+            totalAmount: totalAmount,            
+            email: loggedInEmail
         };
 
+        console.log(orderObj);
         CakeService.cartCake(orderObj).then(res => {
             //    console.log(res.data);
             alert("your order successfully placed");
@@ -40,7 +46,6 @@ function ordernow() {
         alert("Error" + err.message)
     }
     
+}
 const totalBillAmount = localStorage.getItem("TOTAL_BILL_AMOUNT");
 document.querySelector("#totalAmount").value = totalBillAmount;
-}
-
