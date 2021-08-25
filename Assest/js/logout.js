@@ -19,7 +19,7 @@ function LoggedIn() {
     else {
         content = `
         <a class="navbar" href="login.html">login</a>
-         <span> | </sapn>
+         <span> | </span>
         <a class="navbar" href="Register.html">Register</a>
         `;
         // localStorage.setItem("LOGGED_IN_USER",JSON.stringify(false));

@@ -12,24 +12,29 @@ function myOrders()
 
         //filter only my orders for the given email id
         let myOrders = orders.filter(obj=>obj.email == email);
-        
+        let hari=JSON.stringify(myOrders)
+        console.log("hari"+hari)
     console.table(myOrders);
-    console.log(myOrders[0].products);      
+    // console.log(myOrders[0].products);      
     let content="";
     let count=0;
     for(let order of myOrders)
     {
         for(let item of order.products){
         content=content+`
-        <img src="images/${item.imageUrl}" alt="img" width="30px">
+        <img src="images/${item.imageUrl}" alt="img" width="200px">
         <p>${item.name}</p>
         <p>₹${item.price}.00</p>
+        <p>${item.Quantity} Cakes </p>
+        `;
+       }
+        content=content+ `
         <p>${order.status}</p>
         <p>${order.date}</p>
         `;
-        }
-        count++;
+        
     }
+    count++;
     console.log(content);
     document.querySelector("#ordercontainer").innerHTML = content;
 });
