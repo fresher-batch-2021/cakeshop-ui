@@ -387,7 +387,7 @@ font-size: 22px
     border: solid;
     background-color:  #f0efeb;
 }
-.ordernow input
+.ordernow input, .ordernow select
 {
         margin: 10px 0;
         padding: 5px 10px; 
@@ -397,6 +397,7 @@ font-size: 22px
         width: 50%;
         box-sizing: border-box; 
         margin-bottom: 20px;
+       
 
 } 
 /* .ordernow input

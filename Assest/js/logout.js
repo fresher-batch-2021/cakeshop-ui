@@ -1,50 +1,50 @@
 
 // $("#footer").load("footer.html");
 
-function LoggedIn() {
-    console.log("LoggedIn method ");
-    let login = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+// function LoggedIn() {
+//     console.log("LoggedIn method ");
+//     let login = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
 
 
-    if (login == null || login == undefined)
-     {
-        login = false;
-    }
-    let content = "";
-    if (login) {
-        content = `
-        <a class="navbar" onClick="logout()">logout</a>
-        `;
-    }
-    else {
-        content = `
-        <a class="navbar" href="login.html">login</a>
-         <span> | </span>
-        <a class="navbar" href="Register.html">Register</a>
-        `;
-        // localStorage.setItem("LOGGED_IN_USER",JSON.stringify(false));
-    }
-    let navReg = document.querySelector(".navreg");
-    if (navReg) {
+//     if (login == null || login == undefined)
+//      {
+//         login = false;
+//     }
+//     let content = "";
+//     if (login) {
+//         content = `
+//         <a class="navbar" onClick="logout()">logout</a>
+//         `;
+//     }
+//     else {
+//         content = `
+//         <a class="navbar" href="login.html">login</a>
+//          <span> | </span>
+//         <a class="navbar" href="Register.html">Register</a>
+//         `;
+//         // localStorage.setItem("LOGGED_IN_USER",JSON.stringify(false));
+//     }
+//     let navReg = document.querySelector(".navreg");
+//     if (navReg) {
 
-        navReg.innerHTML = content;
-    }
-    else {
-        console.log("No navReg", navReg);
-    }
-}
+//         navReg.innerHTML = content;
+//     }
+//     else {
+//         console.log("No navReg", navReg);
+//     }
+// }
 
-function logout() {
-    localStorage.clear();
-    window.location.href = "index.html";
-}
+// function logout() {
+//     localStorage.clear();
+//     window.location.href = "index.html";
+// }
 
 
-function loginCheck() {
-    if (JSON.parse(localStorage.getItem("LOGGED_IN_USER"))== null) {
-        alert("need to login first");
-        window.location.href = "login.html";
-        return false;
-    }
-}
-LoggedIn();
+// function loginCheck() {
+//     if (JSON.parse(localStorage.getItem("LOGGED_IN_USER"))== null) {
+//         alert("need to login first");
+//         window.location.href = "login.html";
+//         return false;
+//     }
+// }
+// // LoggedIn();
