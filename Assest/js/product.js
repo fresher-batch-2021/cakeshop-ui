@@ -18,9 +18,9 @@ function project()
         </a>
         <p>${cake.productName}</p>
         <br>
-        <p>${cake.price}</p>
+        <p>₹${cake.price}.00</p>
         <br>
-        <p>product description......</p>
+        <p>Minimum Weight:half kg</p> <br>
         <button type="button" onClick="tocart(${cake.id},'${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
         <button ></button>
         

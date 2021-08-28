@@ -7,11 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <style>
-        body {
-            background-color: #fae1dd;
-        }
-    </style>
+    
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
@@ -22,7 +18,7 @@
 </head>
 
 <body>
-    <section>
+    <section class="orderColor">
         <header id="header"></header>
 
         <div class="ordernow">
@@ -35,9 +31,11 @@
                 <input type="email" class="email" id="email" required>
                 <label for="mobileNo">Customer Contact Number:</label>
                 <input type="number" class="mobileNo" id="mobileNo" required>
+                <label for="flavours">Flavours</label>
+                <input type="text" name="flavours" id="flavours">
                 <label for="decorations">Choose a Decorations:</label><br><br>
-                <select data-placeholder="Decorations" multiple class="chosen-select" name="test">
-                    <option value=""></option>
+                <select data-placeholder="Decorations" multiple class="chosen-select" name="test" id="test">
+                    <option value="test"></option>
                     <option>Balloon</option>
                     <option>Candle</option>
                     <option>Number Candle</option>
@@ -54,9 +52,11 @@
                 <label for="totalAmount">Total Amount</label>
                 <input type="number" class="totalAmount" id="totalAmount" required>
                 <label for="payment">Payment</label>
-                
-                <input type="radio" class="payment" id="payment" required>
-                <label for="#">cash on delivery</label>
+                <div>
+                    <select name="payment" id="payment">
+                        <option value="payment">Cash On Delivery</option>
+                    </select>
+                  </div>
                 <button type="submit">place order</button>
                 <button type="reset">reset</button>
                 <button type="cancel"><a href="index.html">cancel</a></button>

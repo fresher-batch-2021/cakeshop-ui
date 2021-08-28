@@ -380,6 +380,10 @@ font-size: 22px
 }*
 /* designer end */
 /* ordernow */
+.orderColor
+{
+    background-color: #fae1dd;
+}
 .ordernow
 {
     margin:  80px 400px 0px 400px;

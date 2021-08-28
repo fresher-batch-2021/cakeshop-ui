@@ -47,10 +47,11 @@ count++;
   
   content += end;
   
-  document.querySelector("#cartdata").innerHTML = content;
+  document.querySelector("#cartData").innerHTML = content;
+
+
 
 }
-
 
 // Deleting elements in cart
 function deleteCartData(index){
