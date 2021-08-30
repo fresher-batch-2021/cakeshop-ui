@@ -6,13 +6,14 @@ function displayCartItems() {
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
 // alert(cartItem);
 console.log(cartItem);
-  let content = `<table>
+  let content = `<table border=1>
   <thead>
 <tr>
     <th class="cakeNo">Cake.No</th>
-    <th class="cakeDesign">CakeDesign</th>
-    <th class="cakePrice">cakePrice</th>
-    <th class="cakeQuantity">CakeQuantity</th>
+    <th class="cakeImage">Cake Design</th>
+    <th class="cakeDesign">Cake Name</th>
+    <th class="cakePrice">cake Price</th>
+    <th class="cakeQuantity">Cake Quantity</th>
     <th class="total">Total Amount</th>
     <th class="delete">Delete</th>
     
@@ -21,7 +22,7 @@ console.log(cartItem);
     
 </thead><tbody>`;
   let end = ` </tbody></table>`;
-  console.log(displayCartItems);
+  console.log(displayCartItems); 
 var count=1;
 let sum=0;
 let total=0;
@@ -30,7 +31,7 @@ let total=0;
     content = content + `
                   <tr>
                   <td>${count}</td>
-                     
+                  <td><img class="cakeImg"src="images/${item.imageUrl}" alt="img"></td>
                      <td>${item.name}</td>
                      <td>${item.price}</td>
                      <td>${item.Quantity}</td>
@@ -81,4 +82,10 @@ function deleteCartData(index){
     }
   }
   displayCartItems();
+  function cartClear()
+    {
+      alert("cart items is cleared")
+        localStorage.removeItem("cartElements");
+        window.location.reload();
+    }
 

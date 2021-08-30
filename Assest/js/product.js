@@ -12,7 +12,7 @@ function project()
         let cake = res.data;
         console.log(cake);
        content = content+`
-     <div class="productrow">
+     <div class="productRow">
      <a href="product.html?id=${cake._id}">
         <img class=""src="images/${cake.imageUrl}" alt="img">
         </a>

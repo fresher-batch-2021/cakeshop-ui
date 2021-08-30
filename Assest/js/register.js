@@ -7,6 +7,7 @@ function register() {
     const mobileNo = document.querySelector("#mobileNo").value;
     const password = document.querySelector("#password").value;
     const confirmPassword = document.querySelector("#confirmPassword").value;
+    const role="USER";
     console.log(name,email,mobileNo,password,confirmPassword);
    
                 try {
@@ -17,7 +18,8 @@ function register() {
                         email: email,
                         mobileNo:mobileNo,
                         password:password,
-                        confirmPassword:confirmPassword
+                        confirmPassword:confirmPassword,
+                        role:role
                     }
 
                         console.log(regObj);
