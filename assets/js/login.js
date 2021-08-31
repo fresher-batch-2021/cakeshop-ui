@@ -38,14 +38,14 @@ function Login()
                 }
             }).catch(err=>{
                 console.error(err.response.data);
-                alert("not login");
+                toastr.error("You Need Login First");
                 
             });
         }
         catch(err)
         {
             console.error(err.message);
-            alert("Error"+err.message)
+            
         }
            
             

@@ -4,7 +4,6 @@
 function displayCartItems() {
   console.log("displayCartItems");
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
-// alert(cartItem);
 console.log(cartItem);
   let content = `<table class="table table-bordered table-hover ">
   <thead>
@@ -74,7 +73,7 @@ function deleteCartData(index){
     let cartItem=JSON.parse(localStorage.getItem("cartElements"));
     if (cartItem==null||cartItem=="")
      {
-      alert("cart is empty");
+      toastr.error("cart is empty");
       window.location.href="occasions.html";
     } else 
     {
@@ -84,8 +83,12 @@ function deleteCartData(index){
   displayCartItems();
   function cartClear()
     {
-      alert("cart items is cleared")
+      toastr.error("cart items is cleared");
         localStorage.removeItem("cartElements");
-        window.location.reload();
+        setTimeout(function()
+        {
+          window.location.reload();
+        },1000);
+        
     }
 

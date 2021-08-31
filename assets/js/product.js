@@ -26,9 +26,10 @@ function project()
         
         </div>`;
         document.querySelector("#productcontainer").innerHTML=content;
+        
     }).catch(err=>{
         console.log(err.response.data);
-        alert("failed in getting data");
+        toastr.error("failed in getting data");
     })
 
 
@@ -61,7 +62,13 @@ function tocart(id,imageUrl,name,price)
     cartItems.push(cartObj);
     }
     
+    
     localStorage.setItem("cartElements",JSON.stringify(cartItems));
-    window.location.href="cart.html";
+    toastr.success("Cake is Added to the Cart");
+    setTimeout(function()
+    {
+        window.location.href="cart.html";
+    },3000);
+   
 
 }

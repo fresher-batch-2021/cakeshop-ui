@@ -34,24 +34,27 @@ function ordernow() {
 
         console.log(orderObj);
         CakeService.cartCake(orderObj).then(res => {
-            //    console.log(res.data);
-            // alert("your order successfully placed");
-            window.location.href = "index.html";
+    
+            toastr.success("your order successfully placed");
+            setTimeout(function()
+            {
+                window.location.href = "index.html";
+            },5000);
+            
         }).catch(err => {
             console.log(err.response.data);
-            alert(" Your Order is Failed ");
+            toastr.error(" Your Order is Failed ");
         });
     }
 
     catch (err) {
         console.error(err.message);
-        alert("Error" + err.message)
+        toastr.error("Error" + err.message);
     }
     
 }
 const totalBillAmount = localStorage.getItem("TOTAL_BILL_AMOUNT");
 document.querySelector("#totalAmount").value = totalBillAmount;
 
-// const FLAVOURS= localStorage.getItem("FLAVOURS");
-// document.getElementById("#cartData").value = FLAVOURS;
+
 var name=localStorage.getItem("FLAVOURS");
