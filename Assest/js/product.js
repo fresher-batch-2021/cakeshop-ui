@@ -15,14 +15,14 @@ function project()
      <div class="productRow">
      <a href="product.html?id=${cake._id}">
         <img class=""src="images/${cake.imageUrl}" alt="img">
-        </a>
+        </a> <div class="product-para">
         <p>${cake.productName}</p>
         <br>
         <p>₹${cake.price}.00</p>
         <br>
         <p>Minimum Weight:half kg</p> <br>
         <button type="button" onClick="tocart(${cake.id},'${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
-        <button ></button>
+        <button ></button></div>
         
         </div>`;
         document.querySelector("#productcontainer").innerHTML=content;

@@ -6,9 +6,9 @@ function displayCartItems() {
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
 // alert(cartItem);
 console.log(cartItem);
-  let content = `<table border=1>
+  let content = `<table class="table table-bordered table-hover ">
   <thead>
-<tr>
+<tr class="table-secondary">
     <th class="cakeNo">Cake.No</th>
     <th class="cakeImage">Cake Design</th>
     <th class="cakeDesign">Cake Name</th>
@@ -20,7 +20,7 @@ console.log(cartItem);
 </tr>
 
     
-</thead><tbody>`;
+</thead><tbody class="table-secondary">`;
   let end = ` </tbody></table>`;
   console.log(displayCartItems); 
 var count=1;

@@ -18,7 +18,7 @@ function myOrders()
     for(let order of myOrders)
     {
        for(let item of order.products){
-        content=content+` 
+        content=content+` <div class="my-order-div">
 
         <img src="images/${item.imageUrl}" alt="img" width="200px">
         <p>${item.name}</p>
@@ -29,7 +29,7 @@ function myOrders()
         content=content+ `
         <p>${order.status}</p>
         <p>${order.date}</p>
-        <button onclick="cancelOrdered('${order._id}')">Cancel Order</button>
+        <button class="order-btn" onclick="cancelOrdered('${order._id}')">Cancel Order</button> </div>
         `;
         count = count + 1;
         if (count == 5) {
