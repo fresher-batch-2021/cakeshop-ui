@@ -27,7 +27,7 @@ function ordernow() {
             address: address,
             products: cartItem,
             status: "ORDERED",
-            totalAmount: totalAmount,   
+            totalAmount: parseInt(totalAmount),   
             payment:"Cash On Delivery",         
             email: loggedInEmail
         };

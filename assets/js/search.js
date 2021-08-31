@@ -25,9 +25,9 @@ async function getData() {
         <p>${cake.flavours}</p>
         <img src="images/${cake.imageUrl}" alt="img">
         <div>
-        `
+        `;
         result.appendChild(li)
-    })
+    });
 }
 
 
@@ -40,7 +40,4 @@ function filterData(searchTerm) {
         }
     })
 }
-{/* <h5>Required :${user.skills}</h5>
-                <p>${user.location.city}, ${user.location.country}</p>
-                <h5>Apply<a href="">${user.link}</a></h5> */}
-                
+

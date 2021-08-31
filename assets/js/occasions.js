@@ -16,7 +16,7 @@ function getCakeSection(category, cakeItems) {
 <img class="cakeimg" id="cakeworld"src="images/${cake.imageUrl}" alt="img"></a>
 <p>${cake.productName}</p>
 <p>₹${cake.price}.00</p>
-<a href="ordernow.html">ordernow</a>
+
 </div>`;
         count = count + 1;
         if (count == 5) {
