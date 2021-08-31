@@ -19,15 +19,20 @@ function Login()
                 let data=res.data.docs;
                 if (data.length==0)
                  {
-                  alert("Invalid login credentials");  
+                
+                toastr.error("Invalid login credentials");  
                 }
                 else
                 {
                     const user=0;
                 console.log(data);
                 localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data[0]));
-                alert("successfully logged in");
-                window.location.href="index.html";
+                
+                toastr.success("successfully logged in");
+                setTimeout(function () {
+                        window.location.href = "index.html"
+                    }, 3000);
+
                 let email = JSON.parse(localStorage.setItem("email"));
                 
                 }

@@ -56,7 +56,7 @@ function cancelOrdered(id)
             orderObj.status="CANCELLED";
             OrderService.cancelOrder(id,orderObj)
             .then(res1=>{
-                alert("Successfully Deleted");
+                // alert("Successfully Deleted");
                 window.location.reload();
             }).catch(err => {
                 alert("error");

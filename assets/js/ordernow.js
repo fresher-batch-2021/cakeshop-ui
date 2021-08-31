@@ -35,7 +35,7 @@ function ordernow() {
         console.log(orderObj);
         CakeService.cartCake(orderObj).then(res => {
             //    console.log(res.data);
-            alert("your order successfully placed");
+            // alert("your order successfully placed");
             window.location.href = "index.html";
         }).catch(err => {
             console.log(err.response.data);

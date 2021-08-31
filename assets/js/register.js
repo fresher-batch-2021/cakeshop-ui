@@ -27,18 +27,22 @@ function register() {
                             {
                                let data = res.data;
                                console.log(data);
-                               alert("successfully register");
-                               window.location.href = "login.html";
+                               toastr.error("successfully register");
+                               setTimeout(function(){
+                                window.location.href = "login.html";
+                               },3000)
+                               
                            }).catch(err => {
-                               console.log(err.response.data);
-                               alert("Unable to Register");
+                               console.log(err);
+                               console.log(err?.response?.data);
+                               toastr.error("Unable to Register");
                            });
                         }
                            catch(err)
                            {
                                
-                                console.error(err.message);
-                                alert("Error"+err.message)
+                                console.error(err);
+                                toastr.error("Error"+err.message)
                            }
                         
                         }
