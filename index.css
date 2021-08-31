@@ -451,10 +451,10 @@ img{
     width: 200px;
     height: 300px;
 
-    margin-left: auto;
+    /* margin-left: auto; */
     margin-right: auto;
     border-radius: 15px;
-    /* margin-left: 10%; */
+    margin-left: 10%;
    
     padding: 3px 4px 10px 4px;
   

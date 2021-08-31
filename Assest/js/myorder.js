@@ -47,9 +47,11 @@ myOrders();
 
 function cancelOrdered(id)
 {
-    alert("order is cancelled");
+    
     OrderService.getOrder(id).then(res=>
         {
+                let cfm = confirm("Do you want to delete ?");
+                if (cfm) {
             let orderObj=res.data;
             orderObj.status="CANCELLED";
             OrderService.cancelOrder(id,orderObj)
@@ -60,7 +62,7 @@ function cancelOrdered(id)
                 alert("error");
                 console.log(err.response.message);
             })
-        })
+        }})
   
 
 }
