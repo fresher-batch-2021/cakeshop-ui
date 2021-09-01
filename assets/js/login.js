@@ -31,7 +31,7 @@ function Login()
                 toastr.success("successfully logged in");
                 setTimeout(function () {
                         window.location.href = "index.html"
-                    }, 3000);
+                    }, 1500);
 
                 let email = JSON.parse(localStorage.setItem("email"));
                 

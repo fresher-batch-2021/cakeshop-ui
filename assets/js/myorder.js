@@ -17,6 +17,8 @@ function myOrders()
     console.table(myOrders);
     for(let order of myOrders)
     {
+        let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
+        let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
        for(let item of order.products){
         content=content+` <div class="my-order-div">
 
@@ -28,7 +30,7 @@ function myOrders()
        }
         content=content+ `
         <p>${order.status}</p>
-        <p>${order.date}</p>
+        <p>${date}</p>
         <button class="order-btn" onclick="cancelOrdered('${order._id}')">Cancel Order</button> </div>
         `;
         count = count + 1;

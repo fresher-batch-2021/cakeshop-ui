@@ -1,6 +1,6 @@
 function project()
 {
-    console.log("product method");
+    
     var content="";
     
     const param=new URLSearchParams(window.location.search.substr(1));
@@ -65,10 +65,10 @@ function tocart(id,imageUrl,name,price)
     
     localStorage.setItem("cartElements",JSON.stringify(cartItems));
     toastr.success("Cake is Added to the Cart");
-    setTimeout(function()
-    {
-        window.location.href="cart.html";
-    },3000);
+    // setTimeout(function()
+    // {
+    //     window.location.href="cart.html";
+    // },3000);
    
 
 }

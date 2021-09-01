@@ -3,7 +3,7 @@ const routes = [
     { path: "login.html" },
     { path: "index.html" },
     { path: "occasions.html", roles:["USER"] },
-    { path: "product.html" },
+    { path: "product.html", roles:["USER"] },
     { path: "cart.html", roles: ["USER", "ADMIN"] },
     { path: "ordernow.html", roles: ["USER", "ADMIN"] },
     { path: "myorder.html" }
@@ -50,6 +50,6 @@ function checkAccess(pageName, role) {
         {
             window.location.href = "login.html";
 
-        },2000);
+        },1500);
     }
 })();

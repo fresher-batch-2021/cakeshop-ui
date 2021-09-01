@@ -5,7 +5,7 @@ function displayCartItems() {
   console.log("displayCartItems");
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
 console.log(cartItem);
-  let content = `<table class="table table-bordered table-hover ">
+  let content = `<table class="table table-bordered table-hover table-full-width">
   <thead>
 <tr class="table-secondary">
     <th class="cakeNo">Cake.No</th>
@@ -64,6 +64,7 @@ function deleteCartData(index){
     arr.splice(index,1);
   }
   console.log(arr[index]);
+  toastr.error("Item is deleted");
   localStorage.setItem("cartElements",JSON.stringify(arr));
   displayCartItems();
   }
