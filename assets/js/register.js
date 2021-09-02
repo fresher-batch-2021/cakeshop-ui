@@ -11,6 +11,11 @@ function register() {
     console.log(name, email, mobileNo, password, confirmPassword);
 
     try {
+        RegisterValidation.isValidString(name,"name is inValid");
+        RegisterValidation.isValidEmail(email,"email is in valid");
+        RegisterValidation.isValidNumber(mobileNo,"mobile number inValid");
+
+        RegisterValidation.isValidMatch(password,confirmPassword,"password is not match");
         RegisterValidation.validate(name, email, mobileNo, password, confirmPassword)
 
         let regObj = {

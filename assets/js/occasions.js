@@ -37,7 +37,7 @@ function SearchCakes()
         
     });
 }
-//  SearchCakes();
+
 
 /**
  * This functions 
@@ -70,7 +70,7 @@ function displayCakes(products, category ) {
 
         console.log(JSON.stringify( categories));
 
-        var content = "";
+        let content = "";
         if (products.length == 0) {
             alert("No cake items");
         }
@@ -95,13 +95,18 @@ function displayCakes(products, category ) {
         console.log(content);
         document.querySelector("#container").innerHTML = content;
 
-        // alert("succesful on getting data");
+        
 }
 
-const params = new URLSearchParams(window.location.search.substr(1));
-const category = params.get('category');
-console.log("Selected Category in previous page:" + category);
-getAllCakes(category);
+window.addEventListener('DOMContentLoaded', (event) => {
+     console.log('DOM fully loaded and parsed');
+    const params = new URLSearchParams(window.location.search.substr(1));
+    const category = params.get('category');
+    console.log("Selected Category in previous page:" + category);
+    getAllCakes(category);
+
+}
+);
 
 
 

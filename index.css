@@ -233,13 +233,14 @@ padding-right: 30%;
   padding-right: 150px;
   color:blue;
 }
-.Submit
+.submit-btn
 {
     padding: 10px;
     border: none;
     color: black;
     border-radius: 50px;
     background-color: white;
+    cursor: pointer;
 }
 .login input[type=password],[type=email]
 {
@@ -282,6 +283,7 @@ padding-right: 30%;
     border: none;
     border-radius: 50px;
     background-color: white;
+    cursor: pointer;
 }
 
 /* occasions */
@@ -403,11 +405,11 @@ font-size: 22px
   /* justify-content: center; */
 /* }  
 /* privacy end */
-.about
+/* .about
 {
     margin-top: 20px;
     
-}
+} */
 img{
     width: 80px;
     height: 110px;

@@ -24,7 +24,7 @@ function Login()
                 }
                 else
                 {
-                    const user=0;
+                
                 console.log(data);
                 localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data[0]));
                 
@@ -33,7 +33,7 @@ function Login()
                         window.location.href = "index.html"
                     }, 1500);
 
-                let email = JSON.parse(localStorage.setItem("email"));
+                // let email = JSON.parse(localStorage.setItem("email"));
                 
                 }
             }).catch(err=>{

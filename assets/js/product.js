@@ -43,7 +43,7 @@ function tocart(id,imageUrl,name,price)
     
 
     
-    let index = cartItems.findIndex(cartItems=>cartItems.Id == id);// If item already exist, update the quantity
+    let index = cartItems.findIndex(cartObj=>cartObj.Id == id);// If item already exist, update the quantity
     
     
     if (index != -1){
@@ -64,10 +64,7 @@ function tocart(id,imageUrl,name,price)
     localStorage.setItem("cartElements",JSON.stringify(cartItems));
     toastr.success("Cake is Added to Cart");
     
-    // setTimeout(function()
-    // {
-    //     window.location.href="cart.html";
-    // },100);
+  
    
 
 }

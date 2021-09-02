@@ -18,19 +18,14 @@ function checkAccess(pageName, role) {
     let allowed = false;
     for (let route of routes) 
     {
-        if (route.path == pageName)
+        if(route.path == pageName)
          {
-            if (!route.roles) 
+            if ((!route.roles)||route.roles.includes(role)) 
             {
                 allowed = true;
                 break;
             }
-            else if (route.roles.includes(role))
-             {
-                allowed = true;
-                break;
-            }
-        }
+       }
     }
     return allowed;
 }

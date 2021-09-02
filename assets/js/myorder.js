@@ -8,15 +8,16 @@ function myOrders()
         console.table(orders);
         //filter only my orders for the given email id
         let myOrders = orders.filter(obj=>obj.email == email);
-        let hari=JSON.stringify(myOrders)
+        
         
     console.table(myOrders);
-    // console.log(myOrders[0].products);      
+       
     let content="";
-    let count=0;
+    
     console.table(myOrders);
     for(let order of myOrders)
     {
+        let count=0;
         let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
         let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
        for(let item of order.products){

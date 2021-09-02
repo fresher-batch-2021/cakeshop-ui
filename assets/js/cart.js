@@ -4,7 +4,7 @@
 function displayCartItems() {
   console.log("displayCartItems");
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
-// console.log(cartItem);
+console.log(cartItem);
   let content = `<table class="table table-bordered table-hover table-full-width">
   <thead>
 <tr class="table-secondary">

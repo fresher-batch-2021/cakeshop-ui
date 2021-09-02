@@ -6,8 +6,8 @@ function ordernow() {
 
     console.log("ordernow method");
     event.preventDefault();
-    const name = document.querySelector("#name").value;
-    const email = document.querySelector("#email").value;
+    // const name = document.querySelector("#name").value;
+    // const email = document.querySelector("#email").value;
     const mobileNo = document.querySelector("#mobileNo").value;
     const flavours=document.querySelector("#flavours").value;
     const date = document.querySelector("#date").value;
