@@ -91,7 +91,7 @@ padding-right: 30%;
 /* slider */
 /* Slideshow container */
 .slideshow_container{
-    /* margin: auto; */
+    margin: auto;
     position: relative; 
     max-width: 100%;
     z-index: -2;

@@ -1,10 +1,10 @@
 function project()
 {
     
-    var content="";
+    let content="";
     
     const param=new URLSearchParams(window.location.search.substr(1));
-    var id = param.get("id");
+    let id = param.get("id");
 
     
    CakeService.getCake(id).then(res =>{
@@ -21,7 +21,7 @@ function project()
         <p>₹${cake.price}.00</p>
         <br>
         <p>Minimum Weight:half kg</p> <br>
-        <button type="button" onClick="tocart(${cake.id},'${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
+        <button type="button" onClick="tocart('${cake._id}','${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
         <button ></button></div>
         
         </div>`;
@@ -32,22 +32,20 @@ function project()
         toastr.error("failed in getting data");
     })
 
-
 }
 project();
 
 function tocart(id,imageUrl,name,price)
 {
-    
     let cartItemsStr=localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr):[];
-    var quantity=1;
+    let quantity=1;
     
 
     
     let index = cartItems.findIndex(cartItems=>cartItems.Id == id);// If item already exist, update the quantity
     
-    console.log(index);
+    
     if (index != -1){
         let cartObj = cartItems[index];
         console.log(cartObj);
@@ -64,11 +62,12 @@ function tocart(id,imageUrl,name,price)
     
     
     localStorage.setItem("cartElements",JSON.stringify(cartItems));
-    toastr.success("Cake is Added to the Cart");
+    toastr.success("Cake is Added to Cart");
+    
     // setTimeout(function()
     // {
     //     window.location.href="cart.html";
-    // },3000);
+    // },100);
    
 
 }

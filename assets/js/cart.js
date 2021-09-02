@@ -4,7 +4,7 @@
 function displayCartItems() {
   console.log("displayCartItems");
 let cartItem=JSON.parse(localStorage.getItem("cartElements"));
-console.log(cartItem);
+// console.log(cartItem);
   let content = `<table class="table table-bordered table-hover table-full-width">
   <thead>
 <tr class="table-secondary">
@@ -25,6 +25,7 @@ console.log(cartItem);
 var count=1;
 let sum=0;
 let total=0;
+
   for (let item of cartItem) {
     total=item.Quantity*item.price;
     content = content + `
@@ -55,6 +56,7 @@ count++;
 
 // Deleting elements in cart
 function deleteCartData(index){
+  
   var arr=JSON.parse(localStorage.getItem("cartElements"));//store the value in localstorage changed into json obj and store it in arr
   if (arr[index].Quantity>1)
    {
@@ -64,13 +66,15 @@ function deleteCartData(index){
     arr.splice(index,1);
   }
   console.log(arr[index]);
-  toastr.error("Item is deleted");
+  toastr.success("Item is deleted");
   localStorage.setItem("cartElements",JSON.stringify(arr));
   displayCartItems();
   }
 
   function cartcheck()
   {
+    alert("hoo");
+    
     let cartItem=JSON.parse(localStorage.getItem("cartElements"));
     if (cartItem==null||cartItem=="")
      {
@@ -84,7 +88,7 @@ function deleteCartData(index){
   displayCartItems();
   function cartClear()
     {
-      toastr.error("cart items is cleared");
+      toastr.success("cart items is cleared");
         localStorage.removeItem("cartElements");
         setTimeout(function()
         {
