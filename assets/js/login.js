@@ -33,7 +33,7 @@ function Login()
                         window.location.href = "index.html"
                     }, 1500);
 
-                // let email = JSON.parse(localStorage.setItem("email"));
+                
                 
                 }
             }).catch(err=>{

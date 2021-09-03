@@ -11,7 +11,7 @@ function myOrders()
         
         
     console.table(myOrders);
-       
+    // console.log(myOrders[0].products);      
     let content="";
     
     console.table(myOrders);
@@ -24,23 +24,38 @@ function myOrders()
         content=content+` <div class="my-order-div">
 
         <img src="images/${item.imageUrl}" alt="img" width="200px">
+        <div class="my-order-p">
         <p>${item.name}</p>
         <p>₹${item.price}.00</p>
         <p>${item.Quantity} Cakes </p>
         `;
        }
         content=content+ `
-        <p>${order.status}</p>
         <p>${date}</p>
-        <button class="order-btn" onclick="cancelOrdered('${order._id}')">Cancel Order</button> </div>
-        `;
+        <p>${order.status}</p>
+        </div></div>`;
+        if (order.status!="DELIVERED")
+         {
+           if (order.status!="CANCELLED")
+            {
+             content+=`<button class="my-order-btn" onclick="cancelOrdered('${order._id}')">Cancel Order</button>`;  
+           } 
+           else
+           {
+               content+= `<p></p>`;
+           }
+        } else{
+            content+= `<p></p>`;
+        }      
+    
+        
         count = count + 1;
         if (count == 5) {
             content = content + `<br>`;
-            count = 0;
+            count=0;
         }
     }
-    count++;
+    // count++;
     console.log(content);
     document.querySelector("#orderContainer").innerHTML = content;
 });
@@ -53,7 +68,7 @@ function cancelOrdered(id)
     
     OrderService.getOrder(id).then(res=>
         {
-                let cfm = confirm("Do you want to cancel your Order ?");
+            let cfm = confirm("Do you want to cancel your Order ?");
                 if (cfm) {
             let orderObj=res.data;
             orderObj.status="CANCELLED";

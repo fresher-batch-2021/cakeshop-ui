@@ -52,7 +52,7 @@ function getAllCakes(category){
         displayCakes(products,category);
     }).catch(err => {
         console.log(err.data);
-        // alert("failed in getting data");
+        toastr.error("failed in getting data");
     });
 
 }

@@ -15,8 +15,8 @@ function register() {
         RegisterValidation.isValidEmail(email,"email is in valid");
         RegisterValidation.isValidNumber(mobileNo,"mobile number inValid");
 
-        RegisterValidation.isValidMatch(password,confirmPassword,"password is not match");
-        RegisterValidation.validate(name, email, mobileNo, password, confirmPassword)
+        RegisterValidation.isPasswordMatch(password,confirmPassword,"password is not match");
+        
 
         let regObj = {
             name: name,
