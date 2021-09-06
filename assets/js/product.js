@@ -54,7 +54,7 @@ function tocart(id,imageUrl,name,price)
  
     }
     else{
-       let cartObj = {Id:id,
+       let cartObj = {_id:id,
         name:name,price:price,imageUrl:imageUrl,Quantity:quantity}; // if item not exist, add new item to cart
     console.log(cartObj);
     cartItems.push(cartObj);

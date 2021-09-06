@@ -3,7 +3,7 @@ function ordernow() {
 
     console.log("ordernow method");
     event.preventDefault();
-    
+    const name= document.querySelector("#name").value;    
     const mobileNo = document.querySelector("#mobileNo").value;
     const flavours=document.querySelector("#flavours").value;
     const date = document.querySelector("#date").value;
@@ -16,7 +16,8 @@ function ordernow() {
     let loggedInEmail = user != null ? user.email : null;
     try {
         OrderValidation.validate(name, mobileNo,flavours, date, address, cartItem, totalAmount)
-        let orderObj = {
+        const orderObj = {
+            
             name: name,
             mobileNo: mobileNo,
             date: date,
@@ -27,28 +28,51 @@ function ordernow() {
             payment:"Cash On Delivery",         
             email: loggedInEmail
         };
+        
 
         console.log(orderObj);
-        CakeService.cartCake(orderObj).then(res => {
-    
-            toastr.success("your order successfully placed");
-            setTimeout(function()
-            {
-                window.location.href = "index.html";
-            },5000);
-            
-        }).catch(err => {
-            console.log(err.response.data);
-            toastr.error(" Your Order is Failed ");
-        });
-    }
+        
 
+        //1. Order the cake
+        OrderService.orderCake(orderObj).then(res => {
+            console.log(JSON.stringify(res.data));
+
+            //2. After orders, reduce the stock quantity
+            let products = orderObj.products;
+            for(let productObj of products)
+            {
+                
+            
+            ProductService.updateStock(productObj._id, productObj.quantity).then(res=>
+                {
+                    let data =res.data;
+                    console.log(data);
+                    localStorage.removeItem("cartElements");
+                    // localStorage.removeItem("totalAmount",null);
+                    toastr.success("your order successfully placed");
+                    setTimeout(function()
+                    {
+                        window.location.href = "index.html";
+                    },5000);
+                    
+                }).catch(err => {
+                    console.log(err);
+                    toastr.error(" Your Order is Failed ");
+                });
+            }
+        
+
+            
+        });
+    
+    }     
     catch (err) {
         console.error(err.message);
         toastr.error("Error" + err.message);
     }
     
 }
+
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 

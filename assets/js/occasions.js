@@ -37,8 +37,6 @@ function SearchCakes()
         
     });
 }
-
-
 /**
  * This functions 
  * 1. Call db and get all cakes
@@ -52,11 +50,10 @@ function getAllCakes(category){
         displayCakes(products,category);
     }).catch(err => {
         console.log(err.data);
-        toastr.error("failed in getting data");
+        // toastr.error("failed in getting data");
     });
 
 }
-
 /**
  *  This function displays cakes category wise
  * If category is passed, it will display only the selected category
@@ -79,9 +76,6 @@ function displayCakes(products, category ) {
             const cakeItems = categories[category];
             console.log("Category:", category, cakeItems);
             content += getCakeSection(category, cakeItems);// return html code
-
-
-
         }
         else {
             console.log("No category selected")
@@ -89,13 +83,10 @@ function displayCakes(products, category ) {
                 const cakeItems = categories[category];
                 console.log("Category:", category, cakeItems);
                 content += getCakeSection(category, cakeItems);// return html code
-
             }
         }
         console.log(content);
-        document.querySelector("#container").innerHTML = content;
-
-        
+        document.querySelector("#container").innerHTML = content;        
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
