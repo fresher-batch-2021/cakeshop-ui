@@ -1,10 +1,8 @@
 class LoginValidator
 {
-    static validate(email,password)
+    static validate(password)
     {
-     if(password.length < 8)
-    {
-        throw new Error("password must be greater than 8 characters");
-    }
+        
+        Validator.hasLength(password, 8 ,"password must be greater than 8 characters");
     }
 }

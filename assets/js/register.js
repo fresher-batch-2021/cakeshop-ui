@@ -30,14 +30,14 @@ function register() {
             
             let exists = res;
             if (exists) {
-                toastr.error("", "This email Id is already exists",//if its true it is an error
+                toastr.error("", ErrorMessage.THIS_EMAIL,//if its true it is an error
                     {
                         preventDuplicate: true
                     });
 
 
             }
-            else {//if email is false, its a email id 
+            else {//if email is false, it is a new email id
 
 
                 console.log(regObj);

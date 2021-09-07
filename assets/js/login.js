@@ -10,7 +10,7 @@ function Login()
     //1.write try and catch block.
      try{
          //2.insert the login-validation.js call the class name and function name 
-        LoginValidator.validate(email,password)
+        LoginValidator.validate(password);
      
       //3.call backend api
         UserService.login(email,password).then(res=>
@@ -20,7 +20,7 @@ function Login()
                 if (data.length==0)
                  {
                 
-                toastr.error("Invalid login credentials");  
+                toastr.error(ErrorMessage.LOGIN_VALID);  
                 }
                 else
                 {
@@ -31,14 +31,14 @@ function Login()
                 toastr.success("successfully logged in");
                 setTimeout(function () {
                         window.location.href = "index.html"
-                    }, 1500);
+                    }, 500);
 
                 
                 
                 }
             }).catch(err=>{
                 console.error(err);
-                toastr.error("You Need Login First");
+                toastr.error(ErrorMessage.LOGIN_ERROR);
                 
             });
         }
