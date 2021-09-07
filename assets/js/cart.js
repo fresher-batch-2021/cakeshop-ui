@@ -20,21 +20,21 @@ function displayCartItems() {
 </thead><tbody class="table-secondary">`;
   let end = ` </tbody></table>`;
   console.log(displayCartItems);
-  var count = 1;
+  let count = 1;
   let sum = 0;
   let total = 0;
 
   if(cartItem){
   for (let item of cartItem) {
-    total = item.Quantity * item.price;
+    total = item.quantity * item.price;
     content = content + `
                   <tr>
                   <td>${count}</td>
                   <td><img class="cakeImg"src="images/${item.imageUrl}" alt="img"></td>
                      <td>${item.name}</td>
                      <td>${item.price}</td>
-                     <td>${item.Quantity}</td>
-                     <td>${item.Quantity * item.price}</td>
+                     <td>${item.quantity}</td>
+                     <td>${item.quantity * item.price}</td>
                      <td><a onclick="deleteCartData(${count - 1})">delete</a></td>
                      
                    </tr>
@@ -57,8 +57,8 @@ console.log("Cart is empty" , cartItem);
 function deleteCartData(index) {
 
   var arr = JSON.parse(localStorage.getItem("cartElements"));//store the value in localstorage changed into json obj and store it in arr
-  if (arr[index].Quantity > 1) {
-    arr[index].Quantity--;
+  if (arr[index].quantity > 1) {
+    arr[index].quantity--;
   }
   else {
     arr.splice(index, 1);

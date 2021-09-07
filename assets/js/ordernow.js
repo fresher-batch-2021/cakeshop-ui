@@ -5,7 +5,7 @@ function ordernow() {
     event.preventDefault();
     const name= document.querySelector("#name").value;    
     const mobileNo = document.querySelector("#mobileNo").value;
-    const flavours=document.querySelector("#flavours").value;
+    // const flavours=document.querySelector("#flavours").value;
     const date = document.querySelector("#date").value;
     const address = document.querySelector("#address").value;
     const totalAmount = document.querySelector("#totalAmount").value;
@@ -15,7 +15,7 @@ function ordernow() {
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
     let loggedInEmail = user != null ? user.email : null;
     try {
-        OrderValidation.validate(name, mobileNo,flavours, date, address, cartItem, totalAmount)
+        OrderValidation.validate(name, mobileNo, date, address, cartItem, totalAmount)
         const orderObj = {
             
             name: name,
@@ -40,10 +40,8 @@ function ordernow() {
             //2. After orders, reduce the stock quantity
             let products = orderObj.products;
             for(let productObj of products)
-            {
-                
-            
-            ProductService.updateStock(productObj._id, productObj.quantity).then(res=>
+            {                
+            ProductService.reduceStock(productObj._id, productObj.quantity).then(res=>
                 {
                     let data =res.data;
                     console.log(data);
@@ -53,14 +51,12 @@ function ordernow() {
                     setTimeout(function()
                     {
                         window.location.href = "index.html";
-                    },5000);
-                    
+                    },5000);                    
                 }).catch(err => {
                     console.log(err);
                     toastr.error(" Your Order is Failed ");
                 });
-            }
-        
+            } 
 
             
         });
@@ -74,13 +70,8 @@ function ordernow() {
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    console.log('DOM fully loaded and parsed');
+    
 
-const totalBillAmount =JSON.parse(localStorage.getItem("TOTAL_BILL_AMOUNT"));
-if(totalBillAmount){
-document.querySelector("#totalAmount").value = totalBillAmount;
-}
-
-
+document.querySelector("#totalAmount").value = CartService.getTotalAmount();
 }
 );

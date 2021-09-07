@@ -39,23 +39,22 @@ function tocart(id,imageUrl,name,price)
 {
     let cartItemsStr=localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr):[];
-    let quantity=1;
-    
+    let quantity=1; 
 
     
-    let index = cartItems.findIndex(cartObj=>cartObj.Id == id);// If item already exist, update the quantity
+    let index = cartItems.findIndex(cartObj=>cartObj._id == id);// If item already exist, update the quantity
     
     
     if (index != -1){
         let cartObj = cartItems[index];
         console.log(cartObj);
-        cartObj.Quantity++;
+        cartObj.quantity++;
         cartItems[index] = cartObj;
  
     }
     else{
        let cartObj = {_id:id,
-        name:name,price:price,imageUrl:imageUrl,Quantity:quantity}; // if item not exist, add new item to cart
+        name:name,price:price,imageUrl:imageUrl,quantity:quantity}; // if item not exist, add new item to cart
     console.log(cartObj);
     cartItems.push(cartObj);
     }

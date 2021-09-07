@@ -25,20 +25,19 @@ function myOrders() {
         <div class="my-order-p">
         <p>${item.name}</p>
         <p>₹${item.price}.00</p>
-        <p>${item.Quantity} Cakes </p>
+        <p>${item.quantity} Cakes </p>
         `;
             }
             content = content + `
         <p>${date}</p>
         <p>${order.status}</p>
         </div></div>`;
-            if (order.status != "DELIVERED" && order.status != "CANCELLED") 
-            {
-                    content += `<button class="my-order-btn" onclick="cancelOrdered('${order._id}')">Cancel Order</button>`;
+            if (order.status != "DELIVERED" && order.status != "CANCELLED") {
+                content += `<button class="my-order-btn" onclick="cancelOrdered('${order._id}')">Cancel Order</button>`;
             }
-                else {
-                    content += `<p></p>`;
-                }
+            else {
+                content += `<p></p>`;
+            }
 
             count = count + 1;
             if (count == 5) {
@@ -56,26 +55,37 @@ myOrders();
 
 function cancelOrdered(id) {
 
-    OrderService.getOrder(id).then(res => {
-        let cfm = confirm("Do you want to cancel your Order ?");
-        if (cfm) {
+    let cfm = confirm("Do you want to cancel your Order ?");
+    if (cfm) {
+
+        OrderService.getOrder(id).then(res => {
+
             let orderObj = res.data;
             orderObj.status = "CANCELLED";
 
 
-            OrderService.cancelOrder(id, orderObj)
-                .then(res1 => {
-                    toastr.success("Your Order is Cancelled");
-                    setTimeout(function () {
-                        window.location.reload();
-                    }, 5000);
+            OrderService.cancelOrder(id, orderObj).then(res => {
+                console.log(JSON.stringify(res.data));
+                let products = orderObj.products;
+                for (let productObj of products) {
+                    ProductService.increaseStock(productObj._id, productObj.quantity)
 
-                }).catch(err => {
-                    toastr.error("Order Can't Be Cancelled");
-                    console.log(err.response.message);
-                })
-        }
-    })
+                        .then(res1 => {
+                            toastr.success("Your Order is Cancelled");
+                            setTimeout(function () {
+                                window.location.reload();
+                            }, 5000);
 
+                        }).catch(err => {
+                            toastr.error("Order Can't Be Cancelled");
+                            console.log(err.response.message);
+                        });
 
+                }
+            }).catch(err => {
+                console.log(err);
+            });
+
+        });
+    }
 }
