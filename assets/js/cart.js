@@ -2,6 +2,10 @@
 
 
 function displayCartItems() {
+  $("#message").show();
+  setTimeout(() => {
+    
+  
   console.log("displayCartItems");
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
   console.log(cartItem);
@@ -23,7 +27,6 @@ function displayCartItems() {
   let count = 1;
   let sum = 0;
   let total = 0;
-
   if(cartItem){
   for (let item of cartItem) {
     total = item.quantity * item.price;
@@ -49,8 +52,10 @@ function displayCartItems() {
   document.querySelector("#cartData").innerHTML = content;
 }
 else{
-console.log("Cart is empty" , cartItem);
+console.log(ErrorMessage.CART_EMPTY , cartItem);
 }
+$("#message").hide();
+}, 2000);
 }
 
 // Deleting elements in cart
@@ -64,7 +69,10 @@ function deleteCartData(index) {
     arr.splice(index, 1);
   }
   console.log(arr[index]);
-  toastr.success("Item is deleted");
+  toastr.success("",ErrorMessage.CART_ITEM_IS_DELETED,
+  {
+    timeOut:1000
+  });
   localStorage.setItem("cartElements", JSON.stringify(arr));
   displayCartItems();
 }
@@ -74,7 +82,8 @@ function cartcheck() {
 
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
   if (cartItem == null || cartItem == "") {
-    toastr.error("cart is empty");
+    toastr.error(ErrorMessage.CART_EMPTY);
+    
     window.location.href = "occasions.html";
   } else {
     window.location.href = "ordernow.html";
@@ -82,11 +91,11 @@ function cartcheck() {
 }
 displayCartItems();
 function cartClear() {
-  toastr.success("cart items is cleared");
+  toastr.success(ErrorMessage.CART_ITEM_IS_CLEARED);
   localStorage.removeItem("cartElements");
   setTimeout(function () {
     window.location.reload();
-  }, 1000);
+  }, 500);
 
 }
 

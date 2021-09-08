@@ -71,13 +71,13 @@ function cancelOrdered(id) {
                     ProductService.increaseStock(productObj._id, productObj.quantity)
 
                         .then(res1 => {
-                            toastr.success("Your Order is Cancelled");
+                            toastr.success(ErrorMessage.MYORDER_CANCEL);
                             setTimeout(function () {
                                 window.location.reload();
                             }, 5000);
 
                         }).catch(err => {
-                            toastr.error("Order Can't Be Cancelled");
+                            toastr.error(ErrorMessage.MYORDER_CANNOT_BE_CANCEL);
                             console.log(err.response.message);
                         });
 

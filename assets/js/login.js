@@ -20,7 +20,7 @@ function Login()
                 if (data.length==0)
                  {
                 
-                toastr.error(ErrorMessage.LOGIN_VALID);  
+                toastr.error(ErrorMessage.INVALID_LOGIN);  
                 }
                 else
                 {
@@ -28,7 +28,7 @@ function Login()
                 console.log(data);
                 localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data[0]));
                 
-                toastr.success("successfully logged in");
+                toastr.success(ErrorMessage.VALID_LOGIN);
                 setTimeout(function () {
                         window.location.href = "index.html"
                     }, 500);
@@ -38,7 +38,7 @@ function Login()
                 }
             }).catch(err=>{
                 console.error(err);
-                toastr.error(ErrorMessage.LOGIN_ERROR);
+                toastr.error(ErrorMessage.LOGIN_FIRST);
                 
             });
         }

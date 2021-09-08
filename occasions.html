@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Divine cakes</title>
+    <link rel="icon" href="images/favicon.ico">
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   
+   <!-- LoadingBar -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         </head>
 <body>
     <div class="occasions">
@@ -22,10 +24,13 @@
 
     </div>
     <section>
-
+        <div id="message" style="display:none;text-align: center;">
+            Loading ....
+        </div>
 
 <div  class="cakecontainer" id="container">
-   
+       
+       
 </div>
 </div>
 </section>
@@ -37,6 +42,7 @@
      <script src="assets/js/cakeservice.js"></script>
      <script src="assets/js/cake-search-service.js"></script>
      <script src="assets/js/occasions.js"></script> 
+     <script src="assets/js/errormessage.js"></script>
 
     <footer id="footer"></footer>
     

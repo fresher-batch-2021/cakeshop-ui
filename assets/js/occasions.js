@@ -1,5 +1,9 @@
 
 function getCakeSection(category, cakeItems) {
+    $("#message").show();
+    setTimeout(function() 
+    {
+
     console.log("getCakeSection" , category );
     console.table(cakeItems);
 
@@ -25,9 +29,13 @@ function getCakeSection(category, cakeItems) {
         }
     }
 }
-    return content;
+    $("#message").hide();
+    document.querySelector("#container").innerHTML=content;
 
+
+},2000);
 }
+
 function SearchCakes()
 {
     CakeSearchService.getAllCakes().then(res=>{

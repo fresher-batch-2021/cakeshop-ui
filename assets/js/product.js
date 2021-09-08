@@ -1,6 +1,9 @@
 function project()
 {
-    
+    $("#message").show();
+    setTimeout(function() 
+    {
+        
     let content="";
     
     const param=new URLSearchParams(window.location.search.substr(1));
@@ -25,14 +28,16 @@ function project()
         <button ></button></div>
         
         </div>`;
+        $("#message").hide();
         document.querySelector("#productcontainer").innerHTML=content;
         
     }).catch(err=>{
         console.log(err.response.data);
-        toastr.error("failed in getting data");
+        toastr.error(ErrorMessage.PRODUCT_FAILED);
     })
-
+    },2000);
 }
+
 project();
 
 function tocart(id,imageUrl,name,price)
@@ -61,9 +66,13 @@ function tocart(id,imageUrl,name,price)
     
     
     localStorage.setItem("cartElements",JSON.stringify(cartItems));
-    toastr.success("Cake is Added to Cart");
+    toastr.success("",ErrorMessage.PRODUCT_SUCCESS,
+    {
+        timeOut:500
+    });
     
   
    
 
 }
+
