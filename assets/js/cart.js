@@ -2,10 +2,10 @@
 
 
 function displayCartItems() {
-  $("#message").show();
-  setTimeout(() => {
-    
-  
+  // $("#message").show();
+  // setTimeout(() => {
+
+
   console.log("displayCartItems");
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
   console.log(cartItem);
@@ -27,14 +27,14 @@ function displayCartItems() {
   let count = 1;
   let sum = 0;
   let total = 0;
-  if(cartItem){
-  for (let item of cartItem) {
-    total = item.quantity * item.price;
-    content = content + `
+  if (cartItem) {
+    for (let item of cartItem) {
+      total = item.quantity * item.price;
+      content = content + `
                   <tr>
                   <td>${count}</td>
                   <td><img class="cakeImg"src="images/${item.imageUrl}" alt="img"></td>
-                     <td>${item.name}</td>
+                     <td>${item.productName}</td>
                      <td>${item.price}</td>
                      <td>${item.quantity}</td>
                      <td>${item.quantity * item.price}</td>
@@ -43,19 +43,19 @@ function displayCartItems() {
                    </tr>
                    `;
 
-    sum = sum + total;
-    count++;
-  }
+      sum = sum + total;
+      count++;
+    }
 
-  localStorage.setItem("TOTAL_BILL_AMOUNT", sum);
-  content += end;
-  document.querySelector("#cartData").innerHTML = content;
-}
-else{
-console.log(ErrorMessage.CART_EMPTY , cartItem);
-}
-$("#message").hide();
-}, 2000);
+    localStorage.setItem("TOTAL_BILL_AMOUNT", sum);
+    content += end;
+    document.querySelector("#cartData").innerHTML = content;
+  }
+  else {
+    console.log(ErrorMessage.CART_EMPTY, cartItem);
+  }
+  $("#message").hide();
+  // }, 2000);
 }
 
 // Deleting elements in cart
@@ -69,10 +69,10 @@ function deleteCartData(index) {
     arr.splice(index, 1);
   }
   console.log(arr[index]);
-  toastr.success("",ErrorMessage.CART_ITEM_IS_DELETED,
-  {
-    timeOut:1000
-  });
+  toastr.success("", ErrorMessage.CART_ITEM_IS_DELETED,
+    {
+      timeOut: 1000
+    });
   localStorage.setItem("cartElements", JSON.stringify(arr));
   displayCartItems();
 }
@@ -83,7 +83,7 @@ function cartcheck() {
   let cartItem = JSON.parse(localStorage.getItem("cartElements"));
   if (cartItem == null || cartItem == "") {
     toastr.error(ErrorMessage.CART_EMPTY);
-    
+
     window.location.href = "occasions.html";
   } else {
     window.location.href = "ordernow.html";

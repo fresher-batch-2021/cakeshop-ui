@@ -28,6 +28,7 @@ header{
 .navbar{
     height: 80px;
     background-color: #f0efeb;
+    margin-top: -17px;
    
 }
 .navbar img{
@@ -81,6 +82,7 @@ header{
     padding: 1%;
     border-radius: 5px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 18px;
 
 }
 .searchContainer>input[type="text"]{
@@ -420,6 +422,11 @@ img{
     cursor: pointer;
 
 }
+.cart h1{
+    padding-top: 35px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+}
 .cartData
 {
     text-align: center;
@@ -430,6 +437,12 @@ img{
     background-color: #fae1dd;
     
 
+}
+.myOrder h1
+{
+    padding-top: 35px;
+    padding-bottom: 10px;
+    padding-left: 25px;
 }
 /* .my-order-div{
     display: flex;
@@ -488,6 +501,34 @@ img{
     /* margin-left: 2%;
     margin-right: 2%; */
 }
+.lds-dual-ring {
+    margin-left: 600px;
+    display: inline-block; 
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+      
+
 
 
 

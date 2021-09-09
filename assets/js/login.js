@@ -44,7 +44,7 @@ function Login()
         }
         catch(err)
         {
-            console.error(err);
+            toastr.error("failed");
             
         }
            

@@ -23,7 +23,7 @@ function myOrders() {
 
         <img src="images/${item.imageUrl}" alt="img" width="200px">
         <div class="my-order-p">
-        <p>${item.name}</p>
+        <p>${item.productName}</p>
         <p>₹${item.price}.00</p>
         <p>${item.quantity} Cakes </p>
         `;

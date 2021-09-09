@@ -1,12 +1,13 @@
 function ordernow() {
-    $("#message").show();
-   setTimeout(() => {       
+    // $("#message").show();
+    
+        
 
     console.log("ordernow method");
     event.preventDefault();
     const name = document.querySelector("#name").value;
     const mobileNo = document.querySelector("#mobileNo").value;
-    const date = document.querySelector("#date").value;
+    const orderDate = document.querySelector("#orderDate").value;
     const address = document.querySelector("#address").value;
     const totalAmount = document.querySelector("#totalAmount").value;
 
@@ -14,13 +15,13 @@ function ordernow() {
 
     let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
     let loggedInEmail = user != null ? user.email : null;
-    try {
-        OrderValidation.validate(name, mobileNo, date, address, cartItem, totalAmount)
+    try {        
+        OrderValidation.validate(name, mobileNo, orderDate, address, cartItem, totalAmount)
         const orderObj = {
 
             name: name,
             mobileNo: mobileNo,
-            date: date,
+            orderDate: orderDate,
             address: address,
             products: cartItem,
             status: "ORDERED",
@@ -28,17 +29,17 @@ function ordernow() {
             payment: "Cash On Delivery",
             email: loggedInEmail
         };
-
-
         console.log(orderObj);
         //1. Order the cake
         OrderService.orderCake(orderObj).then(res => {
+            
             console.log(JSON.stringify(res.data));
 
             //2. After orders, reduce the stock quantity
             let products = orderObj.products;
             for (let productObj of products) {
                 ProductService.reduceStock(productObj._id, productObj.quantity).then(res => {
+                    
                     let data = res.data;
                     console.log(data);
                     localStorage.removeItem("cartElements");
@@ -63,8 +64,8 @@ function ordernow() {
         toastr.error("Error" + err.message);
     }
     
-}, 2000);
 }
+
 
 window.addEventListener('DOMContentLoaded', (event) => {
 

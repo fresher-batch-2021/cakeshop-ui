@@ -16,10 +16,15 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  <!-- LoadingBar -->
  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
+   <!-- sweet alert  -->
+  
+<link rel="stylesheet" href="sweetalert2.min.css">
+
 </head>
 <body>
+    <main>
     <header id="header"></header>
+    <section>
     <div class="myOrder">
     <h1>YOUR ORDERS</h1>
     <div class="orderContainer" id="orderContainer">
@@ -27,15 +32,18 @@
 
     </div>
 </div>
+</section>
     <script src="assets/js/env.js"></script>
-    <script src="assets/js/orderservice.js"></script>
+    <script src="assets/js/serviceclass/orderservice.js"></script>
     <script src="assets/js/myorder.js"></script>
-    <script src="assets/js/productservice.js"></script>
+    <script src="assets/js/serviceclass/productservice.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="assets/jquery.min.js"></script>
     <script src="assets/js/route.js"></script>
     <script src="assets/js/errormessage.js"></script>
     <script>
         $("#header").load("header.html")
     </script>
+    </main>
 </body>
 </html>

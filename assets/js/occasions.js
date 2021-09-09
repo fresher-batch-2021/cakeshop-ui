@@ -1,8 +1,8 @@
 
 function getCakeSection(category, cakeItems) {
-    $("#message").show();
-    setTimeout(function() 
-    {
+    // $("#message").show();
+    // setTimeout(function() 
+    // {
 
     console.log("getCakeSection" , category );
     console.table(cakeItems);
@@ -29,11 +29,11 @@ function getCakeSection(category, cakeItems) {
         }
     }
 }
-    $("#message").hide();
-    document.querySelector("#container").innerHTML=content;
+    // $("#message").hide();
+    // document.querySelector("#container").innerHTML=content;
+   return content;
 
-
-},2000);
+// },2000);
 }
 
 function SearchCakes()

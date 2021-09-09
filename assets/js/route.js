@@ -12,7 +12,7 @@ const routes = [
 
  function logout() {
      localstorage.clear();
-     window.Location.href = "login.html";
+     window.location.href = "login.html";
  }
 function checkAccess(pageName, role) {
     let allowed = false;

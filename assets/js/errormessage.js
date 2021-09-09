@@ -3,8 +3,8 @@ class ErrorMessage
     static EMAIL_ALREADY_EXISTS= "This email Id is already exists";
     static VALID_EMAIL="Successfully register";
     static INVALID_EMAIL="Unable to register";
-    static INVALID_LOGIN="Invalid login credentials";
-    static LOGIN_FIRST="You Need Login First";
+    static LOGIN_FIRST="Wrong Password";
+    static WRONG_PASSWORD="You Need Login First";
     static VALID_LOGIN="Successfully Login";
     static PRODUCT_FAILED="Failed to getting data";
     static PRODUCT_SUCCESS="Cake is Added to Cart";

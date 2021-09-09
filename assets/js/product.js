@@ -40,7 +40,7 @@ function project()
 
 project();
 
-function tocart(id,imageUrl,name,price)
+function tocart(id,imageUrl,productName,price)
 {
     let cartItemsStr=localStorage.getItem("cartElements");
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr):[];
@@ -59,7 +59,7 @@ function tocart(id,imageUrl,name,price)
     }
     else{
        let cartObj = {_id:id,
-        name:name,price:price,imageUrl:imageUrl,quantity:quantity}; // if item not exist, add new item to cart
+        productName:productName,price:price,imageUrl:imageUrl,quantity:quantity}; // if item not exist, add new item to cart
     console.log(cartObj);
     cartItems.push(cartObj);
     }

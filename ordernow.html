@@ -27,6 +27,7 @@
 </head>
 
 <body>
+    <main>
     <section class="orderColor">
         <header id="header"></header>
 
@@ -38,13 +39,9 @@
             <form onsubmit="ordernow()">
 
                 <label for="name">Customer Name(* ):</label>
-                <input type="text" class="name" id="name" required>
-                <!-- <label for="email">Email(* ):</label>
-                <input type="email" class="email" id="email" required> -->
+                <input type="text" class="name" id="name" required autofocus>                
                 <label for="mobileNo">Customer Contact Number(* ):</label>
-                <input type="text" class="mobileNo" id="mobileNo" required>
-                <!-- <label for="flavours">Flavours</label>
-                <input type="text" name="flavours" id="flavours"> -->
+                <input type="text" class="mobileNo" id="mobileNo" required autofocus>                
                 <label for="decorations">Choose a Decorations:</label><br><br>
                 <select data-placeholder="Decorations" multiple class="chosen-select" name="test" id="test">
                     <option value="test"></option>
@@ -57,13 +54,13 @@
                     <option>Ribbon Spray</option>
                     <option>Poppers</option>
                 </select> <br><br>
-                <label for="date">Delivery Date(* ):</label>
-                <input type="date" class="date" id="date" required>
+                <label for="orderDate">Delivery Date(* ):</label>
+                <input type="date" class="orderDate" id="orderDate" required autofocus>
                 <label for="address">Address(* ):</label>
-                <input type="text " class="address" id="address" required>
+                <input type="text " class="address" id="address" required autofocus>
                 <!-- <div class="Amount" id="totalAmount"> -->
                 <label for="totalAmount">Total Amount(* ):</label>
-                <input type="text" class="totalAmount" id="totalAmount" required>
+                <input type="text" class="totalAmount" id="totalAmount" required autofocus>
             <!-- </div> -->
                 <label for="payment">Payment(* ):</label>
                 <div>
@@ -83,11 +80,11 @@
     </footer>
     
     <script src="assets/jquery.min.js"></script>
-    <script src="assets/js/order-validation.js"></script>
-    <script src="assets/js/cart-service.js"></script>
-    <script src="assets/js/cakeservice.js"></script>
-    <script src="assets/js/orderservice.js"></script>
-    <script src="assets/js/productservice.js"></script>
+    <script src="assets/js/validatorclass/order-validation.js"></script>
+    <script src="assets/js/serviceclass/cart-service.js"></script>
+    <script src="assets/js/serviceclass/cakeservice.js"></script>
+    <script src="assets/js/serviceclass/orderservice.js"></script>
+    <script src="assets/js/serviceclass/productservice.js"></script>
     <script src="assets/js/env.js"></script>
     <script src="assets/js/route.js"></script>   
     <script src="assets/js/ordernow.js"></script>
@@ -121,7 +118,7 @@
         });
     </script>
    
-
+</main>
 
 </body>
 
