@@ -15,4 +15,6 @@ class ErrorMessage
     static ORDER_IS_FAILED=" Your Order is Failed ";
     static MYORDER_CANCEL="Your Order is Cancelled";
     static MYORDER_CANNOT_BE_CANCEL="Order Can't Be Cancelled";
+    static MYORDER_ERROR="Some error in your order";
+    static CATCH_ERROR="Process Failed"
 }

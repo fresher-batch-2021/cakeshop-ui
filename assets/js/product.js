@@ -17,7 +17,7 @@ function project()
        content = content+`
      <div class="productRow">
      <a href="product.html?id=${cake._id}">
-        <img class=""src="images/${cake.imageUrl}" alt="img">
+        <img class=""src="assets/images/${cake.imageUrl}" alt="img">
         </a> <div class="product-para">
         <p>${cake.productName}</p>
         <br>
@@ -29,7 +29,7 @@ function project()
         
         </div>`;
         $("#message").hide();
-        document.querySelector("#productcontainer").innerHTML=content;
+        document.querySelector("#productContainer").innerHTML=content;
         
     }).catch(err=>{
         console.log(err.response.data);

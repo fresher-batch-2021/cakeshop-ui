@@ -33,7 +33,7 @@ function displayCartItems() {
       content = content + `
                   <tr>
                   <td>${count}</td>
-                  <td><img class="cakeImg"src="images/${item.imageUrl}" alt="img"></td>
+                  <td><img class="cakeImg"src="assets/images/${item.imageUrl}" alt="img"></td>
                      <td>${item.productName}</td>
                      <td>${item.price}</td>
                      <td>${item.quantity}</td>
@@ -61,7 +61,7 @@ function displayCartItems() {
 // Deleting elements in cart
 function deleteCartData(index) {
 
-  var arr = JSON.parse(localStorage.getItem("cartElements"));//store the value in localstorage changed into json obj and store it in arr
+  let arr = JSON.parse(localStorage.getItem("cartElements"));//store the value in localstorage changed into json obj and store it in arr
   if (arr[index].quantity > 1) {
     arr[index].quantity--;
   }

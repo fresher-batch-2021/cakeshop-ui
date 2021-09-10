@@ -26,7 +26,7 @@ function Login()
                 {
                 
                 console.log(data);
-                localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data[0]));
+                localStorage.setItem(ConstantMessage.LOGGED_IN_USER,JSON.stringify(data[0]));
                 
                 toastr.success(ErrorMessage.VALID_LOGIN);
                 setTimeout(function () {
@@ -44,7 +44,7 @@ function Login()
         }
         catch(err)
         {
-            toastr.error("failed");
+            toastr.error(ErrorMessage.CATCH_ERROR);
             
         }
            

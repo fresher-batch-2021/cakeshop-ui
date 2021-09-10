@@ -16,12 +16,12 @@ function myOrders() {
         console.table(myOrders);
         for (let order of myOrders) {
             let count = 0;
-            let orderedDate = new Date(order.date).toJSON(); //.substr(0, 10);
-            let date = moment(new Date(orderedDate)).format("DD-MM-YYYY");
+            let orderedDate = new Date(order.orderDate).toJSON(); //.substr(0, 10);
+            let orderDate = moment(new Date(orderedDate)).format("DD-MM-YYYY");
             for (let item of order.products) {
                 content = content + ` <div class="my-order-div">
 
-        <img src="images/${item.imageUrl}" alt="img" width="200px">
+        <img src="assets/images/${item.imageUrl}" alt="img" width="200px">
         <div class="my-order-p">
         <p>${item.productName}</p>
         <p>₹${item.price}.00</p>
@@ -29,7 +29,7 @@ function myOrders() {
         `;
             }
             content = content + `
-        <p>${date}</p>
+        <p>${orderDate}</p>
         <p>${order.status}</p>
         </div></div>`;
             if (order.status != "DELIVERED" && order.status != "CANCELLED") {
@@ -60,13 +60,13 @@ function cancelOrdered(id) {
 
         OrderService.getOrder(id).then(res => {
 
-            let orderObj = res.data;
+            const orderObj = res.data;
             orderObj.status = "CANCELLED";
 
 
             OrderService.cancelOrder(id, orderObj).then(res => {
                 console.log(JSON.stringify(res.data));
-                let products = orderObj.products;
+                const products = orderObj.products;
                 for (let productObj of products) {
                     ProductService.increaseStock(productObj._id, productObj.quantity)
 
@@ -84,6 +84,7 @@ function cancelOrdered(id) {
                 }
             }).catch(err => {
                 console.log(err);
+                toastr.error(ErrorMessage.MYORDER_ERROR);
             });
 
         });

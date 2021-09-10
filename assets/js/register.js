@@ -65,7 +65,7 @@ function register() {
     }
     catch(err){
         console.log(err);
-        toastr.error(err.message);
+        toastr.error(ErrorMessage.CATCH_ERROR);
     }
 
 }

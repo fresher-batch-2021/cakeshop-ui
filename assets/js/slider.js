@@ -1,6 +1,6 @@
-var slideIndex = 0;
+let slideIndex = 0;
         
-        let slideData =["images/cake6.jpg","images/cake8.jpg","images/cake12.jpg","images/cake13.jpg"];
+        let slideData =["assets/images/cake6.jpg","assets/images/cake8.jpg","assets/images/cake12.jpg","assets/images/cake13.jpg"];
 
         function addSliderImages(){
              const slider = document.querySelector('.slideshow_container');//to place the html code in container

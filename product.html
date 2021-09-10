@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine cakes</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico">
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
@@ -19,24 +19,16 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
       <!-- LoadingBar -->
    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-   <style>
-       header{
-           top: 0;
-           position: sticky;
-       }
-   </style>
+  
 </head>
 
 <body>
     <main>
     <header id="header"></header>
 <section>
-    <div class="productcontainer" id="productcontainer">
+    <div class="productContainer" id="productContainer">
         <div class="lds-dual-ring"></div>
-        <!-- <div id="message" style="display:none;text-align: center;">
-            Loading ....
-        </div> -->
-
+       
     </div>
 </section>
 
@@ -48,6 +40,7 @@
     <script src="assets/js/serviceclass/cakeservice.js"></script>
     <script src="assets/js/product.js"></script>
     <script src="assets/js/errormessage.js"></script>
+    <script src="/assets/js/util/constantmessage.js"></script>
 
     <script>
         $("#header").load("header.html")

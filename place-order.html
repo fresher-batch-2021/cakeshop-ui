@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine cakes</title>
     <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
@@ -31,12 +31,12 @@
     <section class="orderColor">
         <header id="header"></header>
 
-        <div class="ordernow">
+        <div class="orderNow">
             <div id="message" style="display:none;text-align: center;">
                 Loading ....
             </div>
             <h1>DIVINE CAKES ONLINE DELIVERY </h1><br><br>
-            <form onsubmit="ordernow()">
+            <form onsubmit="orderNow()">
 
                 <label for="name">Customer Name(* ):</label>
                 <input type="text" class="name" id="name" required autofocus>                
@@ -87,8 +87,9 @@
     <script src="assets/js/serviceclass/productservice.js"></script>
     <script src="assets/js/env.js"></script>
     <script src="assets/js/route.js"></script>   
-    <script src="assets/js/ordernow.js"></script>
+    <script src="assets/js/place-order.js"></script>
     <script src="assets/js/errormessage.js"></script>
+    <script src="assets/js/util/constantmessage.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
     

@@ -1,9 +1,5 @@
-function ordernow() {
-    // $("#message").show();
-    
-        
-
-    console.log("ordernow method");
+function orderNow() {
+    // $("#message").show();      
     event.preventDefault();
     const name = document.querySelector("#name").value;
     const mobileNo = document.querySelector("#mobileNo").value;
@@ -61,7 +57,7 @@ function ordernow() {
     }
     catch (err) {
         console.error(err.message);
-        toastr.error("Error" + err.message);
+        toastr.error(ErrorMessage.CATCH_ERROR);
     }
     
 }

@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
 *{
     margin: 0;
-    padding: 0;
-   
-    
+    padding: 0;   
 
 }
 body {
@@ -25,25 +23,25 @@ header{
      position: sticky;
      top: 0;  
 }
-.navbar{
+.navBar{
     height: 80px;
     background-color: #f0efeb;
     margin-top: -17px;
    
 }
-.navbar img{
+.navBar img{
     width: 75px;
     height: 60px;
     margin: 10px;
     float: left;
 }
-.navbar h1{
+.navBar h1{
     padding-top: 25px;
     padding-right: 25px;
     width: 400px;
     font-family: 'Caveat', cursive;
 }
- .navreg 
+ .navReg 
 {
     position: absolute;
     right: 10%;
@@ -56,20 +54,20 @@ header{
     display: inline;
 
 }
-.navbar ul
+.navBar ul
 {
     float: right;  
     padding-bottom: 5px;
 
 }
-.navbar li
+.navBar li
 {
     list-style: none;
    float: left;
     margin-right: 40px;
     font-size: 16.5px;
 }
-.navbar li a:hover
+.navBar li a:hover
 {
     color:#D00000;
     border: 2px solid white;
@@ -149,10 +147,10 @@ padding-right: 30%;
     {
         text-align: center;
     }
-    .indexcontainer{
+    .indexContainer{
         text-align: center;
 }
-.indexcontainer img
+.indexContainer img
 {
     width: 300px;
     height: 250px;
@@ -314,7 +312,7 @@ padding-right: 30%;
     border-radius: 10px;
     
 }
-.cakecontainer h3
+.cakeContainer h3
 {
     padding-left: 36px;
 padding-top: 12px;
@@ -348,14 +346,14 @@ font-size: 22px
 {
     background-color: #fae1dd;
 }
-.ordernow
+.orderNow
 {
     margin:  80px 400px 0px 400px;
     padding: 50px 0px 40px 80px;
     border: solid;
     background-color:  #f0efeb;
 }
-.ordernow input, .ordernow select
+.orderNow input, .orderNow select
 {
         margin: 10px 0;
         padding: 5px 10px; 
@@ -494,7 +492,13 @@ img{
 {
     margin-top:0 ;
     background-color:#fae1dd ;
-}
+    }
+     .about h1
+    {
+        padding-top: 35px;
+        /* padding-bottom: ; */
+        /* padding-left: 25px; */
+    } 
 .aboutUs
 {
     margin: 0 2% 4% 2%;
