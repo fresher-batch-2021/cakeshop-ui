@@ -7,9 +7,9 @@ function orderNow() {
     const address = document.querySelector("#address").value;
     const totalAmount = document.querySelector("#totalAmount").value;
 
-    let cartItem = JSON.parse(localStorage.getItem("cartElements"));
+    let cartItem = JSON.parse(localStorage.getItem(Message.CART_ELEMENTS));
 
-    let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    let user = JSON.parse(localStorage.getItem(Message.LOGGED_IN_USER));
     let loggedInEmail = user != null ? user.email : null;
     try {        
         OrderValidation.validate(name, mobileNo, orderDate, address, cartItem, totalAmount)
@@ -38,16 +38,16 @@ function orderNow() {
                     
                     let data = res.data;
                     console.log(data);
-                    localStorage.removeItem("cartElements");
+                    localStorage.removeItem(Message.CART_ELEMENTS);
                     $("#message").hide();
                     // localStorage.removeItem("totalAmount",null);
-                    toastr.success(ErrorMessage.ORDER_IS_SUCCESS);
+                    toastr.success(Message.ORDER_IS_SUCCESS);
                     setTimeout(function () {
                         window.location.href = "index.html";
                     }, 1000);
                 }).catch(err => {
                     console.log(err);
-                    toastr.error(ErrorMessage.ORDER_IS_FAILED);
+                    toastr.error(Message.ORDER_IS_FAILED);
                 });
             }
 
@@ -57,7 +57,7 @@ function orderNow() {
     }
     catch (err) {
         console.error(err.message);
-        toastr.error(ErrorMessage.CATCH_ERROR);
+        toastr.error(Message.CATCH_ERROR);
     }
     
 }

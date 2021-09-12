@@ -20,15 +20,15 @@ function Login()
                 if (data.length==0)
                  {
                 
-                toastr.error(ErrorMessage.INVALID_LOGIN);  
+                toastr.error(Message.INVALID_LOGIN);  
                 }
                 else
                 {
                 
                 console.log(data);
-                localStorage.setItem("LOGGED_IN_USER",JSON.stringify(data[0]));
+                localStorage.setItem(Message.LOGGED_IN_USER,JSON.stringify(data[0]));
                 
-                toastr.success(ErrorMessage.VALID_LOGIN);
+                toastr.success(Message.VALID_LOGIN);
                 setTimeout(function () {
                         window.location.href = "index.html"
                     }, 500);
@@ -38,13 +38,13 @@ function Login()
                 }
             }).catch(err=>{
                 console.error(err);
-                toastr.error(ErrorMessage.LOGIN_FIRST);
+                toastr.error(Message.LOGIN_FIRST);
                 
             });
         }
         catch(err)
         {
-            toastr.error(ErrorMessage.CATCH_ERROR);
+            toastr.error(Message.CATCH_ERROR);
             
         }
            

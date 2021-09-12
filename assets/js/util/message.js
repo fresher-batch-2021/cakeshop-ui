@@ -1,4 +1,4 @@
-class ErrorMessage
+class Message
 {
     static EMAIL_ALREADY_EXISTS= "Email already exists. Please enter different Email";
     static VALID_EMAIL="Successfully register";
@@ -19,4 +19,7 @@ class ErrorMessage
     static MYORDER_ERROR="Some error in your order";
     static CATCH_ERROR="Process Failed";
     static ROUTE_ALLOWED_ACCESS="You are not authorized to access this page.Redirecting to login page";
+    static LOGGED_IN_USER="LOGGED_IN_USER";
+    static CART_ELEMENTS="cartElements";
+    static CATEGORY="category";
 }

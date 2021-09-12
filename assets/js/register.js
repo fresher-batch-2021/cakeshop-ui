@@ -30,7 +30,7 @@ function register() {
             
             let exists = res;
             if (exists) {
-                toastr.error("", ErrorMessage.EMAIL_ALREADY_EXISTS,//if its true it is an error
+                toastr.error("", Message.EMAIL_ALREADY_EXISTS,//if its true it is an error
                     {
                         preventDuplicate: true
                     });
@@ -44,7 +44,7 @@ function register() {
                 UserService.register(regObj).then(res1 => {
                     let data = res1.data;
                     console.log(data);
-                    toastr.success(ErrorMessage.VALID_EMAIL);
+                    toastr.success(Message.VALID_EMAIL);
                     setTimeout(function () {
                         window.location.href = "login.html";
                     }, 3000)
@@ -52,7 +52,7 @@ function register() {
                 }).catch(err => {
                     console.log(err);
                     console.log(err?.response?.data);
-                    toastr.error(ErrorMessage.INVALID_EMAIL);
+                    toastr.error(Message.INVALID_EMAIL);
                 });
             }
         }).catch(err=>
@@ -65,7 +65,7 @@ function register() {
     }
     catch(err){
         console.log(err);
-        toastr.error(ErrorMessage.CATCH_ERROR);
+        toastr.error(Message.CATCH_ERROR);
     }
 
 }

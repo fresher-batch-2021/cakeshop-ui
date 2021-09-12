@@ -33,7 +33,7 @@ function project()
         
     }).catch(err=>{
         console.log(err.response.data);
-        toastr.error(ErrorMessage.PRODUCT_FAILED);
+        toastr.error(Message.PRODUCT_FAILED);
     })
     },2000);
 }
@@ -42,7 +42,7 @@ project();
 
 function tocart(id,imageUrl,productName,price)
 {
-    let cartItemsStr=localStorage.getItem("cartElements");
+    let cartItemsStr=localStorage.getItem(Message.CART_ELEMENTS);
     let cartItems = cartItemsStr != null ? JSON.parse(cartItemsStr):[];
     let quantity=1; 
 
@@ -65,8 +65,8 @@ function tocart(id,imageUrl,productName,price)
     }
     
     
-    localStorage.setItem("cartElements",JSON.stringify(cartItems));
-    toastr.success("",ErrorMessage.PRODUCT_SUCCESS,
+    localStorage.setItem(Message.CART_ELEMENTS,JSON.stringify(cartItems));
+    toastr.success("",Message.PRODUCT_SUCCESS,
     {
         timeOut:500
     });

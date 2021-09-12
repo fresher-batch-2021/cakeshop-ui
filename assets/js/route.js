@@ -31,7 +31,7 @@ function checkAccess(pageName, role) {
 }
 (function () {
     console.log("Routes initializing")
-    let user = JSON.parse(localStorage.getItem("LOGGED_IN_USER"));
+    let user = JSON.parse(localStorage.getItem(Message.LOGGED_IN_USER));
     console.log("LoggedIn User", user);
     let role = user != null ? user.role : null;
     let pathName = window.location.pathname.substr(1);
@@ -40,7 +40,7 @@ function checkAccess(pageName, role) {
 
 
     if (!allowedAccess) {
-        toastr.error("You are not authorized to access this page,Redirecting to login page");
+        toastr.error(Message.ROUTE_ALLOWED_ACCESS);
         setTimeout(function()
         {
             window.location.href = "login.html";

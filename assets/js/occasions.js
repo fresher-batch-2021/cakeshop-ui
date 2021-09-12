@@ -56,7 +56,8 @@ function getAllCakes(category) {
         console.log(products);
         displayCakes(products, category);
     }).catch(err => {
-        console.log(err.data);
+        console.log(err);
+        toastr.error(Message.PRODUCT_FAILED);
         // toastr.error("failed in getting data");
     });
 
@@ -70,13 +71,13 @@ function getAllCakes(category) {
  */
 function displayCakes(products, category) {
 
-    const categories = _.groupBy(products, 'category');
+    const categories = _.groupBy(products, Message.CATEGORY);
 
     console.log(JSON.stringify(categories));
 
     let content = "";
     if (products.length == 0) {
-        alert("No cake items");
+        toastr.error("No cake items");
     }
     else if (category != null) {
 
@@ -99,7 +100,7 @@ function displayCakes(products, category) {
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     const params = new URLSearchParams(window.location.search.substr(1));
-    const category = params.get('category');
+    const category = params.get(Message.CATEGORY);
     console.log("Selected Category in previous page:" + category);
     getAllCakes(category);
 

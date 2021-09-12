@@ -71,20 +71,20 @@ function cancelOrdered(id) {
                     ProductService.increaseStock(productObj._id, productObj.quantity)
 
                         .then(res1 => {
-                            toastr.success(ErrorMessage.MYORDER_CANCEL);
+                            toastr.success(Message.MYORDER_CANCEL);
                             setTimeout(function () {
                                 window.location.reload();
                             }, 5000);
 
                         }).catch(err => {
-                            toastr.error(ErrorMessage.MYORDER_CANNOT_BE_CANCEL);
+                            toastr.error(Message.MYORDER_CANNOT_BE_CANCEL);
                             console.log(err.response.message);
                         });
 
                 }
             }).catch(err => {
                 console.log(err);
-                toastr.error(ErrorMessage.MYORDER_ERROR);
+                toastr.error(Message.MYORDER_ERROR);
             });
 
         });

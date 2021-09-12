@@ -7,7 +7,7 @@ function displayCartItems() {
 
 
   console.log("displayCartItems");
-  let cartItem = JSON.parse(localStorage.getItem("cartElements"));
+  let cartItem = JSON.parse(localStorage.getItem(Message.CART_ELEMENTS));
   console.log(cartItem);
   let content = `<table class="table table-bordered table-hover table-full-width">
   <thead>
@@ -52,7 +52,7 @@ function displayCartItems() {
     document.querySelector("#cartData").innerHTML = content;
   }
   else {
-    console.log(ErrorMessage.CART_EMPTY, cartItem);
+    console.log(Message.CART_EMPTY, cartItem);
   }
   $("#message").hide();
   // }, 2000);
@@ -61,7 +61,7 @@ function displayCartItems() {
 // Deleting elements in cart
 function deleteCartData(index) {
 
-  let arr = JSON.parse(localStorage.getItem("cartElements"));//store the value in localstorage changed into json obj and store it in arr
+  let arr = JSON.parse(localStorage.getItem(Message.CART_ELEMENTS));//store the value in localstorage changed into json obj and store it in arr
   if (arr[index].quantity > 1) {
     arr[index].quantity--;
   }
@@ -69,20 +69,20 @@ function deleteCartData(index) {
     arr.splice(index, 1);
   }
   console.log(arr[index]);
-  toastr.success("", ErrorMessage.CART_ITEM_IS_DELETED,
+  toastr.success("", Message.CART_ITEM_IS_DELETED,
     {
       timeOut: 1000
     });
-  localStorage.setItem("cartElements", JSON.stringify(arr));
+  localStorage.setItem(Message.CART_ELEMENTS, JSON.stringify(arr));
   displayCartItems();
 }
 
 function cartcheck() {
 
 
-  let cartItem = JSON.parse(localStorage.getItem("cartElements"));
+  let cartItem = JSON.parse(localStorage.getItem(Message.CART_ELEMENTS));
   if (cartItem == null || cartItem == "") {
-    toastr.error(ErrorMessage.CART_EMPTY);
+    toastr.error(Message.CART_EMPTY);
 
     window.location.href = "occasions.html";
   } else {
@@ -91,8 +91,8 @@ function cartcheck() {
 }
 displayCartItems();
 function cartClear() {
-  toastr.success(ErrorMessage.CART_ITEM_IS_CLEARED);
-  localStorage.removeItem("cartElements");
+  toastr.success(Message.CART_ITEM_IS_CLEARED);
+  localStorage.removeItem(Message.CART_ELEMENTS);
   setTimeout(function () {
     window.location.reload();
   }, 500);
