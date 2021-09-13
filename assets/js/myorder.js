@@ -54,15 +54,8 @@ function myOrders() {
 myOrders();
 
 function cancelOrdered(id) {
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "Do You want to cancel this Cake",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, Cancel it!',
-    })
+    let cfm = confirm("Do you want to delete the cake ?");
+    if (cfm) {    
     OrderService.getOrder(id).then(res => {
         const orderObj = res.data;
         orderObj.status = "CANCELLED";
@@ -72,21 +65,11 @@ function cancelOrdered(id) {
             for (let productObj of products) {
                 ProductService.increaseStock(productObj._id, productObj.quantity)
                     .then(res1 => {
-                        if (res1.confirmed) {                           
                         
-                        Swal.fire(
-                            'Cancelled!',
-                            'Your Cake has been Cancelled.',
-                            'success',
-                            setTimeout(function () {
-                                window.location.reload()
-                            }, 1000)
-                        )
-                        }
-                        // toastr.success(Message.MYORDER_CANCEL);
-                        // setTimeout(function () {
-                        //     window.location.reload();
-                        // }, 5000);
+                        toastr.success(Message.MYORDER_CANCEL);
+                        setTimeout(function () {
+                            window.location.reload();
+                        }, 5000);
 
                     }).catch(err => {
                         toastr.error(Message.MYORDER_CANNOT_BE_CANCEL);
@@ -100,5 +83,6 @@ function cancelOrdered(id) {
         });
 
     });
+}
 
 }
