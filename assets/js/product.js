@@ -1,3 +1,23 @@
+
+const productTemplate=(cake)=>
+{
+    let content=
+    `
+     <div class="productRow">
+     <a href="product.html?id=${cake._id}">
+        <img class=""src="assets/images/${cake.imageUrl}" alt="img">
+        </a> <div class="product-para">
+        <p>${cake.productName}</p>
+        <br>
+        <p>₹${cake.price}.00</p>
+        <br>
+        <p>Minimum Weight:half kg</p> <br>
+        <button type="button" onClick="tocart('${cake._id}','${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
+        <button ></button></div>
+        
+        </div>`;
+        return content;
+}
 function project()
 {
     $("#message").show();
@@ -14,20 +34,7 @@ function project()
         
         let cake = res.data;
         console.log(cake);
-       content = content+`
-     <div class="productRow">
-     <a href="product.html?id=${cake._id}">
-        <img class=""src="assets/images/${cake.imageUrl}" alt="img">
-        </a> <div class="product-para">
-        <p>${cake.productName}</p>
-        <br>
-        <p>₹${cake.price}.00</p>
-        <br>
-        <p>Minimum Weight:half kg</p> <br>
-        <button type="button" onClick="tocart('${cake._id}','${cake.imageUrl}','${cake.productName}',${cake.price})">Add to cart</button>
-        <button ></button></div>
-        
-        </div>`;
+       content = content+productTemplate(cake);
         $("#message").hide();
         document.querySelector("#productContainer").innerHTML=content;
         

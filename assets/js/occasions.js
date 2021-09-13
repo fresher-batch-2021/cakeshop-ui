@@ -1,4 +1,21 @@
 
+
+const occasionsTemplate = (cake)=>
+{
+   let content=`
+
+    <div class="cakerow">    
+        <a href="product.html?id=${cake._id}">
+        <figure>
+          <img class="cakeimg" id="cakeworld"src="assets/images/${cake.imageUrl}" alt="img">
+        </figure>
+        </a>
+      <p>${cake.productName}</p>
+      <p>₹${cake.price}.00</p>
+    
+    </div>`;
+    return content;
+}
 function getCakeSection(category, cakeItems) {
     // $("#message").show();
     // setTimeout(function() 
@@ -12,16 +29,7 @@ function getCakeSection(category, cakeItems) {
     content += "<h3>" + category + "</h3>";
     if (cakeItems) {
         for (let cake of cakeItems) {
-            content = content + `
-
-<div class="cakerow">
-
-<a href="product.html?id=${cake._id}">
-<img class="cakeimg" id="cakeworld"src="assets/images/${cake.imageUrl}" alt="img"></a>
-<p>${cake.productName}</p>
-<p>₹${cake.price}.00</p>
-
-</div>`;
+            content = content +occasionsTemplate(cake);
             count = count + 1;
             if (count == 5) {
                 content = content + `<br>`;
@@ -58,7 +66,7 @@ function getAllCakes(category) {
     }).catch(err => {
         console.log(err);
         toastr.error(Message.PRODUCT_FAILED);
-        // toastr.error("failed in getting data");
+        
     });
 
 }
@@ -96,14 +104,12 @@ function displayCakes(products, category) {
     console.log(content);
     document.querySelector("#container").innerHTML = content;
 }
-
 window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     const params = new URLSearchParams(window.location.search.substr(1));
     const category = params.get(Message.CATEGORY);
     console.log("Selected Category in previous page:" + category);
     getAllCakes(category);
-
 }
 );
 

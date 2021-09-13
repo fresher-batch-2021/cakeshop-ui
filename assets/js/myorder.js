@@ -54,39 +54,51 @@ function myOrders() {
 myOrders();
 
 function cancelOrdered(id) {
-
-    let cfm = confirm("Do you want to cancel your Order ?");
-    if (cfm) {
-
-        OrderService.getOrder(id).then(res => {
-
-            const orderObj = res.data;
-            orderObj.status = "CANCELLED";
-
-
-            OrderService.cancelOrder(id, orderObj).then(res => {
-                console.log(JSON.stringify(res.data));
-                const products = orderObj.products;
-                for (let productObj of products) {
-                    ProductService.increaseStock(productObj._id, productObj.quantity)
-
-                        .then(res1 => {
-                            toastr.success(Message.MYORDER_CANCEL);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "Do You want to cancel this Cake",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Cancel it!',
+    })
+    OrderService.getOrder(id).then(res => {
+        const orderObj = res.data;
+        orderObj.status = "CANCELLED";
+        OrderService.cancelOrder(id, orderObj).then(res => {
+            console.log(JSON.stringify(res.data));
+            const products = orderObj.products;
+            for (let productObj of products) {
+                ProductService.increaseStock(productObj._id, productObj.quantity)
+                    .then(res1 => {
+                        if (res1.confirmed) {                           
+                        
+                        Swal.fire(
+                            'Cancelled!',
+                            'Your Cake has been Cancelled.',
+                            'success',
                             setTimeout(function () {
-                                window.location.reload();
-                            }, 5000);
+                                window.location.reload()
+                            }, 1000)
+                        )
+                        }
+                        // toastr.success(Message.MYORDER_CANCEL);
+                        // setTimeout(function () {
+                        //     window.location.reload();
+                        // }, 5000);
 
-                        }).catch(err => {
-                            toastr.error(Message.MYORDER_CANNOT_BE_CANCEL);
-                            console.log(err.response.message);
-                        });
+                    }).catch(err => {
+                        toastr.error(Message.MYORDER_CANNOT_BE_CANCEL);
+                        console.log(err.response.message);
+                    });
 
-                }
-            }).catch(err => {
-                console.log(err);
-                toastr.error(Message.MYORDER_ERROR);
-            });
-
+            }
+        }).catch(err => {
+            console.log(err);
+            toastr.error(Message.MYORDER_ERROR);
         });
-    }
+
+    });
+
 }

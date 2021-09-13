@@ -3,6 +3,17 @@ function orderNow() {
     event.preventDefault();
     const name = document.querySelector("#name").value;
     const mobileNo = document.querySelector("#mobileNo").value;
+    const  decorations= [];
+    
+    let decorationsList = document.querySelectorAll(".search-choice");
+    decorationsList.forEach( e=>{
+        let item = e.children[0].innerText;
+        console.log("Selected item:" , item)
+        decorations.push(item);
+    })
+    console.log("Selected items:" , decorations);    
+
+
     const orderDate = document.querySelector("#orderDate").value;
     const address = document.querySelector("#address").value;
     const totalAmount = document.querySelector("#totalAmount").value;
@@ -12,12 +23,13 @@ function orderNow() {
     let user = JSON.parse(localStorage.getItem(Message.LOGGED_IN_USER));
     let loggedInEmail = user != null ? user.email : null;
     try {        
-        OrderValidation.validate(name, mobileNo, orderDate, address, cartItem, totalAmount)
+        OrderValidation.validate(name, mobileNo,decorations, orderDate, address, cartItem, totalAmount)
         const orderObj = {
 
             name: name,
             mobileNo: mobileNo,
             orderDate: orderDate,
+            decorations:decorations,
             address: address,
             products: cartItem,
             status: "ORDERED",
@@ -50,8 +62,6 @@ function orderNow() {
                     toastr.error(Message.ORDER_IS_FAILED);
                 });
             }
-
-
         });
 
     }

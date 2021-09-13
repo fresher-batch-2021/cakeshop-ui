@@ -1,5 +1,21 @@
 
-
+const cartTemplate = (item) => {
+  let count = 1;
+  let content = `
+  <tr>
+  <td>${count}</td>
+  <td><img class="cakeImg"src="assets/images/${item.imageUrl}" alt="img"></td>
+     <td>${item.productName}</td>
+     <td>${item.price}</td>
+     <td>${item.quantity}</td>
+     <td>${item.quantity * item.price}</td>
+     <td><a onclick="deleteCartData(${count - 1})">delete</a></td>
+     
+   </tr>
+   `;
+  count++;
+  return content;
+}
 
 function displayCartItems() {
   // $("#message").show();
@@ -24,27 +40,14 @@ function displayCartItems() {
 </thead><tbody class="table-secondary">`;
   let end = ` </tbody></table>`;
   console.log(displayCartItems);
-  let count = 1;
+
   let sum = 0;
   let total = 0;
   if (cartItem) {
     for (let item of cartItem) {
       total = item.quantity * item.price;
-      content = content + `
-                  <tr>
-                  <td>${count}</td>
-                  <td><img class="cakeImg"src="assets/images/${item.imageUrl}" alt="img"></td>
-                     <td>${item.productName}</td>
-                     <td>${item.price}</td>
-                     <td>${item.quantity}</td>
-                     <td>${item.quantity * item.price}</td>
-                     <td><a onclick="deleteCartData(${count - 1})">delete</a></td>
-                     
-                   </tr>
-                   `;
-
+      content = content + cartTemplate(item);
       sum = sum + total;
-      count++;
     }
 
     localStorage.setItem("TOTAL_BILL_AMOUNT", sum);
