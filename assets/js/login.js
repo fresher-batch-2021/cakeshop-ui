@@ -1,4 +1,4 @@
-function Login()
+function loginForm()
 {
     
     console.log("login method");
@@ -30,7 +30,7 @@ function Login()
                 
                 toastr.success(Message.VALID_LOGIN);
                 setTimeout(function () {
-                        window.location.href = "index.html"
+                        navigateByUrl("home");
                     }, 500);
 
                 
@@ -44,7 +44,8 @@ function Login()
         }
         catch(err)
         {
-            toastr.error(Message.CATCH_ERROR);
+            console.error(err);
+            toastr.error(err.message);
             
         }
            

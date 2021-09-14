@@ -1,87 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Divine cakes</title>
-    <link rel="icon" href="images/favicon.ico">
-    <!-- axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- touster -->
- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
- <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
-</script>
-    <!-- cdn -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <!-- LoadingBar -->
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        </head>
-<body>
-    <main>
-        <section>
-    <div class="occasions">
-    <header id="header"></header>
-    <div class="searchContainer">
-        
-        <input type="text" id="cakeFilter" placeholder="Search">
-        <button type="button" onclick="searchCake()">Search</button>
-        <ul id="search"  class="userList">
+<div class="searchContainer">
 
-    </div>
-    
-        <div id="message" style="display:none;text-align: center;">
-            Loading ....
-        </div>
+    <input type="text" id="cakeFilter" placeholder="Search">
+    <button type="button" onclick="searchCake()">Search</button>
+    <ul id="search" class="userList">
 
-<div  class="cakeContainer" id="container">
-       
-       
 </div>
+
+
+
+<div class="cakeContainer" id="container">
+
+
 </div>
-</section>
 
-    
-     <script src="assets/querys/jquery.min.js"></script> 
-     <script src="assets/js/util/message.js"></script>
-     <script src="assets/js/route.js"></script>
-     <script src="assets/js/util/env.js"></script>
-     <script src="assets/js/service/cakeservice.js"></script>
-     <script src="assets/js/service/cake-search-service.js"></script>
-     <script src="assets/js/occasions.js"></script> 
 
-    <footer id="footer"></footer>
-    
-    <script>
-        $("#header").load("header.html")
+<script src="assets/js/occasions.js"></script>
+
+<script>
+
         // $("#footer").load("footer.html")
-      
-        /**
-         * 1. Get all cakes
-         * 2. Filter the cakes based on the input given
-         * 3. Call display method to display cakes
-         * */
-
-        function searchCake(){
-            const cake = document.querySelector("#cakeFilter").value;
-            console.log("Search Cake - " + cake);
-
-            CakeService.getCakes().then(res=>{
-                let cakes = res.data.rows.map(obj=>obj.doc);
-                console.table(cakes);
-                let filteredCakes = CakeSearchService.searchCake(cakes, cake);
-                console.table(filteredCakes);
-                displayCakes(filteredCakes);
 
 
-            })
-
-        }
-       
-    </script>
-   </main>
-</body>
-</html>
-
+</script>

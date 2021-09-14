@@ -26,7 +26,11 @@ function project()
         
     let content="";
     
-    const param=new URLSearchParams(window.location.search.substr(1));
+    console.log(window.location.search);
+    let hashValue = window.location.hash;
+    let queryParams = hashValue.substr(hashValue.indexOf("?")+1);
+    
+    const param=new URLSearchParams(queryParams);
     let id = param.get("id");
 
     

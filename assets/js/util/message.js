@@ -7,7 +7,12 @@ class Message
     static PASSWORD_MUST_BE_GREATER_THAN_8_CHARACTERS="Password must be greater than 8 characters";
     static LOGIN_FIRST="Wrong Password";
     static WRONG_PASSWORD="You Need Login First";
+
+    // Login Page
     static VALID_LOGIN="Successfully Login";
+    static INVALID_LOGIN="Invalid Login Credentials";
+
+    //product
     static PRODUCT_FAILED="Failed to getting data";
     static PRODUCT_SUCCESS="Cake is Added to Cart";
     static CART_EMPTY="Cart is empty";

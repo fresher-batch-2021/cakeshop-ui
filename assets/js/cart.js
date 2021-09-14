@@ -39,7 +39,7 @@ function displayCartItems() {
 </tr>    
 </thead><tbody class="table-secondary">`;
   let end = ` </tbody></table>`;
-  console.log(displayCartItems);
+  
 
   let sum = 0;
   let total = 0;

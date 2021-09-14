@@ -1,11 +1,37 @@
 
+ /**
+         * 1. Get all cakes
+         * 2. Filter the cakes based on the input given
+         * 3. Call display method to display cakes
+         * */
 
-const occasionsTemplate = (cake)=>
+  function searchCake(){
+    const cake = document.querySelector("#cakeFilter").value;
+    console.log("Search Cake - " + cake);
+
+    CakeService.getCakes().then(res=>{
+        let cakes = res.data.rows.map(obj=>obj.doc);
+        console.table(cakes);
+        let filteredCakes = CakeSearchService.searchCake(cakes, cake);
+        console.table(filteredCakes);
+        displayCakes(filteredCakes);
+
+
+    })
+
+}
+
+//document.querySelector("#cakeFilter").value="f";/
+// searchCake();
+
+
+
+function occasionsTemplate(cake)
 {
    let content=`
 
     <div class="cakerow">    
-        <a href="product.html?id=${cake._id}">
+        <a href="" onclick=event.preventDefault();navigateByUrl('product?id=${cake._id}')>
         <figure>
           <img class="cakeimg" id="cakeworld"src="assets/images/${cake.imageUrl}" alt="img">
         </figure>
@@ -17,9 +43,7 @@ const occasionsTemplate = (cake)=>
     return content;
 }
 function getCakeSection(category, cakeItems) {
-    // $("#message").show();
-    // setTimeout(function() 
-    // {
+    
 
     console.log("getCakeSection", category);
     console.table(cakeItems);
@@ -37,11 +61,10 @@ function getCakeSection(category, cakeItems) {
             }
         }
     }
-    // $("#message").hide();
-    // document.querySelector("#container").innerHTML=content;
+
     return content;
 
-    // },2000);
+
 }
 
 function SearchCakes() {
@@ -104,14 +127,22 @@ function displayCakes(products, category) {
     console.log(content);
     document.querySelector("#container").innerHTML = content;
 }
-window.addEventListener('DOMContentLoaded', (event) => {
+
+function loadCakesFromDB(){
     console.log('DOM fully loaded and parsed');
-    const params = new URLSearchParams(window.location.search.substr(1));
+
+    let hashValue = window.location.hash;
+    let queryParams = hashValue.substr(hashValue.indexOf("?")+1);
+    const params = new URLSearchParams(queryParams);
+    console.log(params);
+
     const category = params.get(Message.CATEGORY);
     console.log("Selected Category in previous page:" + category);
     getAllCakes(category);
 }
-);
+
+loadCakesFromDB();
+
 
 
 

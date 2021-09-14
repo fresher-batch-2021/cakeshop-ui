@@ -1,59 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine cakes</title>
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- axios -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- touster -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js">
-    </script>
-
-
-</head>
-<body>
-    <main>
-    <header id="header"></header>
-    <section>
-    <div class="login">
-        <h1>welcome to login page</h1><br>
-    <form onsubmit="Login()">
-        <label for="email" >Email(* ):</label>
-        <input type="email" name="email"id="email" required autofocus placeholder="Enter the Email" pattern="[a-z.0-9]+@[a-z]+\.[a-z]{2,}$">
+<div class="login">
+    <h1>welcome to login page</h1><br>
+    <form onsubmit="loginForm()">
+        <label for="email">Email(* ):</label>
+        <input type="email" name="email" id="email" required autofocus placeholder="Enter the Email"
+            pattern="[a-z.0-9]+@[a-z]+\.[a-z]{2,}$">
         <label for="password">Password(* ):</label>
-        <input type="password" name="password"id="password"required autofocus placeholder="Enter the password"><br>
+        <input type="password" name="password" id="password" required autofocus placeholder="Enter the password"><br>
         <!-- <p><a href="forgetPassword.html">forgetpassword?</a></p><br> -->
         <button class="Submit" type="submit">Submit</button><br><br>
         <p>or</p><br>
         <p><a href="register.html">register</a></p>
-        
+
     </form>
 </div>
-</section>
-        
-        <!-- <footer id="footer"></footer> -->
-            <script src="assets/querys/jquery.min.js"></script>
-            <script src="assets/js/validator/validatorClass.js"></script>
-            <script src="assets/js/login.js"></script>
-            <script src="assets/js/validator/emailvalidation.js"></script>
-            <script src="assets/js/service/userservice.js"></script>
-            <script src="assets/js/util/env.js"></script>
-            <script src="assets/js/validator/login-validator.js"></script>
-            <script src="assets/js/route.js"></script>
-            <script src="assets/js/util/message.js"></script>
-                 <script>
-                       $("#header").load("header.html")
-                       $("#footer").load("footer.html")
-                     
-                 </script>
-    
-</main>
-</body>
-</html>
+
+<!-- <script src="assets/js/validator/validatorClass.js"></script> -->
+<script src="assets/js/login.js"></script>
+<!-- <script src="assets/js/validator/emailvalidation.js"></script> -->
+<!-- <script src="assets/js/service/userservice.js"></script> -->
+<!-- <script src="assets/js/validator/login-validator.js"></script> -->

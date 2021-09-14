@@ -1,6 +1,3 @@
-<link href='https://fonts.googleapis.com/css?family=The Girl Next Door' rel='stylesheet'>
-
-<link rel="stylesheet" href="style.css">
 
 <header>
     <nav>
@@ -12,17 +9,17 @@
             </figure>
             <h1>DIVINE CAKES</h1>
             <div class="navReg">
-                <a class="navLog" href="login.html" data-loggedIn="false">Login |</a>
-                <a class="navLog" href="register.html" data-loggedIn="false">| Register</a>
+                <a class="navLog" href="login" data-loggedIn="false">Login |</a>
+                <a class="navLog" href="register" data-loggedIn="false">| Register</a>
                 <a class="navLog" onClick="logout()" data-loggedIn="true">Logout</a>
             </div>
 
             <ul class="navi">
-                <li class="Brand"><a href="index.html" data-loggedIn="true">HOME</a></li>
-                <li class="nav-item1"><a href="occasions.html" data-loggedIn="true">OCCASIONS</a></li>
-                <li class="nav-item1"><a href="myorder.html" data-loggedIn="true">MY ORDER</a></li>
-                <li class="nav-item1"><a href="cart.html" data-loggedIn="true">CART</a></li>
-                <li class="nav-item1"><a href="aboutus.html" data-loggedIn="true">ABOUT US</a></li>
+                <li class="Brand"><a href="home" data-loggedIn="true">HOME</a></li>
+                <li class="nav-item1"><a href="occasions" data-loggedIn="true">OCCASIONS</a></li>
+                <li class="nav-item1"><a href="myorder" data-loggedIn="true">MY ORDER</a></li>
+                <li class="nav-item1"><a href="cart" data-loggedIn="true">CART</a></li>
+                <li class="nav-item1"><a href="aboutus" data-loggedIn="true">ABOUT US</a></li>
 
             </ul>
         </div>
@@ -44,6 +41,42 @@
     }
     function logout() {
         localStorage.clear();
-        window.location.href = "login.html";
+        navigateByUrl("login");
     }
+
+    function navigateByUrl(path)
+    {
+        let parts = path.split("?");
+        let fileName = parts[0];
+        console.log(parts);
+        
+            $("#indexContainer").load(fileName+".html" );
+        
+        window.location.hash=path;
+
+
+    }
+    function link()
+    {
+        $("a[href]").click(function()
+        {
+            event.preventDefault();
+            console.log(this);
+
+            const link=this.pathname.substr(1);
+            console.log(link);
+            
+
+            navigateByUrl(link);
+        })
+    }
+    link();
+
+    //on page refresh, get the href value 
+    // 1. if href value is empty, then load the default page "home";
+    
+    let href = window.location.href;
+    let path = href.indexOf("#") ==-1? "home": href.substr(href.indexOf("#")+1);
+    console.log("Navigate to default page:", path);
+    navigateByUrl(path);
 </script>

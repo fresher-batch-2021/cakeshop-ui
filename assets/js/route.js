@@ -35,15 +35,16 @@ function checkAccess(pageName, role) {
     console.log("LoggedIn User", user);
     let role = user != null ? user.role : null;
     let pathName = window.location.pathname.substr(1);
+    console.log("Path Name:" , pathName);
     let allowedAccess = checkAccess(pathName, role);
 
 
 
     if (!allowedAccess) {
-        toastr.error(Message.ROUTE_ALLOWED_ACCESS);
+       // toastr.error(Message.ROUTE_ALLOWED_ACCESS);
         setTimeout(function()
         {
-            window.location.href = "login.html";
+           // window.location.hash = "login";
 
         },1500);
     }

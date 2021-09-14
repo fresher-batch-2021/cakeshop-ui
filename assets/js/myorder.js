@@ -1,5 +1,5 @@
 function myOrders() {
-    let email = JSON.parse(localStorage.getItem("LOGGED_IN_USER"))?.email;
+    let email = JSON.parse(localStorage.getItem(Message.LOGGED_IN_USER))?.email;
     console.log("Email,", email);
     //get all orders
     OrderService.getAllOrders().then(res => {
